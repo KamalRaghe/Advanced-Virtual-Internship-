@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { provider, auth } from "@/firebase"
+import { IoPersonSharp } from "react-icons/io5";
 import { signInWithPopup,signInWithEmailAndPassword, sendPasswordResetEmail,createUserWithEmailAndPassword } from "firebase/auth"
 
 export default function Modal({close}){
@@ -47,12 +48,15 @@ export default function Modal({close}){
     return (
         <div>
             <div className="modal">
-                <div style={{display:"flex",justifyContent:"end"}} >
-                    <button onClick={close}  style={{fontSize:"40px",border:"none",margin:"0",padding:"0",marginLeft:"20px"}} >x</button>
+                <div style={{display:"flex",justifyContent:"end",alignItems:"start",height:"35px"}} >
+                    <button onClick={close}  style={{fontSize:"40px",border:"none",marginLeft:"20px"}} >x</button>
                 </div>
                 <p className="modal__title">Log in to Summarist</p>
                 <div className="modal__buttons">
-                <button onClick={close} className="btn btn__cancel">Cancel</button>
+                    <button onClick={close} className="modal-btn" style={{backgroundColor:"#032b41",color:"white"}} ><IoPersonSharp/>Login as a Guest<div></div></button>
+                </div>
+                <div className="modal__buttons">
+                    <button onClick={close} className="modal-btn" ><div style={{fontSize:"20px"}} ><IoPersonSharp/></div>Login as a Guest<div></div></button>
                 </div>
             </div>
             <div className="backdrop" />

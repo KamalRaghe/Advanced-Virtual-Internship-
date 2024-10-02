@@ -8,23 +8,19 @@
 }
 /* modal */
 
-.btn {
-  padding: 8px 32px;
+.modal-btn {
+  padding: 16px;
+  height: 16px;
+  width: 366px;
   cursor: pointer;
   border-radius: 4px;
-  background-color: #7645d9;
+  background-color: #20ba68;
   color: white;
-  border: 1px solid #7645d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn__cancel {
-  background-color: transparent;
-  color: #7645d9;
-}
- 
-.btn__cancel:hover {
-  background-color: #ebebeb;
-}
 .modal {
   border-radius: 4px;
   background-color: white;
@@ -40,7 +36,9 @@
  
 .modal__title {
   margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: bolder;
+  color:#032b41;
 }
  
 .modal__buttons {
