@@ -53,10 +53,11 @@ export default function Modal({close}){
                 </div>
                 <p className="modal__title">Log in to Summarist</p>
                 <div className="modal__buttons">
-                    <button onClick={close} className="modal-btn" style={{backgroundColor:"#032b41",color:"white"}} ><IoPersonSharp/>Login as a Guest<div></div></button>
+                    <button onClick={close} className="modal-btn" style={{backgroundColor:"#0564f1",color:"white"}} ><div style={{fontSize:"30px",position:"relative",top:"3px",right:"5px"}} ><IoPersonSharp/></div>Login as a Guest<div style={{fontSize:"30px",color:"transparent"}} ><IoPersonSharp/></div></button>
                 </div>
+                <br></br>
                 <div className="modal__buttons">
-                    <button onClick={close} className="modal-btn" ><div style={{fontSize:"20px"}} ><IoPersonSharp/></div>Login as a Guest<div></div></button>
+                    <button onClick={close} style={{justifyContent:"center"}} className="modal-btn" >Login</button>
                 </div>
             </div>
             <div className="backdrop" />
