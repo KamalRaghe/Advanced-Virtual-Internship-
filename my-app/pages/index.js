@@ -1,4 +1,9 @@
 import { useState } from "react"
+import { 
+  // AiFillFileText,
+  // AiFillBulb,
+  // AiFillAudio,
+} from "react-icons/io5"
 import Modal from "@/components/modal"
 export default function Home(){
  
@@ -25,6 +30,7 @@ export default function Home(){
         </ul>
       </div>
     </nav>
+    {modal && <Modal close={()=>{setModal()}} ></Modal>}
     <section id="landing">
       <div class="container">
         <div class="row">
@@ -41,7 +47,7 @@ export default function Home(){
                 <br class="remove--tablet" />
                 and even people who don’t like to read.
               </div>
-              {modal && <Modal close={()=>{setModal()}} ></Modal>}
+             
               <button onClick={()=>{setModal(true)}}  class="btn home__cta--btn">Login</button>
             </div>
             <div class="landing__image--mask">
