@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { provider, auth } from "@/firebase"
+import { signInWithPopup,signInWithEmailAndPassword, sendPasswordResetEmail,createUserWithEmailAndPassword } from "firebase/auth"
 
 export default function Modal({close}){
     const [account, setAccount] = useState({
@@ -37,6 +38,10 @@ export default function Modal({close}){
           }).catch(err =>{
             alert(err)
           })
+      }
+
+      function signInWithGoogle(){
+        signInWithPopup(auth, provider)
       }
 
     return (
