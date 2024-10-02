@@ -1,6 +1,9 @@
+import { useState } from "react"
+import Modal from "@/components/modal"
 export default function Home(){
+ 
+  const [modal, setModal] = useState()
   return(
-    
 <div lang="en">
   <div>
     <meta charset="UTF-8" />
@@ -15,7 +18,7 @@ export default function Home(){
           <img class="nav__img" src="logo.png" alt="logo" />
         </div>
         <ul class="nav__list--wrapper">
-          <li class="nav__list nav__list--login">Login</li>
+          <button onClick={()=>{setModal(true)}} class="nav__list nav__list--login">Login</button>
           <li class="nav__list nav__list--mobile">About</li>
           <li class="nav__list nav__list--mobile">Contact</li>
           <li class="nav__list nav__list--mobile">Help</li>
@@ -38,7 +41,8 @@ export default function Home(){
                 <br class="remove--tablet" />
                 and even people who don’t like to read.
               </div>
-              <button class="btn home__cta--btn">Login</button>
+              {modal && <Modal close={()=>{setModal()}} ></Modal>}
+              <button onClick={()=>{setModal(true)}}  class="btn home__cta--btn">Login</button>
             </div>
             <div class="landing__image--mask">
               <img src="landing.png" alt="landing" />
