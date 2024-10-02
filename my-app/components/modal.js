@@ -57,6 +57,10 @@ export default function Modal({close}){
                 </div>
                 <br></br>
                 <div className="modal__buttons">
+                <button onClick={close} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} ><div style={{fontSize:"30px",backgroundColor:"white",padding:"8px"}} ><img style={{width:"100px",height:"100px"}} src="google.png" alt="logo" /></div>Login as a Guest<div style={{fontSize:"30px",color:"transparent"}} ><IoPersonSharp/></div></button>
+                </div>
+                <br></br>
+                <div className="modal__buttons">
                     <button onClick={close} style={{justifyContent:"center"}} className="modal-btn" >Login</button>
                 </div>
             </div>
