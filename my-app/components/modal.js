@@ -47,10 +47,12 @@ export default function Modal({close}){
     return (
         <div>
             <div className="modal">
+                <div style={{display:"flex",justifyContent:"end"}} >
+                    <button onClick={close}  style={{fontSize:"40px",border:"none",margin:"0",padding:"0",marginLeft:"20px"}} >x</button>
+                </div>
                 <p className="modal__title">Log in to Summarist</p>
                 <div className="modal__buttons">
                 <button onClick={close} className="btn btn__cancel">Cancel</button>
-                <button className="btn">Confirm</button>
                 </div>
             </div>
             <div className="backdrop" />
