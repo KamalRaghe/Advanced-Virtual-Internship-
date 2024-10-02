@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useRouter } from "next/router"
+import { provider, auth } from "@/firebase"
 
 export default function Modal({close}){
     const [account, setAccount] = useState({
