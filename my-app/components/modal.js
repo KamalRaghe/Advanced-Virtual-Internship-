@@ -84,6 +84,7 @@ export default function Modal({close}){
                 <div className="modal__buttons">
                     <button onClick={close} style={{justifyContent:"center"}} className="modal-btn" >Login</button>
                 </div>
+                <input></input>
             </div>: null}
             <div onClick={close} className="backdrop" />
         </div>
