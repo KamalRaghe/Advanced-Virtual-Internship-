@@ -72,7 +72,7 @@ export default function Modal({close}){
                 </div>
                
                 <div className="modal__buttons">
-                <button onClick={close} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} >
+                <button onClick={signInWithGoogle} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} >
                     <div style={{backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",width:"40px",height:"40px",borderRadius:"5px"}} >
                         <img style={{scale:"0.25"}} src="google.png" alt="logo" /></div>
                         Login with Google
