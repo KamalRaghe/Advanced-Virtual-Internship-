@@ -81,10 +81,13 @@ export default function Modal({close}){
                     or
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                 </div>
+                <input style={{widows:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" ></input>
+                <br></br>
+                <input style={{widows:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" ></input>
+                <br></br>
                 <div className="modal__buttons">
                     <button onClick={close} style={{justifyContent:"center"}} className="modal-btn" >Login</button>
                 </div>
-                <input></input>
             </div>: null}
             <div onClick={close} className="backdrop" />
         </div>
