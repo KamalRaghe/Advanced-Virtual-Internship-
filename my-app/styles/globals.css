@@ -27,7 +27,7 @@
   background-color: white;
   padding: 16px;
   text-align: center;
-  width: 424px;
+  width: 416px;
   z-index: 1000;
   position: fixed;
   top: 50%;
@@ -36,7 +36,7 @@
 }
  
 .modal__title {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   font-size: 24px;
   font-weight: bolder;
   color:#032b41;

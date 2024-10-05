@@ -52,10 +52,11 @@ export default function Modal({close}){
                 <div style={{display:"flex",justifyContent:"end",alignItems:"start",height:"35px"}} >
                     <button onClick={close}  style={{fontSize:"40px",border:"none",marginLeft:"20px"}} >x</button>
                 </div>
-                <p className="modal__title">Log in to Summarist</p>
                 <br></br>
+                <p className="modal__title">Log in to Summarist</p>
+               
                 <div className="modal__buttons">
-                    <button onClick={close} className="modal-btn" style={{backgroundColor:"#0564f1",color:"white"}} >
+                    <button onClick={close} className="modal-btn" style={{backgroundColor:"#0564f1",color:"white",margin:"8px"}} >
                         <div style={{fontSize:"30px",position:"relative",top:"3px",left:"5px"}} >
                             <IoPersonSharp/>
                         </div>
@@ -63,13 +64,13 @@ export default function Modal({close}){
                         <div style={{fontSize:"30px",color:"transparent"}} ><IoPersonSharp/></div>
                     </button>
                 </div>
-                <br></br>
+               
                 <div style={{display:"flex",justifyContent:"space-between",margin:"10px",width:"95%"}}>
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                     or
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                 </div>
-                <br></br>
+               
                 <div className="modal__buttons">
                 <button onClick={close} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} >
                     <div style={{backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",width:"40px",height:"40px",borderRadius:"5px"}} >
@@ -79,19 +80,22 @@ export default function Modal({close}){
                     </div>
                 </button>
                 </div>
-                <br></br>
+               
                 <div style={{display:"flex",justifyContent:"space-between",margin:"10px",width:"95%"}}>
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                     or
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                 </div>
+               
                 <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" ></input>
-                <br></br>
+               
                 <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" ></input>
-                <br></br>
+               
                 <div className="modal__buttons">
-                    <button onClick={close} style={{justifyContent:"center"}} className="modal-btn" >Login</button>
+                    <button onClick={close} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Login</button>
                 </div>
+                <div><button style={{color:"#0365f2",margin:"16px",fontSize:"16px"}} > Forgot password? </button></div>
+                <div><button style={{color:"#0365f2",fontSize:"16px"}} > Don't have an account? </button></div>
             </div>: null}
             <div onClick={close} className="backdrop" />
         </div>
