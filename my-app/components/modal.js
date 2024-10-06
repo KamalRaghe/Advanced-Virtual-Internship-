@@ -37,8 +37,8 @@ export default function Modal({close}){
       
         function CreateUser(e){
           e.preventDefault()
-          const email = e.target.email.value
-          const password = e.target.password.value
+          const email = account.title
+          const password = account.password
       
           createUserWithEmailAndPassword(auth,email,password).then(()=>{
           }).catch(err =>{
@@ -132,7 +132,7 @@ export default function Modal({close}){
             <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" ></input>
            
             <div className="modal__buttons">
-                <button onClick={close} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Sign up</button>
+                <button onClick={CreateUser} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Sign up</button>
             </div>
             <div><button onClick={()=>setLogin(true)} style={{color:"#0365f2",fontSize:"16px"}} > Already have an account? </button></div>
         </div>}
