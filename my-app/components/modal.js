@@ -102,24 +102,8 @@ export default function Modal({close}){
                 <button onClick={close}  style={{fontSize:"40px",border:"none",marginLeft:"20px"}} >x</button>
             </div>
             <br></br>
-            <p className="modal__title">Log in to Summarist</p>
-           
-            <div className="modal__buttons">
-                <button onClick={close} className="modal-btn" style={{backgroundColor:"#0564f1",color:"white",margin:"8px"}} >
-                    <div style={{fontSize:"30px",position:"relative",top:"3px",left:"5px"}} >
-                        <IoPersonSharp/>
-                    </div>
-                    Login as a Guest
-                    <div style={{fontSize:"30px",color:"transparent"}} ><IoPersonSharp/></div>
-                </button>
-            </div>
-           
-            <div style={{display:"flex",justifyContent:"space-between",margin:"10px",width:"95%"}}>
-                <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
-                or
-                <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
-            </div>
-           
+            <p className="modal__title">Sign up to Summarist</p>
+        
             <div className="modal__buttons">
             <button onClick={signInWithGoogle} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} >
                 <div style={{backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",width:"40px",height:"40px",borderRadius:"5px"}} >
