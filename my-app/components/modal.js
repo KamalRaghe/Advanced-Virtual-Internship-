@@ -110,7 +110,8 @@ export default function Modal({close}){
             </div>
             <br></br>
             <p className="modal__title">Sign up to Summarist</p>
-        
+            <div style={{color:"red"}}  >{message}</div>
+            <br></br>
             <div className="modal__buttons">
             <button onClick={signInWithGoogle} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} >
                 <div style={{backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",width:"40px",height:"40px",borderRadius:"5px"}} >
