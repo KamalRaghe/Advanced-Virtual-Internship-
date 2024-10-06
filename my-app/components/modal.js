@@ -141,10 +141,9 @@ export default function Modal({close}){
             <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" ></input>
            
             <div className="modal__buttons">
-                <button onClick={close} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Login</button>
+                <button onClick={close} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Sign up</button>
             </div>
-            <div><button onClick={Forgot} style={{color:"#0365f2",margin:"16px",fontSize:"16px"}} > Forgot password? </button></div>
-            <div><button onClick={()=>setLogin(false)} style={{color:"#0365f2",fontSize:"16px"}} > Don't have an account? </button></div>
+            <div><button onClick={()=>setLogin(true)} style={{color:"#0365f2",fontSize:"16px"}} > Already have an account? </button></div>
         </div>}
             <div onClick={close} className="backdrop" />
         </div>
