@@ -6,6 +6,7 @@ import { signInWithPopup,signInWithEmailAndPassword, sendPasswordResetEmail,crea
 
 export default function Modal({close}){
     const [login, setLogin] = useState(true)
+    const [message, setMessage] = useState()
     const [account, setAccount] = useState({
         title:"", 
         password:""
@@ -18,7 +19,10 @@ export default function Modal({close}){
           const password = account.password
           signInWithEmailAndPassword(auth,email,password).then(()=>{
           }).catch(err =>{
-            alert(err)
+            setMessage(err.message)
+            setTimeout(() => {
+                setMessage()
+            }, 4000);
           })
         }
         
@@ -27,7 +31,7 @@ export default function Modal({close}){
           if(email){
             sendPasswordResetEmail(auth, email).then(()=>{alert('Check your email')})
           }else{
-            alert('Put in your email') 
+            setMessage('Put in your email') 
           }
         }
       
@@ -38,7 +42,10 @@ export default function Modal({close}){
       
           createUserWithEmailAndPassword(auth,email,password).then(()=>{
           }).catch(err =>{
-            alert(err)
+            setMessage(err.message)
+            setTimeout(() => {
+                setMessage()
+            }, 4000);
           })
       }
 
@@ -54,7 +61,7 @@ export default function Modal({close}){
                 </div>
                 <br></br>
                 <p className="modal__title">Log in to Summarist</p>
-               
+               <div style={{color:"red"}}  >{message}</div>
                 <div className="modal__buttons">
                     <button onClick={close} className="modal-btn" style={{backgroundColor:"#0564f1",color:"white",margin:"8px"}} >
                         <div style={{fontSize:"30px",position:"relative",top:"3px",left:"5px"}} >
@@ -92,7 +99,7 @@ export default function Modal({close}){
                 <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" ></input>
                
                 <div className="modal__buttons">
-                    <button onClick={close} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Login</button>
+                    <button onClick={signIn} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Login</button>
                 </div>
                 <div><button onClick={Forgot} style={{color:"#0365f2",margin:"16px",fontSize:"16px"}} > Forgot password? </button></div>
                 <div><button onClick={()=>setLogin(false)} style={{color:"#0365f2",fontSize:"16px"}} > Don't have an account? </button></div>
