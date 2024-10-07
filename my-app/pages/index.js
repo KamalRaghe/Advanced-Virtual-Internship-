@@ -22,7 +22,7 @@ export default function Home(){
   <div>
     <nav class="nav">
       <div class="nav__wrapper">
-        <div class="nav__img--mask">
+      <div class="nav__img--mask">
           <img class="nav__img" src="logo.png" alt="logo" />
         </div>
         {modal && <Modal close={()=>{setModal()}} ></Modal>}
