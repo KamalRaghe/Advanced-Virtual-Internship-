@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useRouter } from "next/router"
 import { provider, auth } from "@/firebase"
 import { IoPersonSharp} from "react-icons/io5";
+import axios from "axios";
 import { signInWithPopup,
     signInWithEmailAndPassword, 
     sendPasswordResetEmail,
@@ -33,6 +34,7 @@ export default function Modal({close}){
         
         function Forgot(){
           const email = account.title
+          fetchUsers()
           if(email){
             sendPasswordResetEmail(auth, email).then(()=>{alert('Check your email')})
           }else{
@@ -52,6 +54,11 @@ export default function Modal({close}){
                 setMessage()
             }, 4000);
           })
+      }
+
+      async function fetchUsers(){
+        const { data } = await axios.get("https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended")
+        console.log(data)
       }
 
       function signInWithGoogle(){
