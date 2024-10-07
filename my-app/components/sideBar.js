@@ -8,7 +8,7 @@ export default function SideBar(){
     return(
         <div style={{backgroundColor:"#f1f6f4"}}>
             <div class="nav__img--mask">
-                <img class="nav__img" src="logo.png" alt="logo" />
+                <img class="nav__img" style={{scale:"0.9"}} src="logo.png" alt="logo" />
             </div>
            <div><FaHouse></FaHouse> Home</div>
            <div><CiBookmark></CiBookmark> My library</div>
