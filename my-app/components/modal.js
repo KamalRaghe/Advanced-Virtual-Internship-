@@ -3,12 +3,14 @@ import { useRouter } from "next/router"
 import { provider, auth } from "@/firebase"
 import { IoPersonSharp} from "react-icons/io5";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { signInWithPopup,
     signInWithEmailAndPassword, 
     sendPasswordResetEmail,
     createUserWithEmailAndPassword,
     signInAnonymously 
 } from "firebase/auth"
+
 
 export default function Modal({close}){
     const [login, setLogin] = useState(true)
@@ -24,6 +26,7 @@ export default function Modal({close}){
           const email = account.title
           const password = account.password
           signInWithEmailAndPassword(auth,email,password).then(()=>{
+            router.push('/for-you')
           }).catch(err =>{
             setMessage(err.message)
             setTimeout(() => {
