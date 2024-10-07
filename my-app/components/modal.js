@@ -2,7 +2,12 @@ import { useState } from "react"
 import { useRouter } from "next/router"
 import { provider, auth } from "@/firebase"
 import { IoPersonSharp} from "react-icons/io5";
-import { signInWithPopup,signInWithEmailAndPassword, sendPasswordResetEmail,createUserWithEmailAndPassword } from "firebase/auth"
+import { signInWithPopup,
+    signInWithEmailAndPassword, 
+    sendPasswordResetEmail,
+    createUserWithEmailAndPassword,
+    signInAnonymously 
+} from "firebase/auth"
 
 export default function Modal({close}){
     const [login, setLogin] = useState(true)
@@ -53,6 +58,12 @@ export default function Modal({close}){
         signInWithPopup(auth, provider)
       }
 
+      function signInAnonymous(){
+        signInAnonymously(auth).then(
+            close()
+        )
+      }
+
     return (
         <div>
             {login ? <div className="modal">
@@ -63,7 +74,7 @@ export default function Modal({close}){
                 <p className="modal__title">Log in to Summarist</p>
                <div style={{color:"red"}}  >{message}</div>
                 <div className="modal__buttons">
-                    <button onClick={close} className="modal-btn" style={{backgroundColor:"#0564f1",color:"white",margin:"8px"}} >
+                    <button onClick={signInAnonymous} className="modal-btn" style={{backgroundColor:"#0564f1",color:"white",margin:"8px"}} >
                         <div style={{fontSize:"30px",position:"relative",top:"3px",left:"5px"}} >
                             <IoPersonSharp/>
                         </div>
