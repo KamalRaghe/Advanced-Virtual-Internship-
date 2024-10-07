@@ -105,9 +105,9 @@ export default function Modal({close}){
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                 </div>
                
-                <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" ></input>
+                <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" name='email' type='email' value={account.title} onChange = {(e) => setAccount({...account, title: e.target.value})} ></input>
                
-                <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" ></input>
+                <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" value={account.password} onChange = {(e) => setAccount({...account, password: e.target.value})} ></input>
                
                 <div className="modal__buttons">
                     <button onClick={signIn} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Login</button>
@@ -139,9 +139,9 @@ export default function Modal({close}){
                 <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
             </div>
            
-            <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" ></input>
+            <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" name='email' type='email' value={account.title} onChange = {(e) => setAccount({...account, title: e.target.value})} ></input>
            
-            <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" ></input>
+            <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="password" value={account.password} onChange = {(e) => setAccount({...account, password: e.target.value})} ></input>
            
             <div className="modal__buttons">
                 <button onClick={CreateUser} style={{justifyContent:"center",margin:"16px"}} className="modal-btn" >Sign up</button>
