@@ -39,7 +39,7 @@ export default function Modal({close}){
           const email = account.title
           fetchUsers()
           if(email){
-            sendPasswordResetEmail(auth, email).then(()=>{alert('Check your email')})
+            sendPasswordResetEmail(auth, email).then(()=>{setMessage('Check your email')})
           }else{
             setMessage('Put in your email') 
           }
@@ -51,6 +51,7 @@ export default function Modal({close}){
           const password = account.password
       
           createUserWithEmailAndPassword(auth,email,password).then(()=>{
+            router.push('/for-you')
           }).catch(err =>{
             setMessage(err.message)
             setTimeout(() => {
@@ -65,12 +66,14 @@ export default function Modal({close}){
       }
 
       function signInWithGoogle(){
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, provider).then(
+            router.push('/for-you')
+        )
       }
 
       function signInAnonymous(){
         signInAnonymously(auth).then(
-            close()
+            router.push('/for-you')
         )
       }
 
