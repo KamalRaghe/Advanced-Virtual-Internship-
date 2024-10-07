@@ -1,4 +1,5 @@
 import axios from "axios"
+import SideBar from "@/components/sideBar"
 
 export default function ForYou(){
     async function fetchBooks(){
@@ -6,10 +7,8 @@ export default function ForYou(){
         console.log(data)
       }
       return(
-        <div style={{backgroundColor:"#f1f6f4"}}>
-             <div class="nav__img--mask">
-                <img class="nav__img" src="logo.png" alt="logo" />
-            </div>
+        <div style={{display:"flex"}}>
+             <SideBar></SideBar>
         </div>
       )
 }
