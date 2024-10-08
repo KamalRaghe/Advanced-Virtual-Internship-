@@ -6,17 +6,19 @@ import { MdLogout } from "react-icons/md";
 
 export default function SideBar(){
     return(
-        <div style={{backgroundColor:"#f1f6f4",height:"100vh"}}>
+        <div style={{backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",display:"flex",alignItems:"center",flexDirection:"column"}}>
             <div class="nav__img--mask">
                 <img class="nav__img" style={{scale:"0.9"}} src="logo.png" alt="logo" />
             </div>
-           <div><FaHouse></FaHouse> Home</div>
-           <div><CiBookmark></CiBookmark> My library</div>
-           <div><FaPenClip></FaPenClip> Highlights </div>
-           <div><GoSearch></GoSearch> Search</div>
-           <div><CiSettings></CiSettings> Settings</div>
-           <div><CiCircleQuestion></CiCircleQuestion> Help & Support</div>
-           <div><MdLogout></MdLogout> Logout</div>
+           <div style={{scale:"1.5",marginTop:"50px",display:"flex",alignItems:"start",flexDirection:"column"}} >
+                <div><FaHouse></FaHouse> Home</div>
+                <div><CiBookmark></CiBookmark> My library</div>
+                <div><FaPenClip></FaPenClip> Highlights </div>
+                <div><GoSearch></GoSearch> Search</div>
+                <div><CiSettings></CiSettings> Settings</div>
+                <div><CiCircleQuestion></CiCircleQuestion> Help & Support</div>
+                <div><MdLogout></MdLogout> Logout</div>
+           </div>
         </div>
     )
 }
