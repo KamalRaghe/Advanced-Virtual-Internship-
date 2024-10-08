@@ -10,14 +10,14 @@ export default function SideBar(){
             <div class="nav__img--mask">
                 <img class="nav__img" style={{scale:"0.9"}} src="logo.png" alt="logo" />
             </div>
-           <div style={{scale:"1.5",marginTop:"50px",display:"flex",alignItems:"start",flexDirection:"column"}} >
-                <div><FaHouse></FaHouse> Home</div>
-                <div><CiBookmark></CiBookmark> My library</div>
-                <div><FaPenClip></FaPenClip> Highlights </div>
-                <div><GoSearch></GoSearch> Search</div>
-                <div><CiSettings></CiSettings> Settings</div>
-                <div><CiCircleQuestion></CiCircleQuestion> Help & Support</div>
-                <div><MdLogout></MdLogout> Logout</div>
+           <div style={{scale:"1.3",position:"relative",top:"100px",display:"flex",justifyContent:"space-between",flexDirection:"column",height:"50vh"}} >
+                <div className="side-bar__icon"><FaHouse></FaHouse> <div style={{margin:"5px"}} ></div> Home </div>
+                <div className="side-bar__icon"><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>My library</div>
+                <div className="side-bar__icon"><FaPenClip></FaPenClip> <div style={{margin:"5px"}} ></div>Highlights </div>
+                <div className="side-bar__icon"><GoSearch></GoSearch> <div style={{margin:"5px"}} ></div>Search</div>
+                <div className="side-bar__icon"><CiSettings></CiSettings> <div style={{margin:"5px"}} ></div>Settings</div>
+                <div className="side-bar__icon"><CiCircleQuestion></CiCircleQuestion> <div style={{fontSize:"13px",margin:'5px'}} >Help & Support</div></div>
+                <div className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>
            </div>
         </div>
     )

@@ -140,6 +140,11 @@ button:disabled {
   font-weight: bold;
 }
 
+.side-bar__icon{
+  display: flex;
+  align-items: center;
+}
+
 /* NAVBAR */
 .nav {
   height: 80px;
