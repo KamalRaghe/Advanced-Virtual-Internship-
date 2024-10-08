@@ -4,6 +4,7 @@ import { FaPenClip } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
 import { MdLogout } from "react-icons/md";
 
+
 export default function SideBar(){
     return(
         <div style={{backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",display:"flex",alignItems:"center",flexDirection:"column"}}>
