@@ -14,9 +14,9 @@ export default function SideBar(){
                 <div className="side-bar__icon"><FaHouse></FaHouse> <div style={{margin:"5px"}} ></div> Home </div>
                 <div className="side-bar__icon"><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>My library</div>
                 <div className="side-bar__icon"><FaPenClip></FaPenClip> <div style={{margin:"5px"}} ></div>Highlights </div>
-                <div className="side-bar__icon"><GoSearch></GoSearch> <div style={{margin:"5px"}} ></div>Search</div>
-                <div className="side-bar__icon"><CiSettings></CiSettings> <div style={{margin:"5px"}} ></div>Settings</div>
-                <div className="side-bar__icon"><CiCircleQuestion></CiCircleQuestion> <div style={{fontSize:"13px",margin:'5px'}} >Help & Support</div></div>
+                <div className="side-bar__icon"><div style={{scale:"1.2"}} ><GoSearch></GoSearch></div> <div style={{margin:"5px"}} ></div>Search</div>
+                <div className="side-bar__icon"><div style={{scale:"1.3"}} ><CiSettings></CiSettings></div> <div style={{margin:"5px"}} ></div>Settings</div>
+                <div className="side-bar__icon"><<div style={{scale:"1.3"}} >CiCircleQuestion></div></CiCircleQuestion> <div style={{fontSize:"13px",margin:'5px'}} >Help & Support</div></div>
                 <div className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>
            </div>
         </div>
