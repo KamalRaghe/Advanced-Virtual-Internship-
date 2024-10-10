@@ -19,9 +19,11 @@ export default function ForYou(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-                <div style={{border:"1px solid black",height:"100vh",width:"80vw",position:"relative",left:"18vw"}}>
+                <div style={{height:"100vh",width:"80vw",position:"relative",left:"18vw",display:"flex"}}>
                     {books.map(book =>{
-                    return <div key={book.id}>LoremkdhsvbKSDWVwebkvbaweiVBQEAEWVWREBERB</div>
+                    return <div key={book.id} style={{border:"1px solid black",scale:"0.2",margin:"0px"}} >
+                        <img src={book.imageLink}></img>
+                      </div>
                   })}
                 </div>
              </div>
