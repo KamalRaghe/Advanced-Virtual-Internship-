@@ -19,8 +19,8 @@ export default function ForYou(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-                <div style={{height:"100vh",width:"80vw",position:"relative",left:"18vw",display:"flex",justifyContent:"start"}}>            
-                <div style={{width:"200px"}} >Recommended For You</div>
+                <div style={{height:"100vh",width:"80%",position:"relative",left:"12%",display:"flex",justifyContent:"start"}}>            
+                <div style={{border:"1px solid black",}} >Recommended For You</div>
                     <div style={{display:"flex",position:"relative",right:"120px"}}>
                         {books.map(book =>{
                         return <div key={book.id} style={{scale:"0.28",width:"200px",height:"300px",}} >
