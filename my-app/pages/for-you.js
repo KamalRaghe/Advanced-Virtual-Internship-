@@ -20,7 +20,7 @@ export default function ForYou(){
              <div>
                 <NavBar></NavBar>
                 {books.map(book =>{
-                  return <div key={book.id}>Hi</div>
+                  return <div style={{position:"relative",right:"-200px"}} key={book.id}>LoremkdhsvbKSDWVwebkvbaweiVBQEAEWVWREBERB</div>
                 })}
              </div>
         </div>
