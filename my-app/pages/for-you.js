@@ -19,9 +19,9 @@ export default function ForYou(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-                <div style={{display:"flex",justifyContent:"start",border:"1px solid black",height:"100vh",width:"80vw",position:"relative",left:"18vw"}}>
+                <div style={{border:"1px solid black",height:"100vh",width:"80vw",position:"relative",left:"18vw"}}>
                     {books.map(book =>{
-                    return <div style={{position:"relative",right:"-280px"}} key={book.id}>LoremkdhsvbKSDWVwebkvbaweiVBQEAEWVWREBERB</div>
+                    return <div key={book.id}>LoremkdhsvbKSDWVwebkvbaweiVBQEAEWVWREBERB</div>
                   })}
                 </div>
              </div>
