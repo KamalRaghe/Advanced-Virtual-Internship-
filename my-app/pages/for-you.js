@@ -11,7 +11,7 @@ export default function ForYouPage(){
              <div>
                 <NavBar></NavBar>
                 <Books url= {"https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"} name={'Recommended For You'}/>
-                <Books url= {"https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"} name={'Recommended For You'}/>
+                <Books url= {"https://us-central1-summaristt.cloudfunctions.net/getBooks?status=suggested"} name={'Suggested Books'}/>
               </div>
         </div>
       )
