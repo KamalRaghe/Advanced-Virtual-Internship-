@@ -25,7 +25,7 @@ export default function ForYou(){
                           </div>
                         })}
                     </div>
-                    <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"end",border:"1px solid black"}} >Recommended For You</div>
+                    <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"end",color:"navy",fontSize:"15px",fontWeight:"bolder"}} >Recommended For You</div>
                     <div style={{display:"flex",position:"relative",right:"240px",bottom:"50px"}}>
                         {books.map(book =>{
                         return <div key={book.id} style={{scale:"0.28",width:"200px",height:"300px"}} >

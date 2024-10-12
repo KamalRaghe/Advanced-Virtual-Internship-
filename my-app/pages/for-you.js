@@ -21,6 +21,7 @@ export default function ForYouPage(){
              <div>
                 <NavBar></NavBar>
                 <ForYou></ForYou>
+                <ForYou></ForYou>
               </div>
         </div>
       )
