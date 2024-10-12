@@ -11,9 +11,7 @@ export default function ForYou(){
         console.log(data)
       }
 
-      useEffect(()=>{
-        fetchBooks()
-      },[])
+      
       return(
         <div style={{display:"flex"}}>
                 <div style={{height:"100vh",width:"80%",position:"relative",left:"18vw",display:"flex",justifyContent:"start"}}>            
