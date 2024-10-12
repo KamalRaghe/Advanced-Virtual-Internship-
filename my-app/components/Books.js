@@ -20,8 +20,9 @@ export default function Books({url,name,move}){
                     <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >{name}</div>
                     <div style={{display:"flex",position:"relative",right:move,bottom:"50px"}}>
                         {books.map(book =>{
-                        return <div key={book.id} style={{scale:"0.28",width:"200px",height:"300px"}} >
-                            <img src={book.imageLink}></img>
+                        return <div key={book.id}  >
+                            <img style={{scale:"0.28",width:"200px",height:"300px"}} src={book.imageLink}></img>
+                            <div>{book.title}</div>
                           </div>
                         })}
                     </div>
