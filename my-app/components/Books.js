@@ -8,7 +8,6 @@ export default function Books({url,name,move}){
     async function fetchBooks(){
         const { data } = await axios.get(url)
         setBooks(data)
-        console.log(data)
       }
 
       useEffect(()=>{
