@@ -17,7 +17,7 @@ export default function Book(){
         <div >
                 <div style={{width:"80%",position:"relative",left:"18vw",display:"flex",justifyContent:"start",margin:"20px"}}>            
                     <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >Selected book</div>
-                    <div style={{display:"flex",position:"relative",right:move,bottom:"50px"}}>
+                    <div style={{display:"flex",position:"relative",bottom:"50px"}}>
                         {books.map(book =>{
                         return <div key={book.id} style={{scale:"0.28",width:"200px",height:"300px"}} >
                               <img src={book.imageLink}></img>
