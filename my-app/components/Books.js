@@ -11,7 +11,9 @@ export default function Books({url,name,move}){
         console.log(data)
       }
 
-     
+      useEffect(()=>{
+        fetchBooks()
+      },[])
       return(
         <div >
                 <div style={{width:"80%",position:"relative",left:"18vw",display:"flex",justifyContent:"start",margin:"20px"}}>            
