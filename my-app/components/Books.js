@@ -11,9 +11,7 @@ export default function Books({url,name,move}){
         console.log(data)
       }
 
-      useEffect(()=>{
-        fetchBooks()
-      },[])
+      
       return(
         <div >
                 <div style={{width:"80%",position:"relative",left:"18vw",display:"flex",justifyContent:"start",margin:"20px"}}>            
@@ -23,7 +21,7 @@ export default function Books({url,name,move}){
                         return <div key={book.id} style={{scale:"0.28",width:"200px",height:"300px"}} >
                               <img src={book.imageLink}></img>
                               <div className="center" style={{justifyContent:"start",width:"600px",color:"navy",fontSize:"60px",fontWeight:"bolder",padding:"10px"}}>{book.title}</div>
-                              <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 10px"}}>{book.author}</div>
+                              <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0px"}}>{book.author}</div>
                             </div>
                         })}
                     </div>
