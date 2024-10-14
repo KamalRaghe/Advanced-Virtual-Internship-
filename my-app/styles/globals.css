@@ -6,6 +6,13 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* modal */
 
 .modal-btn {
