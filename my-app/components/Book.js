@@ -17,11 +17,16 @@ export default function Book(){
       return(
         <div >
                 <div style={{width:"80%",position:"relative",left:"18vw",margin:"20px",marginBottom:"100px"}}>            
-                    <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >Selected just for you</div>
-                    <div style={{display:"flex",alignItems:"center",backgroundColor:"beige",width:"30%",height:"200px",padding:"20px",border:'10px solid black'}} >
-                        <div style={{width:"220px",position:"relative",bottom:"20px"}} >{book.subTitle}</div>
-                        <div key={book.id} style={{scale:"0.22",width:"200px",height:"300px",position:"relative",bottom:"20px"}} >
+                    <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder",marginBottom:"20px"}} >Selected just for you</div>
+                    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",backgroundColor:"beige",width:"35%",height:"180px",padding:"20px"}} >
+                        <div style={{width:"400px",position:"relative",bottom:"30px"}} >{book.subTitle}</div>
+                        <div className="center" style={{borderRight:"1px solid lightblue",height:"90%",width:"10px"}} ></div>
+                        <div key={book.id} style={{scale:"0.24",width:"200px",height:"300px",position:"relative",bottom:"30px"}} >
                             <img src={book.imageLink}></img>
+                        </div>
+                        <div style={{height:"100%",width:"300px",position:"relative",left:"20px",top:"10px"}} >
+                            <div className="center" style={{justifyContent:"start",fontWeight:"bolder"}}>{book.title}</div>
+                            <div className="center" style={{justifyContent:"start",scale:"0.8",position:"relative",right:"17px"}}>{book.author}</div>
                         </div>
                     </div>
                 </div>
