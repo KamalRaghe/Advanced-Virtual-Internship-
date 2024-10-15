@@ -17,9 +17,12 @@ export default function Book(){
       return(
         <div >
                 <div style={{width:"80%",position:"relative",left:"18vw",margin:"20px",marginBottom:"100px"}}>            
-                    <div style={{zIndex:"100",width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >Selected just for you</div>
-                    <div style={{backgroundColor:"beige"}} >
-                        <div style={{width:"200px"}} >{book.subTitle}</div>
+                    <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >Selected just for you</div>
+                    <div style={{display:"flex",alignItems:"center",backgroundColor:"beige",width:"30%",height:"200px",padding:"20px",border:'10px solid black'}} >
+                        <div style={{width:"220px",position:"relative",bottom:"20px"}} >{book.subTitle}</div>
+                        <div key={book.id} style={{scale:"0.22",width:"200px",height:"300px",position:"relative",bottom:"20px"}} >
+                            <img src={book.imageLink}></img>
+                        </div>
                     </div>
                 </div>
         </div>
