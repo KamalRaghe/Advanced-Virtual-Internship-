@@ -2,6 +2,7 @@ import axios from "axios"
 import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
 import { useEffect, useState } from "react"
+import { FaPlay } from "react-icons/fa";
 export default function Book(){
   const [book, setBook] = useState([])
 
@@ -27,6 +28,7 @@ export default function Book(){
                         <div style={{height:"100%",width:"300px",position:"relative",left:"20px",top:"10px"}} >
                             <div className="center" style={{justifyContent:"start",fontWeight:"bolder"}}>{book.title}</div>
                             <div className="center" style={{justifyContent:"start",scale:"0.8",position:"relative",right:"17px"}}>{book.author}</div>
+                            <div className="center" style={{position:"relative",backgroundColor:"black",color:"white",borderRadius:"50%",width:'40px',height:'40px'}}><FaPlay></FaPlay></div>
                         </div>
                     </div>
                 </div>
