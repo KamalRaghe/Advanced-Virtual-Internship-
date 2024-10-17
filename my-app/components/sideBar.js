@@ -7,7 +7,7 @@ import { MdLogout } from "react-icons/md";
 
 export default function SideBar(){
     return(
-        <div style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",display:"flex",alignItems:"center",flexDirection:"column",position:"fixed"}}>
+        <div className="sideBar" style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
             <div class="nav__img--mask">
                 <img class="nav__img" style={{scale:"0.9"}} src="logo.png" alt="logo" />
             </div>

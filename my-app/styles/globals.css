@@ -13,6 +13,12 @@
     align-items: center;
 }
 
+.sideBar{
+  display: flex;
+}
+.zero{
+  display: none;
+}
 /* modal */
 
 .modal-btn {
@@ -519,6 +525,10 @@ button:disabled {
     text-align: center;
     max-width: 540px;
     margin: 0 auto;
+  }
+
+  .sideBar{
+    display: none;
   }
 
   .landing__image--mask {
