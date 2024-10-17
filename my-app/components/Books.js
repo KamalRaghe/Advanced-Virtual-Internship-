@@ -18,7 +18,7 @@ export default function Books({url,name,move,subName}){
       },[])
       return(
         <div >
-                <div style={{width:"80%",position:"relative",left:"18vw",display:"flex",justifyContent:"start",marginBottom:"150px"}}>            
+                <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"start",marginBottom:"150px"}}>            
                     <div>
                       <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >{name}</div>
                       <br></br>

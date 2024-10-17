@@ -16,6 +16,10 @@
 .sideBar{
   display: flex;
 }
+.BookScreen{
+  width: 80%;
+  left: 18vw
+}
 .zero{
   display: none;
 }
@@ -517,6 +521,16 @@ button:disabled {
   font-weight: 500;
 }
 
+@media (max-width: 950px){
+  .sideBar{
+    display: none;
+  }
+  .BookScreen{
+    width: 100%;
+    left: 0vw
+  }
+}
+
 @media (max-width: 768px) {
   .landing__content {
     display: flex;
@@ -526,11 +540,6 @@ button:disabled {
     max-width: 540px;
     margin: 0 auto;
   }
-
-  .sideBar{
-    display: none;
-  }
-
   .landing__image--mask {
     display: none;
   }
