@@ -22,7 +22,7 @@ export default function Books({url,name,move,subName}){
                     <div style={{position:"relative",left:"30px"}}>
                       <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >{name}</div>
                       <br></br>
-                      <div>{subName}</div>
+                      
                     </div>
                     <div style={{display:"flex",position:"relative",right:move,bottom:"0px"}}>
                         {books.map(book =>{
