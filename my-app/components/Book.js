@@ -9,7 +9,6 @@ export default function Book(){
     async function fetchBooks(){
         const { data } = await axios.get('https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected')
         setBook(data[0])
-        console.log(data[0].subTitle)
       }
 
       useEffect(()=>{
