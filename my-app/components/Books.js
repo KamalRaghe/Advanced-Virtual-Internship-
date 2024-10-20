@@ -29,7 +29,7 @@ export default function Books({url,name,move,subName}){
                     </div>
                     <div style={{display:"flex",position:"relative",right:move,bottom:"0px"}}>
                         {books.map(book =>{
-                        return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px"}} >
+                        return <div key={book.id} onClick={()=>{router.push(`/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px"}} >
                               <img src={book.imageLink}></img>
                               <div className="center" style={{justifyContent:"start",width:"600px",color:"navy",fontSize:"60px",fontWeight:"bolder",padding:"10px"}}>{book.title}</div>
                               <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>
