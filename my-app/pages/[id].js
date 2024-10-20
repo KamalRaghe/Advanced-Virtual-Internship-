@@ -6,19 +6,16 @@ import { useRouter } from "next/router"
 export default function ForYouPage(){
   
   const [books, setBooks] = useState([])
+  const [loaded, setLoaded] = useState([])
   const router = useRouter()
 
   
   async function fetchBooks(){
     const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
     setBook(data)
+    console.log(data)
   }
 
-  useEffect(() => {
-    if(!books){
-      router.push('/for-you')
-    }
-  },[])
 
       return(
         <div style={{display:"flex"}}>
