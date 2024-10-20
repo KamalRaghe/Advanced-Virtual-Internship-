@@ -1,7 +1,7 @@
 import axios from "axios"
 import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
-import Book from "@/components/Book"
+import Book from "@/components/selected"
 import Books from "@/components/Books"
 import { useEffect, useState } from "react"
 export default function ForYouPage(){

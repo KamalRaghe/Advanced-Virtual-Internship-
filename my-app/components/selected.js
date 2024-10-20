@@ -16,7 +16,7 @@ export default function Book(){
       },[])
       return(
         <div >
-                <div style={{position:"relative",margin:"20px",marginBottom:"100px"}}>            
+                <div  className="BookScreen" style={{position:"relative",margin:"20px",marginBottom:"100px"}}>            
                     <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder",marginBottom:"20px"}} >Selected just for you</div>
                     <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",backgroundColor:"beige",width:"35%",height:"180px",padding:"20px"}} >
                         <div style={{width:"400px",position:"relative",bottom:"30px"}} >{book.subTitle}</div>
