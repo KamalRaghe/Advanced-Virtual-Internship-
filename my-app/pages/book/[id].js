@@ -11,6 +11,9 @@ export default function ForYouPage(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
+                <div class="nav__img--mask" style={{position:"relative",left:"200px"}}>
+                    <img class="nav__img" style={{scale:"0.9"}} src="logo.png" alt="logo" />
+                </div>
               </div>
         </div>
       )
