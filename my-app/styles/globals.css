@@ -525,6 +525,37 @@ button:disabled {
   .sideBar{
     display: none;
   }
+  .popIn{
+    display: flex;
+    animation: popIn 1s linear;
+  }
+
+  @keyframes popIn {
+    0%{
+      translate: -200px;
+    }
+
+    100%{
+      translate: 0px;
+    }
+  }
+  
+  .popOut{
+    animation: popOut 1s linear;
+  }
+
+  @keyframes popOut {
+    0%{
+      display: flex;
+      translate: 0px;
+    }
+
+    100%{
+      translate: -200px;
+      display: none;
+    }
+  }
+
   .BookScreen{
     width: 100%;
     left: 0vw

@@ -3,15 +3,20 @@ import { CiBookmark, CiSettings, CiCircleQuestion } from "react-icons/ci";
 import { FaPenClip } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
 import { MdLogout } from "react-icons/md";
+import { IoMdMenu } from "react-icons/io";
+import { useState } from "react";
+import { IoClose } from "react-icons/io5";
 
 
 export default function SideBar(){
+    const [menu, setMenu] = useState("sideBar")
+    const [close, setClose] = useState(false)
     return(
         <div>
-            <div className="center" style={{justifyContent:"end",padding:"30px",border:"1px solid black",width:"100vw",position:"fixed"}}>
-                x
+            <div className="center" style={{zIndex:"100",justifyContent:"end",fontSize:"30px",padding:"30px",width:"100vw",position:"fixed"}}>
+                {close ? <IoClose onClick={()=>{setMenu("sideBar popOut");setClose(false)}} ></IoClose> :<IoMdMenu onClick={()=>{setMenu("sideBar popIn");setClose(true)}} ></IoMdMenu>}
            </div>
-            <div className="sideBar" style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
+            <div className= {menu} style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
                 <div className ="nav__img--mask">
                     <img className ="nav__img" style={{scale:"0.9"}} src="logo.png" alt="logo" />
                 </div>
