@@ -16,6 +16,14 @@
 .sideBar{
   display: flex;
 }
+
+.popIn,.popOut{
+  display: none;
+}
+
+
+
+
 .BookScreen{
   width: 80%;
   left: 18vw
