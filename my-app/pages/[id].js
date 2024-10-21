@@ -3,9 +3,11 @@ import NavBar from "@/components/Nav"
 import Book from "@/components/selected"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
+import axios from "axios"
+
 export default function ForYouPage(){
   
-  const [books, setBooks] = useState([])
+  const [book, setBook] = useState([])
   const [loaded, setLoaded] = useState([])
   const router = useRouter()
   const {id} = router.query
@@ -13,15 +15,21 @@ export default function ForYouPage(){
   async function fetchBooks(){
     const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
     setBook(data)
-    console.log(data)
+    if(!data.id){
+      router.push('/for-you')
+    }
   }
 
+  useEffect(()=>{
+    fetchBooks()
+  },[])
 
       return(
         <div style={{display:"flex"}}>
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
+              
               </div>
         </div>
       )
