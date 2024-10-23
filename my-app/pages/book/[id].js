@@ -4,6 +4,7 @@ import Book from "@/components/selected"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import axios from "axios"
+import BookId from "@/components/BookId"
 
 export default function ForYouPage(){
   
@@ -29,7 +30,7 @@ export default function ForYouPage(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-              
+              <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} ></BookId>
               </div>
         </div>
       )
