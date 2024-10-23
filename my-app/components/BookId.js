@@ -33,6 +33,13 @@ export default function BookId({url,name,move,subName}){
                             </div>
                             <IoMdTime style={{scale:"1.5",marginLeft:"20px"}}></IoMdTime>
                         </div>
+                        <div style={{display:"flex"}} >
+                            <div className="center" style={{width:"150px",justifyContent:"space-between"}}>
+                                <CiStar style={{scale:"1.5",position:"relative",left:"10px"}} /> 
+                                {book.averageRating} ({book.totalRating} ratings)
+                            </div>
+                            <IoMdTime style={{scale:"1.5",marginLeft:"20px"}}></IoMdTime>
+                        </div>
                     </div>
                     <div>
                         <img style={{width:"300px",height:"300px",margin:"10px"}} src={book.imageLink}></img>
