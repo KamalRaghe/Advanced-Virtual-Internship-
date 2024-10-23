@@ -18,7 +18,7 @@ export default function SideBar(){
            </div>
             <div className= {menu} style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
                 <div className ="nav__img--mask">
-                    <img className ="nav__img" style={{scale:"0.9"}} src="logo.png" alt="logo" />
+                    <img className ="nav__img" style={{scale:"0.9"}} src={"/logo.png"} alt="logo" />
                 </div>
                 <div style={{scale:"1.3",position:"relative",top:"100px",display:"flex",justifyContent:"space-between",flexDirection:"column",height:"60vh"}} >
                     <div className="side-bar__icon"><FaHouse></FaHouse> <div style={{margin:"5px"}} ></div> Home </div>
