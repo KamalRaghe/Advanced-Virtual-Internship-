@@ -28,21 +28,21 @@ export default function BookId({url,name,move,subName}){
                         <div style={{margin:"10px",fontWeight:"bold"}} >{book.author}</div>
                         <div style={{margin:"10px",fontSize:"20px"}} >{book.subTitle}</div>
                         <div style={{display:"flex",marginTop:"50px"}} >
-                            <div className="center" style={{width:"150px",justifyContent:"space-between"}}>
-                                <CiStar style={{scale:"1.5",position:"relative",left:"10px"}} /> 
+                            <div className="center" style={{width:"130px",justifyContent:"space-between"}}>
+                                <CiStar style={{scale:"1.5"}} /> 
                                 {book.averageRating} ({book.totalRating} ratings)
                             </div>
                             <IoMdTime style={{scale:"1.5",marginLeft:"20px"}}></IoMdTime>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
-                            <div className="center" style={{width:"140px",justifyContent:"space-between"}}>
-                                <HiOutlineMicrophone  style={{scale:"1.5",position:"relative",left:"10px"}} /> 
+                            <div className="center" style={{width:"130px",justifyContent:"space-between"}}>
+                                <HiOutlineMicrophone  style={{scale:"1.5"}} /> 
+                                {book.type}
                             </div>
-                            <div className="center" style={{width:"140px",justifyContent:"space-between",marginLeft:"20px"}}>
-                                <HiOutlineLightBulb style={{scale:"1.5",position:"relative",left:"10px"}} /> 
+                            <div className="center" style={{width:"130px",justifyContent:"space-between",marginLeft:"20px"}}>
+                                <HiOutlineLightBulb style={{scale:"1.5"}} /> 
                                 {book.keyIdeas} Key Ideas
                             </div>
-                           
                         </div>
                     </div>
                     <div>
