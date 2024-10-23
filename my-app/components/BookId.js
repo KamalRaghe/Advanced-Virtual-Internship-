@@ -32,14 +32,14 @@ export default function BookId({url,name,move,subName}){
                                 <CiStar style={{scale:"1.5"}} /> 
                                 {book.averageRating} ({book.totalRating} ratings)
                             </div>
-                            <IoMdTime style={{scale:"1.5",marginLeft:"20px"}}></IoMdTime>
+                            <IoMdTime style={{scale:"1.5",marginLeft:"60px"}}></IoMdTime>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
                             <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
                                 <HiOutlineMicrophone  style={{scale:"1.5"}} /> 
                                 {book.type}
                             </div>
-                            <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"45px"}}>
+                            <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
                                 <HiOutlineLightBulb style={{scale:"1.5"}} /> 
                                 {book.keyIdeas} Key Ideas
                             </div>
