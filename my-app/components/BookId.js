@@ -24,22 +24,22 @@ export default function BookId({url,name,move,subName}){
         <div >
                 <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"space-between"}}>            
                     <div>
-                        <div style={{width:"700px",display:"flex",justifyContent:"start",color:"navy",fontSize:"30px",margin:"10px",fontWeight:"bolder"}} >{book.title}</div>
-                        <div style={{margin:"10px",fontWeight:"bold"}} >{book.author}</div>
-                        <div style={{margin:"10px",fontSize:"20px"}} >{book.subTitle}</div>
+                        <div style={{width:"700px",display:"flex",justifyContent:"start",color:"navy",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
+                        <div style={{margin:"20px 10px",fontWeight:"bold"}} >{book.author}</div>
+                        <div style={{margin:"10px",fontSize:"25px"}} >{book.subTitle}</div>
                         <div style={{display:"flex",marginTop:"50px"}} >
-                            <div className="center" style={{width:"130px",justifyContent:"space-between"}}>
+                            <div className="center" style={{width:"140px",justifyContent:"space-between"}}>
                                 <CiStar style={{scale:"1.5"}} /> 
                                 {book.averageRating} ({book.totalRating} ratings)
                             </div>
                             <IoMdTime style={{scale:"1.5",marginLeft:"20px"}}></IoMdTime>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
-                            <div className="center" style={{width:"130px",justifyContent:"space-between"}}>
+                            <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
                                 <HiOutlineMicrophone  style={{scale:"1.5"}} /> 
                                 {book.type}
                             </div>
-                            <div className="center" style={{width:"130px",justifyContent:"space-between",marginLeft:"20px"}}>
+                            <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"45px"}}>
                                 <HiOutlineLightBulb style={{scale:"1.5"}} /> 
                                 {book.keyIdeas} Key Ideas
                             </div>
