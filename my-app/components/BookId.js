@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from "react"
 import { IoMdTime } from "react-icons/io";
 import { CiStar } from "react-icons/ci";
 import { useRouter } from "next/router";
+import { PiBookOpenText } from "react-icons/pi";
 import { HiOutlineLightBulb, HiOutlineMicrophone  } from "react-icons/hi";
 
 export default function BookId({url,name,move,subName}){
@@ -45,10 +46,10 @@ export default function BookId({url,name,move,subName}){
                             </div>
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
-                         <button style={{display:"flex",backgroundColor:"#032b41",color:'white',padding:"10px 45px",fontSize:"20px",borderRadius:"5px"}}> 
-                            Read
+                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"10px 45px",fontSize:"20px",borderRadius:"5px"}}> 
+                            < PiBookOpenText />  Read
                         </button>  
-                         <button style={{display:"flex",backgroundColor:"#032b41",color:'white',padding:"10px 45px",fontSize:"20px",borderRadius:"5px"}}> 
+                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"10px 40px",fontSize:"20px",borderRadius:"5px"}}> 
                          <HiOutlineMicrophone/>  Listen
                         </button>  
                         </div>
