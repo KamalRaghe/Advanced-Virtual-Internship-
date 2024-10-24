@@ -44,9 +44,9 @@ export default function BookId({url,name,move,subName}){
                                 {book.keyIdeas} Key Ideas
                             </div>
                         </div>
-                        <div style={{display:"flex",border:"1px solid black"}} >
-                         <button style={{backgroundColor:"#032b41",color:'white',padding:"15px 50px",fontSize:"20px"}}> Read</button>  
-                         <button style={{backgroundColor:"#032b41",color:'white',padding:"15px 50px",fontSize:"20px"}}> Listen</button>  
+                        <div style={{display:"flex",border:"1px solid black",justifyContent:"space-between",width:"400px",marginTop:"30px"}} >
+                         <button style={{backgroundColor:"#032b41",color:'white',padding:"10px 50px",fontSize:"20px"}}> Read</button>  
+                         <button style={{backgroundColor:"#032b41",color:'white',padding:"10px 50px",fontSize:"20px"}}> Listen</button>  
                         </div>
                     </div>
                     
