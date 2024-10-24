@@ -24,7 +24,7 @@ export default function BookId({url,name,move,subName}){
         <div >
                 <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"space-between"}}>            
                     <div>
-                        <div style={{width:"700px",display:"flex",justifyContent:"start",color:"navy",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
+                        <div style={{width:"600px",display:"flex",justifyContent:"start",color:"navy",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{book.author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{book.subTitle}</div>
                         <div style={{display:"flex",marginTop:"50px"}} >
@@ -44,10 +44,13 @@ export default function BookId({url,name,move,subName}){
                                 {book.keyIdeas} Key Ideas
                             </div>
                         </div>
+                        <div style={{display:"flex",marginTop:"20px"}} >Read</div>
                     </div>
+                    
                     <div>
                         <img style={{width:"300px",height:"300px",margin:"10px"}} src={book.imageLink}></img>
                     </div>
+                    
                       
         
                 </div>
