@@ -44,9 +44,13 @@ export default function BookId({url,name,move,subName}){
                                 {book.keyIdeas} Key Ideas
                             </div>
                         </div>
-                        <div style={{display:"flex",border:"1px solid black",justifyContent:"space-between",width:"400px",marginTop:"30px"}} >
-                         <button style={{backgroundColor:"#032b41",color:'white',padding:"10px 50px",fontSize:"20px"}}> Read</button>  
-                         <button style={{backgroundColor:"#032b41",color:'white',padding:"10px 50px",fontSize:"20px"}}> Listen</button>  
+                        <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
+                         <button style={{display:"flex",backgroundColor:"#032b41",color:'white',padding:"10px 45px",fontSize:"20px",borderRadius:"5px"}}> 
+                            Read
+                        </button>  
+                         <button style={{display:"flex",backgroundColor:"#032b41",color:'white',padding:"10px 45px",fontSize:"20px",borderRadius:"5px"}}> 
+                         <HiOutlineMicrophone/>  Listen
+                        </button>  
                         </div>
                     </div>
                     
