@@ -45,8 +45,8 @@ export default function BookId({url,name,move,subName}){
                             </div>
                         </div>
                         <div style={{display:"flex"}} >
-                         <button style={{margin:"40px",backgroundColor:"#032b41"}}> Read</button>  
-                         <button style={{margin:"40px",backgroundColor:"#032b41"}}> Listen</button>  
+                         <button style={{margin:"40px",backgroundColor:"#032b41",color:'white'}}> Read</button>  
+                         <button style={{margin:"40px",backgroundColor:"#032b41",color:'white'}}> Listen</button>  
                         </div>
                     </div>
                     
