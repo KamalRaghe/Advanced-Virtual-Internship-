@@ -13,7 +13,7 @@ export default function SideBar(){
     const [close, setClose] = useState(false)
     return(
         <div>
-            <div className="center" style={{zIndex:"100",justifyContent:"end",fontSize:"30px",padding:"30px",width:"100vw",position:"fixed"}}>
+            <div className="center zero" style={{zIndex:"100",justifyContent:"end",fontSize:"30px",padding:"30px",width:"100vw",position:"fixed"}}>
                 {close ? <IoClose onClick={()=>{setMenu("sideBar popOut");setClose(false)}} ></IoClose> :<IoMdMenu onClick={()=>{setMenu("sideBar popIn");setClose(true)}} ></IoMdMenu>}
            </div>
             <div className= {menu} style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>

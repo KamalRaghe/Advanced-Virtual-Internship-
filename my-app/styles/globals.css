@@ -533,6 +533,11 @@ button:disabled {
   .sideBar{
     display: none;
   }
+
+  .zero{
+    display: flex;
+  }
+
   .popIn{
     display: flex;
     animation: popIn 1s linear;
