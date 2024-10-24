@@ -46,11 +46,11 @@ export default function BookId({url,name,move,subName}){
                             </div>
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
-                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"10px 45px",fontSize:"20px",borderRadius:"5px"}}> 
-                            < PiBookOpenText />  Read
+                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
+                            < PiBookOpenText/>  <div style={{marginLeft:"5px",fontSize:"16px"}}>Read</div> 
                         </button>  
-                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"10px 40px",fontSize:"20px",borderRadius:"5px"}}> 
-                         <HiOutlineMicrophone/>  Listen
+                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
+                            <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}}>Listen</div>
                         </button>  
                         </div>
                     </div>
