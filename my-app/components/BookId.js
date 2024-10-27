@@ -58,7 +58,7 @@ export default function BookId({url,name,move,subName}){
                         <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
                         <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"20px"}}>What's it about?</div>
                         {tags.map(tag =>{
-                            return <div key={tag} style={{margin:"10px",display:"flex"}}>{tag}</div>
+                            return <div key={tag} style={{margin:"10px",display:"flex",color:"red"}}><button>{tag}</button></div>
                         })}
                     </div>
                     <div>
