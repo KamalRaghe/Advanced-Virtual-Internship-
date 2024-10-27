@@ -65,6 +65,10 @@ export default function BookId({url,name,move,subName}){
                         <div>
                             {book.summary}
                         </div>
+                        <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>
+                        <div>
+                            {book.authorDescription}
+                        </div>
                     </div>
                     <div>
                         <img style={{width:"300px",height:"300px",margin:"10px"}} src={book.imageLink}></img>
