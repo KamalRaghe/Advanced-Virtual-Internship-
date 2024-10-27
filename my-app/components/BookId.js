@@ -59,7 +59,7 @@ export default function BookId({url,name,move,subName}){
                         <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"20px"}}>What's it about?</div>
                         <div style={{display:"flex"}}>
                             {tags.map(tag =>{
-                                return <div key={tag} style={{fontSize:"18px",margin:"10px 0px",marginRight:"10px",display:"flex",backgroundColor:"#f1f6f4",padding:'20px'}}><button>{tag}</button></div>
+                                return <div key={tag} style={{fontSize:"28px",margin:"10px 0px",marginRight:"10px",display:"flex",backgroundColor:"#f1f6f4",padding:'20px'}}>{tag}</div>
                             })}
                         </div>
                     </div>
