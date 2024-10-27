@@ -3,18 +3,20 @@ import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
 import { Suspense, useEffect, useState } from "react"
 import { IoMdTime } from "react-icons/io";
-import { CiStar } from "react-icons/ci";
+import { CiBookmark, CiStar } from "react-icons/ci";
 import { useRouter } from "next/router";
 import { PiBookOpenText } from "react-icons/pi";
 import { HiOutlineLightBulb, HiOutlineMicrophone  } from "react-icons/hi";
 
 export default function BookId({url,name,move,subName}){
   const [book, setBook] = useState([])
+  const [tags, setTags] = useState([])
   const router = useRouter()
 
     async function fetchBook(){
         const { data } = await axios.get(url)
         setBook(data)
+        setTags(data.tags)
         console.log(data)
       }
 
@@ -53,8 +55,12 @@ export default function BookId({url,name,move,subName}){
                             <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}}>Listen</div>
                         </button>  
                         </div>
+                        <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
+                        <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"20px"}}>What's it about?</div>
+                        {tags.map(tag =>{
+                            return <button key={tag} style={{margin:"10px",display:"flex"}}>{tag}</button>
+                        })}
                     </div>
-                    
                     <div>
                         <img style={{width:"300px",height:"300px",margin:"10px"}} src={book.imageLink}></img>
                     </div>
