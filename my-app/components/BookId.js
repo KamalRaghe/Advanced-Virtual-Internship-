@@ -26,7 +26,7 @@ export default function BookId({url,name,move,subName}){
       return(
         <div >
                 <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"space-between"}}>            
-                    <div>
+                    <div style={{padding:"10px"}} >
                         <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{book.author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{book.subTitle}</div>
