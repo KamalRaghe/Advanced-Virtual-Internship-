@@ -3,7 +3,6 @@ import { GoSearch } from "react-icons/go";
 
 export default function NavBar(){
     const [books, setBooks] = useState([])
-    const router = useRouter()
     const [search, setSearch] = useState('')
   
       async function fetchBooks(){
