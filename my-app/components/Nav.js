@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { GoSearch } from "react-icons/go";
+import axios from "axios";
 
 export default function NavBar(){
     const [books, setBooks] = useState([])
