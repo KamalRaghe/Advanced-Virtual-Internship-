@@ -28,12 +28,14 @@ export default function NavBar(){
                  </button>
             </div>
             <div className="searchModal" >
-                <div className="border" style={{zIndex:"200",backgroundColor:"white",width:"350px",marginRight:'140px'}} >
+                <div className="border" style={{zIndex:"200",backgroundColor:"white",width:"450px",marginRight:'100px'}} >
                 {books.map(book =>{
-                        return <div key={book.id} style={{display:"flex"}} onClick={()=>{router.push(`/book/${book.id}`)}}>
+                        return <div key={book.id} style={{display:"flex",borderBottom:"1px solid grey"}} onClick={()=>{router.push(`/book/${book.id}`)}}>
                               <img className="center" style={{margin:"15px",width:"80px",height:"70px",justifyContent:"start"}}  src={book.imageLink}></img>
-                                <div>{book.title}</div>
-                                <div>{book.author}</div>
+                               <div style={{padding:"10px"}}>
+                                  <div>{book.title}</div>
+                                  <div>{book.author}</div>
+                                </div> 
                              
                             </div>
                         })}
