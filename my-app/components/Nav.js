@@ -34,8 +34,7 @@ export default function NavBar(){
                               <img className="center" style={{margin:"15px",width:"80px",height:"70px",justifyContent:"start"}}  src={book.imageLink}></img>
                                <div style={{padding:"10px"}}>
                                   <div style={{fontWeight:"bolder",color:"#032b41"}}>{book.title}</div>
-                                  <br></br>
-                                  <div style={{fontSize:"15px",color:"grey"}} >{book.author}</div>
+                                  <div style={{fontSize:"15px",color:"grey",padding:"10px 0px"}} >{book.author}</div>
                                 </div> 
                              
                             </div>
