@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { GoSearch } from "react-icons/go";
 import axios from "axios";
+import { IoMdTime } from "react-icons/io";
 
 export default function NavBar(){
     const [books, setBooks] = useState([])
@@ -35,6 +36,7 @@ export default function NavBar(){
                                <div style={{padding:"10px"}}>
                                   <div style={{fontWeight:"bolder",color:"#032b41"}}>{book.title}</div>
                                   <div style={{fontSize:"15px",color:"grey",padding:"10px 0px"}} >{book.author}</div>
+                                  <IoMdTime style={{scale:"1.5",marginLeft:"60px"}}></IoMdTime>
                                 </div> 
                              
                             </div>
