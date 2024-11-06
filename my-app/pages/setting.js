@@ -7,7 +7,7 @@ export default function Setting(){
                <SideBar></SideBar>
                <div className="BookScreen">
                     <NavBar></NavBar>
-                    <div style={{color:"#032b41",fontSize:"32px",fontWeight:"bolder"}} >Settings</div>
+                    <div style={{color:"#032b41",fontSize:"32px",fontWeight:"bolder",margin:"10px",padding:"20px 0px",borderBottom:"1px solid lightgrey"}} >Settings</div>
                     <div>Your Subscription plan</div>
                     <div>premium-plus</div>
                     <div>Email</div>
