@@ -5,7 +5,9 @@ export default function Setting(){
           <div style={{display:"flex"}}>
                <SideBar></SideBar>
                <div className="BookScreen" >
-                    Settings
+                    <div>Settings</div>
+                    <div>Your Subscription plan</div>
+                    <div>premium-plus</div>
                 </div>
           </div>
         )
