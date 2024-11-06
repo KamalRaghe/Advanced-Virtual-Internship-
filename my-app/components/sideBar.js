@@ -6,11 +6,17 @@ import { MdLogout } from "react-icons/md";
 import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
+import { useRouter } from "next/router";
 
 
 export default function SideBar(){
     const [menu, setMenu] = useState("sideBar")
     const [close, setClose] = useState(false)
+
+    const router = useRouter(
+
+    )
+
     return(
         <div>
             <div className="center zero" style={{zIndex:"100",justifyContent:"end",fontSize:"30px",padding:"30px",width:"100vw",position:"fixed"}}>
