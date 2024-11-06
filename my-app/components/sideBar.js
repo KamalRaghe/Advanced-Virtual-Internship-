@@ -26,7 +26,7 @@ export default function SideBar(){
                 <div className ="nav__img--mask">
                     <img className ="nav__img" style={{scale:"0.9"}} src={"/logo.png"} alt="logo" />
                 </div>
-                <div style={{scale:"1.3",position:"relative",top:"100px",display:"flex",justifyContent:"space-between",flexDirection:"column",height:"60vh"}} >
+                <div style={{scale:"1.3",position:"relative",top:"100px",display:"flex",justifyContent:"space-between",cursor:"pointer",flexDirection:"column",height:"60vh"}} >
                     <div className="side-bar__icon" onClick={()=>router.push('/for-you')}><FaHouse></FaHouse> <div style={{margin:"5px"}} ></div> Home </div>
                     <div className="side-bar__icon"><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>My library</div>
                     <div className="side-bar__icon"><FaPenClip></FaPenClip> <div style={{margin:"5px"}} ></div>Highlights </div>
