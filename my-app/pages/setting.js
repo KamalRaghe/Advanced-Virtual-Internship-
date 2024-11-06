@@ -4,7 +4,7 @@ export default function Setting(){
         return(
           <div style={{display:"flex"}}>
                <SideBar></SideBar>
-               <div>
+               <div className="BookScreen" >
                     Settings
                 </div>
           </div>
