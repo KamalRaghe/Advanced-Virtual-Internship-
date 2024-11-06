@@ -5,9 +5,11 @@ export default function Setting(){
           <div style={{display:"flex"}}>
                <SideBar></SideBar>
                <div className="BookScreen" >
-                    <div>Settings</div>
+                    <div style={{color:"#032b41",fontSize:"40px",fontWeight:"bolder"}} >Settings</div>
                     <div>Your Subscription plan</div>
                     <div>premium-plus</div>
+                    <div>Email</div>
+                    <div>hanna@gmail.com</div>
                 </div>
           </div>
         )
