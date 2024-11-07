@@ -52,7 +52,7 @@ export default function BookId({url,name,move,subName}){
                             < PiBookOpenText/>  <div style={{marginLeft:"5px",fontSize:"16px"}}>Read</div> 
                         </button>  
                          <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
-                            <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}}>Listen</div>
+                            <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}} onClick={()=>router.push(`/player/${id}`)} >Listen</div>
                         </button>  
                         </div>
                         <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
