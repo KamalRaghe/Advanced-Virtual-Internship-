@@ -4,7 +4,7 @@ import Book from "@/components/selected"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import axios from "axios"
-import BookId from "@/components/BookId"
+import Player from "@/components/player"
 
 export default function ForYouPage(){
   
@@ -12,13 +12,14 @@ export default function ForYouPage(){
   const [loaded, setLoaded] = useState([])
   const router = useRouter()
   const {id} = router.query
-  
+  const 
+
       return(
         <div style={{display:"flex"}}>
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-                <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} ></BookId>
+                <Player url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`}/>
               </div>
         </div>
       )
