@@ -13,18 +13,6 @@ export default function ForYouPage(){
   const router = useRouter()
   const {id} = router.query
   
-  async function fetchBooks(){
-    const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
-    setBook(data)
-    if(!data.id){
-      router.push('/for-you')
-    }
-  }
-
-  useEffect(()=>{
-    fetchBooks()
-  },[])
-
       return(
         <div style={{display:"flex"}}>
              <SideBar></SideBar>
