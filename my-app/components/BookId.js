@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { PiBookOpenText } from "react-icons/pi";
 import { HiOutlineLightBulb, HiOutlineMicrophone  } from "react-icons/hi";
 
-export default function BookId({url,name,move,subName}){
+export default function BookId({url,id}){
   const [book, setBook] = useState([])
   const [tags, setTags] = useState([])
   const router = useRouter()

@@ -30,7 +30,7 @@ export default function ForYouPage(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-              <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} ></BookId>
+              <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} id={id} ></BookId>
               </div>
         </div>
       )
