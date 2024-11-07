@@ -13,13 +13,7 @@ export default function ForYouPage(){
   const router = useRouter()
   const {id} = router.query
   
-
-
-  useEffect(()=>{
-    fetchBooks()
-  },[])
-
-      return(
+  return(
         <div style={{display:"flex"}}>
              <SideBar></SideBar>
              <div>
