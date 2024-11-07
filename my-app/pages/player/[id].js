@@ -12,7 +12,6 @@ export default function ForYouPage(){
   const [loaded, setLoaded] = useState([])
   const router = useRouter()
   const {id} = router.query
-  const 
 
       return(
         <div style={{display:"flex"}}>
