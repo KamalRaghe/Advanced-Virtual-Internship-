@@ -13,12 +13,12 @@ export default function ForYouPage(){
   const router = useRouter()
   const {id} = router.query
   
-  return(
+      return(
         <div style={{display:"flex"}}>
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-              <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} ></BookId>
+              <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} id={id} ></BookId>
               </div>
         </div>
       )
