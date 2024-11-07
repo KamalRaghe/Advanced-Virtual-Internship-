@@ -13,13 +13,7 @@ export default function ForYouPage(){
   const router = useRouter()
   const {id} = router.query
   
-  async function fetchBooks(){
-    const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
-    setBook(data)
-    if(!data.id){
-      router.push('/for-you')
-    }
-  }
+
 
   useEffect(()=>{
     fetchBooks()
@@ -30,7 +24,7 @@ export default function ForYouPage(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-              <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} id={id} ></BookId>
+              <BookId url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`} ></BookId>
               </div>
         </div>
       )
