@@ -16,6 +16,7 @@ export default function Player({url}){
       function Audio(){
         let audio = new Audio(book.audioLink)
         audio.play()
+        console.log('click')
       }
 
       useEffect(()=>{
@@ -28,6 +29,7 @@ export default function Player({url}){
                         <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{book.author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{book.subTitle}</div>
+                        <button onClick={Audio} >iehrb</button>
                         <div>
                             {book.summary}
                         </div>
