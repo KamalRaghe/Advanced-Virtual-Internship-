@@ -1,7 +1,7 @@
 import axios from "axios"
 import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
-import { Suspense, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { IoMdTime } from "react-icons/io";
 import { CiBookmark, CiStar } from "react-icons/ci";
 import { useRouter } from "next/router";
