@@ -3,14 +3,16 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function Player({url}){
-
-  const router = useRouter()
+    const [book, setBook] = useState([])
+    const router = useRouter()
 
     async function fetchBook(){
         const { data } = await axios.get(url)
         setBook(data)
-        setTags(data.tags)
-        console.log(data)
+      }
+
+      function Audio(){
+        let audio = new Audio(book)
       }
 
       useEffect(()=>{
