@@ -11,7 +11,7 @@ const AudioPlayer = ({ audioUrl }) => {
 
     useEffect(() => {
         const audioElement = audioRef.current;
-         setDuration(audioElement.duration); // Set the duration when metadata is loaded
+         console.log(audioElement.duration); // Set the duration when metadata is loaded
     });
 
   return (
