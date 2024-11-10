@@ -20,9 +20,10 @@ const AudioPlayer = ({ audioUrl }) => {
   };
 
 
-//   useEffect(()=>{
-//     console.log(audioRef.duration)
-//   })
+  useEffect(()=>{
+    console.log((audioRef.current.duration)/60)
+    console.log(Math.floor((audioRef.current.duration)%60))
+  })
 
 
   return (
