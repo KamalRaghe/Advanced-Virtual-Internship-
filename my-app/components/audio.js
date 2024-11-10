@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const AudioPlayer = ({ audioUrl }) => {
+const AudioPlayer = ({ audioUrl, show }) => {
   const audioRef = useRef(null);
 
 
@@ -21,14 +21,14 @@ const AudioPlayer = ({ audioUrl }) => {
 
 
   useEffect(()=>{
-    console.log((audioRef.current.duration)/60)
+    console.log(Math.floor((audioRef.current.duration)/60))
     console.log(Math.floor((audioRef.current.duration)%60))
   })
 
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-      <audio ref={audioRef} controls style={{ width: '100%' }}>
+    <div style={{ display: show , alignItems: 'center', gap: '10px' }}>
+      <audio ref={audioRef} controls style={{ width: '100%'}}>
         <source src={audioUrl} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
