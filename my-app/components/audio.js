@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const AudioPlayer = ({ audioUrl }) => {
   const audioRef = useRef(null);
@@ -18,6 +18,11 @@ const AudioPlayer = ({ audioUrl }) => {
       );
     }
   };
+
+
+  useEffect(()=>{
+    console.log(audioRef.duration)
+  })
 
   if (!audioUrl) {
     return <p>No audio URL provided.</p>;
