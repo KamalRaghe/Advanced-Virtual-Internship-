@@ -12,6 +12,7 @@ export default function Player({url}){
     async function fetchBook(){
         const { data } = await axios.get(url)
         setBook(data)
+        console.log(data.audioLink)
       }
 
       useEffect(()=>{

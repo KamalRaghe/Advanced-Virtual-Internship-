@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const AudioPlayer = ({ audioUrl }) => {
   if (!audioUrl) {
@@ -8,9 +9,9 @@ const AudioPlayer = ({ audioUrl }) => {
   const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
 
-  useEffect(() => {
+    useEffect(() => {
         const audioElement = audioRef.current;
-      setDuration(audioElement.duration); // Set the duration when metadata is loaded
+         setDuration(audioElement.duration); // Set the duration when metadata is loaded
     });
 
   return (
