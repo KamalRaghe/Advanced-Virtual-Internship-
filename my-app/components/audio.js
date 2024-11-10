@@ -1,25 +1,36 @@
-import React from 'react';
-import { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const AudioPlayer = ({ audioUrl }) => {
+  const audioRef = useRef(null);
+
+
+  const handleSkipBack = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = Math.max(audioRef.current.currentTime - 10, 0);
+    }
+  };
+
+  const handleSkipForward = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = Math.min(
+        audioRef.current.currentTime + 10,
+        audioRef.current.duration
+      );
+    }
+  };
+
   if (!audioUrl) {
     return <p>No audio URL provided.</p>;
   }
 
-  const [duration, setDuration] = useState(0);
-  const audioRef = useRef(null);
-
-    useEffect(() => {
-        const audioElement = audioRef.current;
-         console.log(audioElement.duration); // Set the duration when metadata is loaded
-    });
-
   return (
-    <div>
-      <audio controls style={{ width: '100%' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <audio ref={audioRef} controls style={{ width: '100%' }}>
         <source src={audioUrl} type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
-      <div>{duration}</div>
+      <button onClick={handleSkipBack}>⏪ 10s</button>
+      <button onClick={handleSkipForward}>10s ⏩</button>
     </div>
   );
 };
