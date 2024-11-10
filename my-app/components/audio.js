@@ -24,9 +24,6 @@ const AudioPlayer = ({ audioUrl }) => {
     console.log(audioRef.duration)
   })
 
-  if (!audioUrl) {
-    return <p>No audio URL provided.</p>;
-  }
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>

@@ -18,7 +18,7 @@ export default function ForYouPage(){
              <SideBar></SideBar>
              <div>
                 <NavBar></NavBar>
-                <Player url={`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`}/>
+                <Player url={id}/>
               </div>
         </div>
       )
