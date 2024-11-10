@@ -5,12 +5,20 @@ const AudioPlayer = ({ audioUrl }) => {
     return <p>No audio URL provided.</p>;
   }
 
+  const [duration, setDuration] = useState(0);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+        const audioElement = audioRef.current;
+      setDuration(audioElement.duration); // Set the duration when metadata is loaded
+    });
+
   return (
     <div>
       <audio controls style={{ width: '100%' }}>
         <source src={audioUrl} type="audio/mpeg" />
-        Your browser does not support the audio element.
       </audio>
+      <div>{duration}</div>
     </div>
   );
 };
