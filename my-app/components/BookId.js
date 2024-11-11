@@ -7,11 +7,22 @@ import { CiBookmark, CiStar } from "react-icons/ci";
 import { useRouter } from "next/router";
 import { PiBookOpenText } from "react-icons/pi";
 import { HiOutlineLightBulb, HiOutlineMicrophone  } from "react-icons/hi";
+import AudioPlayer from "./audio";
 
 export default function BookId({url,id}){
   const [book, setBook] = useState([])
   const [tags, setTags] = useState([])
   const router = useRouter()
+  const [minute, setMinute] = useState(0)
+    const [second, setSecond] = useState(0)
+
+    function Minute(min){
+        setMinute(min)
+    }
+
+    function Second(sec){
+        setSecond(sec)
+    }
 
     async function fetchBook(){
         const { data } = await axios.get(url)
@@ -35,7 +46,10 @@ export default function BookId({url,id}){
                                 <CiStar style={{scale:"1.5"}} /> 
                                 {book.averageRating} ({book.totalRating} ratings)
                             </div>
-                            <IoMdTime style={{scale:"1.5",marginLeft:"60px"}}></IoMdTime>
+                            <div className="center" style={{width:"80px",justifyContent:"space-between",marginLeft:"60px"}}>
+                                <IoMdTime style={{scale:"1.7" }}></IoMdTime>{minute < 10 && 0}{minute}:{second}
+                                {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} minute= {Minute} second= {Second} />}
+                            </div>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
                             <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
