@@ -5,18 +5,31 @@ import { Suspense, useEffect, useState } from "react"
 import { IoMdTime } from "react-icons/io";
 import { CiStar } from "react-icons/ci";
 import { useRouter } from "next/router";
+import AudioPlayer from "./audio";
 
 export default function Books({url,name,move,subName}){
   const [books, setBooks] = useState([])
   const router = useRouter()
+  const [minute, setMinute] = useState(0)
+  const [second, setSecond] = useState(0)
+
+  function Minute(min){
+      setMinute(min)
+  }
+
+  function Second(sec){
+      setSecond(sec)
+  }
 
     async function fetchBooks(){
         const { data } = await axios.get(url)
         setBooks(data)
+        console.log(data)
       }
 
       useEffect(()=>{
         fetchBooks()
+       
       },[])
       return(
         <div >
@@ -34,8 +47,8 @@ export default function Books({url,name,move,subName}){
                               <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>
                               <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"45px",padding:"10px"}}>{book.subTitle}</div>
                               <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"50px",padding:" 5px 10px"}}>
-                                  <IoMdTime></IoMdTime>
-                                  <CiStar /> {book.averageRating}
+                                  <IoMdTime></IoMdTime> {minute}:{second}  {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} minute= {Minute} second= {Second} />}
+                                  <CiStar  style={{marginLeft:"20px"}} /> {book.averageRating}
                                 </div>
                              
                             </div>
