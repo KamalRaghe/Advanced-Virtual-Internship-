@@ -9,14 +9,6 @@ export default function Player({url}){
     const [minute, setMinute] = useState(0)
     const [second, setSecond] = useState(0)
 
-    function Minute(min){
-        setMinute(min)
-    }
-
-    function Second(sec){
-        setSecond(sec)
-    }
-
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${url}`)
         setBook(data)

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const AudioPlayer = ({audioUrl, show, minute, second }) => {
+const AudioPlayer = ({audioUrl, show}) => {
   const audioRef = useRef(null);
 
 
@@ -21,8 +21,8 @@ const AudioPlayer = ({audioUrl, show, minute, second }) => {
 
 
   useEffect(()=>{
-    minute(Math.floor((audioRef.current.duration)/60))
-    second(Math.floor((audioRef.current.duration)%60))
+    window.localStorage.setItem(minutes,Math.floor((audioRef.current.duration)/60))
+    window.localStorage.setItem(second,Math.floor((audioRef.current.duration)%60))
   })
 
 
