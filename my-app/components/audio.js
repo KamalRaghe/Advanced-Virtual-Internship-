@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const AudioPlayer = ({ audioUrl, show }) => {
+const AudioPlayer = ({audioUrl, show, minute, second }) => {
   const audioRef = useRef(null);
 
 
@@ -21,19 +21,19 @@ const AudioPlayer = ({ audioUrl, show }) => {
 
 
   useEffect(()=>{
-    console.log(Math.floor((audioRef.current.duration)/60))
-    console.log(Math.floor((audioRef.current.duration)%60))
+    minute(Math.floor((audioRef.current.duration)/60))
+    second(Math.floor((audioRef.current.duration)%60))
   })
 
 
   return (
     <div style={{display:'flex',alignItems: 'center', gap: '10px' }}>
-      <audio ref={audioRef} controls style={{display: show ,width: '100%'}}>
+      <audio ref={audioRef} controls style={{display:show ,width: '100%'}}>
         <source src={audioUrl} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <button onClick={handleSkipBack}>⏪ 10s</button>
-      <button onClick={handleSkipForward}>10s ⏩</button>
+      <button style={{display:show}}onClick={handleSkipBack}>⏪ 10s</button>
+      <button style={{display:show}} onClick={handleSkipForward}>10s ⏩</button>
     </div>
   );
 };
