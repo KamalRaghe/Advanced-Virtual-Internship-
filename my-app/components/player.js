@@ -16,6 +16,10 @@ export default function Player({url}){
 
       useEffect(()=>{
         fetchBook()
+        let min = window.localStorage.getItem('minute')
+        setMinute(min)
+        let sec = window.localStorage.getItem('second')
+        setSecond(sec)
       },[])
       return(
         <div >
@@ -24,7 +28,7 @@ export default function Player({url}){
                         <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{book.author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{book.subTitle}</div>
-                        {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} minute= {Minute} second= {Second} />}
+                        {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} />}
                         {minute}:{second}
                         <div>
                             {book.summary}

@@ -21,8 +21,8 @@ const AudioPlayer = ({audioUrl, show}) => {
 
 
   useEffect(()=>{
-    window.localStorage.setItem(minutes,Math.floor((audioRef.current.duration)/60))
-    window.localStorage.setItem(second,Math.floor((audioRef.current.duration)%60))
+    window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
+    window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
   })
 
 
