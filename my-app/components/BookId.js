@@ -16,14 +16,6 @@ export default function BookId({url,id}){
   const [minute, setMinute] = useState(0)
     const [second, setSecond] = useState(0)
 
-    function Minute(min){
-        setMinute(min)
-    }
-
-    function Second(sec){
-        setSecond(sec)
-    }
-
     async function fetchBook(){
         const { data } = await axios.get(url)
         setBook(data)
@@ -33,6 +25,10 @@ export default function BookId({url,id}){
 
       useEffect(()=>{
         fetchBook()
+        let min = window.localStorage.getItem('minute')
+        setMinute(min)
+        let sec = window.localStorage.getItem('second')
+        setSecond(sec)
       },[])
       return(
         <div >
@@ -48,7 +44,7 @@ export default function BookId({url,id}){
                             </div>
                             <div className="center" style={{width:"80px",justifyContent:"space-between",marginLeft:"60px"}}>
                                 <IoMdTime style={{scale:"1.7" }}></IoMdTime>{minute < 10 && 0}{minute}:{second}
-                                {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} minute= {Minute} second= {Second} />}
+                                {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} />}
                             </div>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
