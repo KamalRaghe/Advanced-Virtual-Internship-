@@ -17,7 +17,7 @@ export default function BookId(){
   const [second, setSecond] = useState(0)
   const [title, setTitle] = useState()
   const [author, setAuthor] = useState()
-  const [subtitle, setSubTitle] = useState()
+  const [subTitle, setSubTitle] = useState()
   const [averageRating, setAverageRating] = useState()
   const [totalRating, setTotalRating] = useState()
   const [audioLink, setAudioLink] = useState()
@@ -28,12 +28,11 @@ export default function BookId(){
   const [tag, setTag] = useState()
   const [tag1, setTag1] = useState()
   const [tag2, setTag2] = useState()
+  const[imageLink,setImageLink]= useState()
 
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
         setBook(data)
-        setTag(data.tags)
-        console.log(data.audioLink)
         window.localStorage.setItem('title', data.title)
         window.localStorage.setItem('author', data.author)
         window.localStorage.setItem('subtitle', data.subTitle)
@@ -44,17 +43,18 @@ export default function BookId(){
         window.localStorage.setItem('keyIdeas', data.keyIdeas)
         window.localStorage.setItem('summary', data.summary )
         window.localStorage.setItem('authorDescription', data.authorDescription)
+        window.localStorage.setItem('imageLink', data.imageLink)
         window.localStorage.setItem('tag', data.tags[0])
-        if(data.tags > 1){
-            window.localStorage.setItem('tag1', data.tags[1])
-        }else{
-            window.localStorage.setItem('tag1', '')
-        }
-        if(data.tags > 2){
-            window.localStorage.setItem('tag2', data.tags[2])
-        }else{
-            window.localStorage.setItem('tag2', '')
-        }
+        // if(data.tags > 1){
+        //     window.localStorage.setItem('tag1', data.tags[1])
+        // }else{
+        //     window.localStorage.setItem('tag1', '')
+        // }
+        // if(data.tags > 2){
+        //     window.localStorage.setItem('tag2', data.tags[2])
+        // }else{
+        //     window.localStorage.setItem('tag2', '')
+        // }
       }
 
       useEffect(()=>{
@@ -65,13 +65,14 @@ export default function BookId(){
         setSubTitle(window.localStorage.getItem('subtitle'))
         setAverageRating(window.localStorage.getItem('averageRating'))
         setAudioLink(window.localStorage.getItem('audioLink'))
+        setImageLink(window.localStorage.getItem('imageLink'))
         setType(window.localStorage.getItem('type'))
         setKeyIdeas(window.localStorage.getItem('keyIdeas'))
         setSummary(window.localStorage.getItem('summary'))
         setAuthorDescription(window.localStorage.getItem('authorDescription'))
         setTag(window.localStorage.getItem('tag'))
         setTag1(window.localStorage.getItem('tag1'))
-        setTag2(window.localStorage.getItem('tad2'))
+        setTag2(window.localStorage.getItem('ta2'))
         let min = window.localStorage.getItem('minute')
         setMinute(min)
         let sec = window.localStorage.getItem('second')
@@ -81,27 +82,27 @@ export default function BookId(){
         <div >
                 <div className="BookScreen" style={{display:"flex",justifyContent:"space-between"}}>            
                     <div style={{padding:"10px"}} >
-                        <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
-                        <div style={{margin:"20px 10px",fontWeight:"bold"}} >{book.author}</div>
-                        <div style={{margin:"10px",fontSize:"25px"}} >{book.subTitle}</div>
+                        <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>
+                        <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
+                        <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>
                         <div style={{display:"flex",marginTop:"50px"}} >
                             <div className="center" style={{width:"140px",justifyContent:"space-between"}}>
                                 <CiStar style={{scale:"1.5"}} /> 
-                                {book.averageRating} ({book.totalRating} ratings)
+                                {averageRating} ({totalRating} ratings)
                             </div>
                             <div className="center" style={{width:"80px",justifyContent:"space-between",marginLeft:"60px"}}>
                                 <IoMdTime style={{scale:"1.7" }}></IoMdTime>{minute < 10 && 0}{minute}:{second}
-                                <AudioPlayer audioUrl={book.audioLink} show={'none'} />
+                                <AudioPlayer audioUrl={audioLink} show={'none'} />
                             </div>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
                             <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
                                 <HiOutlineMicrophone  style={{scale:"1.5"}} /> 
-                                {book.type}
+                                {type}
                             </div>
                             <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
                                 <HiOutlineLightBulb style={{scale:"1.5"}} /> 
-                                {book.keyIdeas} Key Ideas
+                                {keyIdeas} Key Ideas
                             </div>
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
@@ -120,15 +121,15 @@ export default function BookId(){
                             })} */}
                         </div>
                         <div>
-                            {book.summary}
+                            {summary}
                         </div>
                         <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>
                         <div>
-                            {book.authorDescription}
+                            {authorDescription}
                         </div>
                     </div>
                     <div>
-                        <img style={{width:"300px",height:"300px",margin:"10px"}} src={book.imageLink}></img>
+                        <img style={{width:"300px",height:"300px",margin:"10px"}} src={imageLink}></img>
                     </div>
                     
                       
