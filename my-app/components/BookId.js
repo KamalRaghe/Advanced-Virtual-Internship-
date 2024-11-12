@@ -25,13 +25,16 @@ export default function BookId(){
   const [keyIdeas, setKeyIdeas] = useState()
   const [summary, setSummary] = useState()
   const [authorDescription, setAuthorDescription] = useState()
-  const [tag, setTag] = useState([])
+  const [tag, setTag] = useState()
+  const [tag1, setTag1] = useState()
+  const [tag2, setTag2] = useState()
 
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
         setBook(data)
         setTag(data.tags)
         console.log(data.audioLink)
+        window.localStorage.setItem()
       }
 
       useEffect(()=>{
