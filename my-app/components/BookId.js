@@ -34,7 +34,18 @@ export default function BookId(){
         setBook(data)
         setTag(data.tags)
         console.log(data.audioLink)
-        window.localStorage.setItem()
+        window.localStorage.setItem('title')
+        window.localStorage.setItem('author')
+        window.localStorage.setItem('totalRating')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
+        window.localStorage.setItem('')
       }
 
       useEffect(()=>{
