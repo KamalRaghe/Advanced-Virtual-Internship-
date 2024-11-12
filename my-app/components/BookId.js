@@ -15,7 +15,13 @@ export default function BookId(){
   const router = useRouter()
   const {id} = router.query
   const [minute, setMinute] = useState(0)
-    const [second, setSecond] = useState(0)
+  const [second, setSecond] = useState(0)
+  const [title, setTitle] = useState()
+  const [author, setAuthor] = useState()
+  const [subtitle, setSubTitle] = useState()
+  const [averageRating, setAverageRating] = useState()
+  const [totalRating, setTotalRating] = useState()
+  const [audioLink, setAudioLink] = useState()
 
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
@@ -45,7 +51,7 @@ export default function BookId(){
                             </div>
                             <div className="center" style={{width:"80px",justifyContent:"space-between",marginLeft:"60px"}}>
                                 <IoMdTime style={{scale:"1.7" }}></IoMdTime>{minute < 10 && 0}{minute}:{second}
-                                {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} />}
+                                <AudioPlayer audioUrl={book.audioLink} show={'none'} />
                             </div>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
