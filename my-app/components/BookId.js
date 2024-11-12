@@ -9,18 +9,19 @@ import { PiBookOpenText } from "react-icons/pi";
 import { HiOutlineLightBulb, HiOutlineMicrophone  } from "react-icons/hi";
 import AudioPlayer from "./audio";
 
-export default function BookId({url,id}){
+export default function BookId(){
   const [book, setBook] = useState([])
   const [tags, setTags] = useState([])
   const router = useRouter()
+  const {id} = router.query
   const [minute, setMinute] = useState(0)
     const [second, setSecond] = useState(0)
 
     async function fetchBook(){
-        const { data } = await axios.get(url)
+        const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
         setBook(data)
         setTags(data.tags)
-        console.log(data)
+        console.log(data.audioLink)
       }
 
       useEffect(()=>{
