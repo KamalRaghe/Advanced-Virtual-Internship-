@@ -33,7 +33,8 @@ export default function BookId(){
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
         setBook(data)
-        window.localStorage.setItem('title', data.title)
+        if(data){
+            window.localStorage.setItem('title', data.title)
         window.localStorage.setItem('author', data.author)
         window.localStorage.setItem('subtitle', data.subTitle)
         window.localStorage.setItem('totalRating', data.totalRating)
@@ -45,16 +46,17 @@ export default function BookId(){
         window.localStorage.setItem('authorDescription', data.authorDescription)
         window.localStorage.setItem('imageLink', data.imageLink)
         window.localStorage.setItem('tag', data.tags[0])
-        // if(data.tags > 1){
-        //     window.localStorage.setItem('tag1', data.tags[1])
-        // }else{
-        //     window.localStorage.setItem('tag1', '')
-        // }
-        // if(data.tags > 2){
-        //     window.localStorage.setItem('tag2', data.tags[2])
-        // }else{
-        //     window.localStorage.setItem('tag2', '')
-        // }
+        if(data.tags > 1){
+            window.localStorage.setItem('tag1', data.tags[1])
+        }else{
+            window.localStorage.setItem('tag1', '')
+        }
+        if(data.tags > 2){
+            window.localStorage.setItem('tag2', data.tags[2])
+        }else{
+            window.localStorage.setItem('tag2', '')
+        }
+        }
       }
 
       useEffect(()=>{
@@ -77,6 +79,7 @@ export default function BookId(){
         setMinute(min)
         let sec = window.localStorage.getItem('second')
         setSecond(sec)
+        console.log(window.localStorage.getItem('audioLink'))
       },[])
       return(
         <div >
