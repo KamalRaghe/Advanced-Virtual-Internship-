@@ -11,7 +11,6 @@ import AudioPlayer from "./audio";
 
 export default function BookId(){
   const [book, setBook] = useState([])
-  const [tags, setTags] = useState([])
   const router = useRouter()
   const {id} = router.query
   const [minute, setMinute] = useState(0)
@@ -22,11 +21,16 @@ export default function BookId(){
   const [averageRating, setAverageRating] = useState()
   const [totalRating, setTotalRating] = useState()
   const [audioLink, setAudioLink] = useState()
+  const [type, setType] = useState()
+  const [keyIdeas, setKeyIdeas] = useState()
+  const [summary, setSummary] = useState()
+  const [authorDescription, setAuthorDescription] = useState()
+  const [tag, setTag] = useState([])
 
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
         setBook(data)
-        setTags(data.tags)
+        setTag(data.tags)
         console.log(data.audioLink)
       }
 
@@ -75,9 +79,9 @@ export default function BookId(){
                         <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
                         <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"20px"}}>What's it about?</div>
                         <div style={{display:"flex"}}>
-                            {tags && tags.map(tag =>{
+                            {/* {tags && tags.map(tag =>{
                                 return <div key={tag} style={{fontSize:"16px",margin:"10px 0px",marginRight:"10px",display:"flex",backgroundColor:"#f1f6f4",padding:'15px 20px'}}>{tag}</div>
-                            })}
+                            })} */}
                         </div>
                         <div>
                             {book.summary}
