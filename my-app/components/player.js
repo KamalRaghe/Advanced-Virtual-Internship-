@@ -37,13 +37,13 @@ export default function Player({url}){
         <div >
                 <div className="BookScreen" style={{display:"flex",justifyContent:"space-between"}}>            
                     <div style={{padding:"10px"}} >
-                        <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{book.title}</div>
-                        <div style={{margin:"20px 10px",fontWeight:"bold"}} >{book.author}</div>
-                        <div style={{margin:"10px",fontSize:"25px"}} >{book.subTitle}</div>
-                        {book.audioLink && <AudioPlayer audioUrl={book.audioLink} show={'none'} />}
+                        <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>
+                        <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
+                        <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>
+                        {audioLink && <AudioPlayer audioUrl={audioLink} show={'flex'} />}
                         {minute}:{second}
                         <div>
-                            {book.summary}
+                            {summary}
                         </div>
 
                       
