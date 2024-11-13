@@ -31,7 +31,7 @@ const AudioPlayer = ({audioUrl, show}) => {
 
   return (
     <div style={{display:'flex',alignItems: 'center', gap: '10px' }}>
-      <audio className='Audio' ref={audioRef} controls style={{display:show ,width: '100%'}}>
+      <audio ref={audioRef} controls style={{display:show ,width: '100%'}}>
         <source src={audioUrl}  type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
