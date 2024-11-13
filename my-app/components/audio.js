@@ -22,17 +22,17 @@ const AudioPlayer = ({audioUrl, show}) => {
 
   useEffect(()=>{
    if(audioRef.current.duration){
-    window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
-    window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
-   }
-    console.log(audioRef)
+      window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
+      window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
+    }
+    console.log(audioRef.current.duration)
   })
 
 
   return (
     <div style={{display:'flex',alignItems: 'center', gap: '10px' }}>
-      <audio ref={audioRef} controls style={{display:show ,width: '100%'}}>
-        <source src={audioUrl} type="audio/mpeg" />
+      <audio ref={audioRef} controls style={{display:show}}>
+        <source src={audioUrl}  type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       <button style={{display:show}}onClick={handleSkipBack}>⏪ 10s</button>
