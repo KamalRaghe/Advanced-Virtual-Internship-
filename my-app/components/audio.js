@@ -1,44 +1,75 @@
 import React, { useEffect, useRef } from 'react';
 
 const AudioPlayer = ({audioUrl, show}) => {
-  const audioRef = useRef(null);
 
+    const audioRef = useRef(null);
 
-  const handleSkipBack = () => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = Math.max(audioRef.current.currentTime - 10, 0);
-    }
-  };
+    const loadAudio = () => {
+        if (audioUrl && audioRef.current) {
+            audioRef.current.src = audioUrl;
+            audioRef.current.load();
+            audioRef.current.play();
+        } else {
+            alert("Please enter a valid audio URL.");
+        }
+    };
 
-  const handleSkipForward = () => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = Math.min(
-        audioRef.current.currentTime + 10,
-        audioRef.current.duration
-      );
-    }
-  };
+    return (
+        <div className="audio-player-container">
+            <h2>Simple Audio Player</h2>
+            <input
+                type="text"
+                placeholder="Enter audio link here"
+                value={audioUrl}
+                onChange={(e) => setAudioUrl(e.target.value)}
+            />
+            <button onClick={loadAudio}>Play Audio</button>
+            <audio ref={audioRef} controls>
+                Your browser does not support the audio element.
+            </audio>
 
+            <style jsx>{`
+                .audio-player-container {
+                    background-color: navy;
+                    color: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                    max-width: 400px;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-family: Arial, sans-serif;
+                }
 
-  useEffect(()=>{
-   if(audioRef.current.duration){
-      window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
-      window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
-    }
-    console.log(audioRef.current.duration)
-  })
+                input[type="text"] {
+                    width: 80%;
+                    padding: 8px;
+                    border-radius: 4px;
+                    border: none;
+                    margin-top: 10px;
+                }
 
+                button {
+                    padding: 8px 12px;
+                    border-radius: 4px;
+                    border: none;
+                    background-color: white;
+                    color: navy;
+                    font-weight: bold;
+                    cursor: pointer;
+                    margin-top: 10px;
+                }
 
-  return (
-    <div style={{display:'flex',alignItems: 'center', gap: '10px' }}>
-      <audio ref={audioRef} controls style={{display:show}}>
-        <source src={audioUrl}  type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-      <button style={{display:show}}onClick={handleSkipBack}>⏪ 10s</button>
-      <button style={{display:show}} onClick={handleSkipForward}>10s ⏩</button>
-    </div>
-  );
+                button:hover {
+                    background-color: #e0e0e0;
+                }
+
+                audio {
+                    width: 100%;
+                    margin-top: 15px;
+                }
+            `}</style>
+        </div>
+    );
 };
 
 export default AudioPlayer;
