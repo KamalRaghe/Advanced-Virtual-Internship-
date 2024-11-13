@@ -8,6 +8,11 @@ export default function Player({url}){
     const [book, setBook] = useState([])
     const [minute, setMinute] = useState(0)
     const [second, setSecond] = useState(0)
+    const [title, setTitle] = useState()
+    const [author, setAuthor] = useState()
+    const [subTitle, setSubTitle] = useState()
+    const [audioLink, setAudioLink] = useState()
+    const [summary, setSummary] = useState()
 
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${url}`)
@@ -16,6 +21,13 @@ export default function Player({url}){
 
       useEffect(()=>{
         fetchBook()
+        setTimeout(() => {
+          setTitle(window.localStorage.getItem('title'))
+          setAuthor(window.localStorage.getItem('author'))
+          setSubTitle(window.localStorage.getItem('subtitle'))
+          setAudioLink(window.localStorage.getItem('audioLink'))
+          setSummary(window.localStorage.getItem('summary'))
+     }, 1000);
         let min = window.localStorage.getItem('minute')
         setMinute(min)
         let sec = window.localStorage.getItem('second')

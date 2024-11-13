@@ -35,27 +35,27 @@ export default function BookId(){
         setBook(data)
         if(data){
             window.localStorage.setItem('title', data.title)
-        window.localStorage.setItem('author', data.author)
-        window.localStorage.setItem('subtitle', data.subTitle)
-        window.localStorage.setItem('totalRating', data.totalRating)
-        window.localStorage.setItem('averageRating', data.averageRating)
-        window.localStorage.setItem('audioLink', data.audioLink)
-        window.localStorage.setItem('type', data.type)
-        window.localStorage.setItem('keyIdeas', data.keyIdeas)
-        window.localStorage.setItem('summary', data.summary )
-        window.localStorage.setItem('authorDescription', data.authorDescription)
-        window.localStorage.setItem('imageLink', data.imageLink)
-        window.localStorage.setItem('tag', data.tags[0])
-        if(data.tags > 1){
-            window.localStorage.setItem('tag1', data.tags[1])
-        }else{
-            window.localStorage.setItem('tag1', '')
-        }
-        if(data.tags > 2){
-            window.localStorage.setItem('tag2', data.tags[2])
-        }else{
-            window.localStorage.setItem('tag2', '')
-        }
+            window.localStorage.setItem('author', data.author)
+            window.localStorage.setItem('subtitle', data.subTitle)
+            window.localStorage.setItem('totalRating', data.totalRating)
+            window.localStorage.setItem('averageRating', data.averageRating)
+            window.localStorage.setItem('audioLink', data.audioLink)
+            window.localStorage.setItem('type', data.type)
+            window.localStorage.setItem('keyIdeas', data.keyIdeas)
+            window.localStorage.setItem('summary', data.summary )
+            window.localStorage.setItem('authorDescription', data.authorDescription)
+            window.localStorage.setItem('imageLink', data.imageLink)
+            window.localStorage.setItem('tag', data.tags[0])
+            if(data.tags > 1){
+                window.localStorage.setItem('tag1', data.tags[1])
+            }else{
+                window.localStorage.setItem('tag1', '')
+            }
+            if(data.tags > 2){
+                window.localStorage.setItem('tag2', data.tags[2])
+            }else{
+                window.localStorage.setItem('tag2', '')
+            }
         }
       }
 
