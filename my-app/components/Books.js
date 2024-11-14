@@ -6,6 +6,7 @@ import { IoMdTime } from "react-icons/io";
 import { CiStar } from "react-icons/ci";
 import { useRouter } from "next/router";
 import AudioPlayer from "./audio";
+import Time from "./time";
 
 export default function Books({url,name,move,subName}){
   const [books, setBooks] = useState([])
@@ -37,7 +38,7 @@ export default function Books({url,name,move,subName}){
                               <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>
                               <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"45px",padding:"10px"}}>{book.subTitle}</div>
                               <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"50px",padding:" 5px 10px"}}>
-                                 <IoMdTime></IoMdTime>
+                                 <IoMdTime></IoMdTime> <Time audioUrl={book.audioLink} ></Time>
                                   <CiStar  style={{marginLeft:"20px"}} /> {book.averageRating}
                                 </div>
                              
