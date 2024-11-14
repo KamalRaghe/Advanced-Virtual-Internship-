@@ -52,13 +52,14 @@ const AudioPlayer = ({ audioUrl, show }) => {
   };
 
   useEffect(()=>{
-    setTimeout(() => {
-      if(audioRef.current.duration){
-        window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
-        window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
-      }
-    }, 900);
-      console.log(audioRef.current.duration)
+   setTimeout(() => {
+    if(audioRef.current.duration){
+      window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
+      window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
+    } 
+   }, 1000);
+    
+    console.log(audioRef.current.duration)
   })
 
   return (
