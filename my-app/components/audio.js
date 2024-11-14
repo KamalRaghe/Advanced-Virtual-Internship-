@@ -52,12 +52,12 @@ const AudioPlayer = ({ audioUrl, show }) => {
   };
 
   useEffect(()=>{
-    if(audioRef.current.duration){
-      window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
-      window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
-    }else{
-      router
-    }
+    setTimeout(() => {
+      if(audioRef.current.duration){
+        window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
+        window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
+      }
+    }, 900);
       console.log(audioRef.current.duration)
   })
 
@@ -74,7 +74,7 @@ const AudioPlayer = ({ audioUrl, show }) => {
       maxWidth: '600px',
     }}>
       {/* Link label */}
-      <span style={{ color: 'red', marginBottom: '8px' }}>audioLink</span>
+     
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%' }}>
         <audio

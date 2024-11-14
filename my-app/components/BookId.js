@@ -76,11 +76,12 @@ export default function BookId(){
             setTag(window.localStorage.getItem('tag'))
             setTag1(window.localStorage.getItem('tag1'))
             setTag2(window.localStorage.getItem('ta2'))
+            let min = window.localStorage.getItem('minute')
+            setMinute(min)
+            let sec = window.localStorage.getItem('second')
+            setSecond(sec)
        }, 1000);
-        let min = window.localStorage.getItem('minute')
-        setMinute(min)
-        let sec = window.localStorage.getItem('second')
-        setSecond(sec)
+        
         console.log(window.localStorage.getItem('audioLink'))
       },[])
       return(
