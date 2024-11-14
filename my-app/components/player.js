@@ -41,8 +41,7 @@ export default function Player({url}){
                         <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>
-                        {/* {audioLink && <AudioPlayer audioUrl={audioLink} show={'flex'} />} */}
-                        <Time audioUrl={audioLink} />
+                        {audioLink && <AudioPlayer audioUrl={audioLink} show={'flex'} />}
                         {minute}:{second}
                         <div>
                             {summary}
