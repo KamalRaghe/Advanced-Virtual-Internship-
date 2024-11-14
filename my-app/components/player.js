@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link";
 import AudioPlayer from "./audio";
+import Time from "./time";
 
 export default function Player({url}){
     const [book, setBook] = useState([])
@@ -40,7 +41,8 @@ export default function Player({url}){
                         <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>
-                        {audioLink && <AudioPlayer audioUrl={audioLink} show={'flex'} />}
+                        {/* {audioLink && <AudioPlayer audioUrl={audioLink} show={'flex'} />} */}
+                        <Time audioUrl={audioLink} />
                         {minute}:{second}
                         <div>
                             {summary}
