@@ -5,17 +5,6 @@ const Time = ({ audioUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  
-
-  // Play or pause audio
-  const togglePlayPause = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
 
   // Update current time as audio plays
   const handleTimeUpdate = () => {
@@ -34,34 +23,7 @@ const Time = ({ audioUrl }) => {
     return `${minutes}:${seconds}`;
   };
 
-  // Skip backward 10 seconds
-  const handleSkipBack = () => {
-    audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 10);
-  };
-
-  // Skip forward 10 seconds
-  const handleSkipForward = () => {
-    audioRef.current.currentTime = Math.min(duration, audioRef.current.currentTime + 10);
-  };
-
-  // Handle seek bar change
-  const handleSeek = (e) => {
-    const newTime = (e.target.value / 100) * duration;
-    audioRef.current.currentTime = newTime;
-    setCurrentTime(newTime);
-  };
-
-  useEffect(()=>{
-   setTimeout(() => {
-    if(audioRef.current.duration){
-      window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
-      window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
-    } 
-   }, 1000);
-    
-    console.log(audioRef.current.duration)
-  })
-
+ 
   return (
       <div>
         <audio
