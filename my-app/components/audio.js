@@ -1,10 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 
-const AudioPlayer = ({ audioUrl }) => {
+const AudioPlayer = ({ audioUrl, show }) => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  
 
   // Play or pause audio
   const togglePlayPause = () => {
@@ -49,6 +50,16 @@ const AudioPlayer = ({ audioUrl }) => {
     audioRef.current.currentTime = newTime;
     setCurrentTime(newTime);
   };
+
+  useEffect(()=>{
+    if(audioRef.current.duration){
+      window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
+      window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
+    }else{
+      router
+    }
+      console.log(audioRef.current.duration)
+  })
 
   return (
     <div style={{
