@@ -52,7 +52,7 @@ const AudioPlayer = ({ audioUrl }) => {
 
   return (
     <div style={{
-      display: 'flex',
+      display: show,
       flexDirection: 'column',
       alignItems: 'center',
       backgroundColor: '#0A2E3D',
