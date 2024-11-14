@@ -98,7 +98,6 @@ export default function BookId(){
                             </div>
                             <div className="center" style={{width:"80px",justifyContent:"space-between",marginLeft:"60px"}}>
                                 <IoMdTime style={{scale:"1.7" }}></IoMdTime>{minute < 10 && 0}{minute}:{second}
-                                <AudioPlayer audioUrl={audioLink} show={'none'} />
                             </div>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
