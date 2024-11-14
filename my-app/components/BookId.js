@@ -7,7 +7,7 @@ import { CiBookmark, CiStar } from "react-icons/ci";
 import { useRouter } from "next/router";
 import { PiBookOpenText } from "react-icons/pi";
 import { HiOutlineLightBulb, HiOutlineMicrophone  } from "react-icons/hi";
-import AudioPlayer from "./audio";
+import Time from "./time";
 
 export default function BookId(){
   const [book, setBook] = useState([])
@@ -92,12 +92,13 @@ export default function BookId(){
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>
                         <div style={{display:"flex",marginTop:"50px"}} >
-                            <div className="center" style={{width:"140px",justifyContent:"space-between"}}>
+                            <div className="center" style={{justifyContent:"start",width:"200px"}}>
                                 <CiStar style={{scale:"1.5"}} /> 
-                                {averageRating} ({totalRating} ratings)
+                                <div style={{padding:"5px"}} >{averageRating} ({totalRating} ratings)</div>
                             </div>
-                            <div className="center" style={{width:"80px",justifyContent:"space-between",marginLeft:"60px"}}>
-                                <IoMdTime style={{scale:"1.7" }}></IoMdTime>{minute < 10 && 0}{minute}:{second}
+                            <div className="center" style={{justifyContent:"space-between"}}>
+                                <IoMdTime style={{scale:"1.7"}}></IoMdTime>
+                                <div style={{padding:"5px"}} ><Time audioUrl={audioLink} ></Time></div>
                             </div>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
