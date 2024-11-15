@@ -1,6 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
+import { MdReplay10, MdOutlineForward10 } from "react-icons/md";
+import { FaPlay } from "react-icons/fa";
+import { IoMdPause } from "react-icons/io";
 
-const AudioPlayer = ({ audioUrl, show }) => {
+const AudioPlayer = ({ audioUrl, author, title, img }) => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -51,33 +54,23 @@ const AudioPlayer = ({ audioUrl, show }) => {
     setCurrentTime(newTime);
   };
 
-  useEffect(()=>{
-   setTimeout(() => {
-    if(audioRef.current.duration){
-      window.localStorage.setItem('minute',Math.floor((audioRef.current.duration)/60))
-      window.localStorage.setItem('second',Math.floor((audioRef.current.duration)%60))
-    } 
-   }, 1000);
-    
-    console.log(audioRef.current.duration)
-  })
-
   return (
     <div style={{
-      display: show,
+      display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       backgroundColor: '#0A2E3D',
-      padding: '15px',
-      borderRadius: '8px',
+      padding: '25px',
       color: 'white',
       width: '100%',
-      maxWidth: '600px',
+      zIndex:"200",
+      position:"fixed",
+      top:"87%", 
     }}>
       {/* Link label */}
      
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%' }}>
+      <div style={{display:'flex', alignItems: 'center',justifyContent:"space-between", gap: '10px', width: '100%' }}>
         <audio
           ref={audioRef}
           src={audioUrl}
@@ -85,36 +78,51 @@ const AudioPlayer = ({ audioUrl, show }) => {
           onLoadedMetadata={handleLoadedMetadata}
         />
 
-        {/* Skip Backward Button */}
-        <button onClick={handleSkipBack} style={buttonStyle}>⏪ 10</button>
-        
-        {/* Play/Pause Button */}
-        <button onClick={togglePlayPause} style={buttonStyle}>
-          {isPlaying ? '⏸' : '▶️'}
-        </button>
+        <div style={{display:"flex",alignItems:"center",fontSize:"12px"}} >
+        <div style={{scale:"0.09",width:"20px",height:"30px",position:'relative',bottom:"25px"}} >
+          <img src={img}></img>
+        </div>
+          <div style={{position:'relative',left:"50px"}} >
+            <div>{title}</div>
+            <div style={{color:"lightgrey"}} >{author}</div>
+          </div>
+        </div>
 
-        {/* Skip Forward Button */}
-        <button onClick={handleSkipForward} style={buttonStyle}>10 ⏩</button>
+        <div style={{width:"100px",display:'flex', alignItems: 'center',justifyContent:"space-between",left:"40px",top:"4px",position:'relative'}}>
+            {/* Skip Backward Button */}
+          <button onClick={handleSkipBack} style={buttonStyle}>< MdReplay10 style={{scale:"1.5"}}/></button>
+          
+          {/* Play/Pause Button */}
+          <button onClick={togglePlayPause} style={buttonStyle}>
+            {isPlaying ? <IoMdPause/> :  <FaPlay/>}
+          </button>
 
-        {/* Current Time */}
-        <span>{formatTime(currentTime)}</span>
+          {/* Skip Forward Button */}
+          <button onClick={handleSkipForward} style={buttonStyle}><MdOutlineForward10 style={{scale:"1.5"}}/></button>
 
-        {/* Seek Bar */}
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value={(currentTime / duration) * 100 || 0}
-          onChange={handleSeek}
-          style={{
-            width: '100px',
-            marginLeft: '10px',
-            accentColor: 'white',
-          }}
-        />
+        </div>
 
-        {/* Total Duration */}
-        <span>{formatTime(duration)}</span>
+        <div style={{width:"180px",display:'flex', alignItems: 'center',justifyContent:"space-between"}}>
+          {/* Current Time */}
+          <span>{formatTime(currentTime)}</span>
+
+          {/* Seek Bar */}
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={(currentTime / duration) * 100 || 0}
+            onChange={handleSeek}
+            style={{
+              width: '100px',
+              marginLeft: '10px',
+              accentColor: 'white',
+            }}
+          />
+
+          {/* Total Duration */}
+          <span>{formatTime(duration)}</span>
+        </div>
       </div>
     </div>
   );
@@ -126,6 +134,7 @@ const buttonStyle = {
   border: 'none',
   fontSize: '20px',
   cursor: 'pointer',
+
 };
 
 export default AudioPlayer;

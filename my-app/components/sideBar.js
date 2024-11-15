@@ -4,25 +4,31 @@ import { FaPenClip } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
 import { MdLogout } from "react-icons/md";
 import { IoMdMenu } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/router";
 
 
-export default function SideBar(){
+export default function SideBar({small}){
     const [menu, setMenu] = useState("sideBar")
     const [close, setClose] = useState(false)
+    const [overflow, setOverflow] = useState('')
+    const [width, setWidth] = useState('100vh')
 
-    const router = useRouter(
+    const router = useRouter()
 
-    )
+    useEffect(()=>{
+        if(small){
+            setWid
+        }
+    },[])
 
     return(
         <div>
             <div className="center zero" style={{zIndex:"100",justifyContent:"end",fontSize:"30px",padding:"30px",width:"100vw",position:"fixed"}}>
                 {close ? <IoClose onClick={()=>{setMenu("sideBar popOut");setClose(false)}} ></IoClose> :<IoMdMenu onClick={()=>{setMenu("sideBar popIn");setClose(true)}} ></IoMdMenu>}
            </div>
-            <div className= {menu} style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"100vh",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
+            <div className= {menu} style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"87vh",overflowY:"scroll",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
                 <div className ="nav__img--mask">
                     <img className ="nav__img" style={{scale:"0.9"}} src={"/logo.png"} alt="logo" />
                 </div>
