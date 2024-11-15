@@ -135,7 +135,7 @@ export default function BookId(){
                         </div>
                     </div>
                     <div>
-                        <img style={{width:"300px",height:"300px",margin:"10px"}} src={imageLink}></img>
+                        {!imageLink ? <img style={{width:"300px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div style={{backgroundColor:"lightgrey",width:"250px",height:"300px",margin:"10px 100px"}}><div className="" style={{width:"250px",height:"30px",backgroundColor:"white"}} ></div></div>}
                     </div>
                     
                       
