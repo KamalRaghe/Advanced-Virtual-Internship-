@@ -19,7 +19,8 @@ export default function SideBar({small}){
 
     useEffect(()=>{
         if(small){
-            setWid
+            setWidth('87vh')
+            setOverflow('scroll')
         }
     },[])
 
@@ -28,7 +29,7 @@ export default function SideBar({small}){
             <div className="center zero" style={{zIndex:"100",justifyContent:"end",fontSize:"30px",padding:"30px",width:"100vw",position:"fixed"}}>
                 {close ? <IoClose onClick={()=>{setMenu("sideBar popOut");setClose(false)}} ></IoClose> :<IoMdMenu onClick={()=>{setMenu("sideBar popIn");setClose(true)}} ></IoMdMenu>}
            </div>
-            <div className= {menu} style={{zIndex:"100",backgroundColor:"#f1f6f4",height:"87vh",overflowY:"scroll",padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
+            <div className= {menu} style={{zIndex:"100",backgroundColor:"#f1f6f4",height: width,overflowY:overflow,padding:"10px",alignItems:"center",flexDirection:"column",position:"fixed"}}>
                 <div className ="nav__img--mask">
                     <img className ="nav__img" style={{scale:"0.9"}} src={"/logo.png"} alt="logo" />
                 </div>

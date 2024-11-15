@@ -34,7 +34,7 @@ export default function ForYouPage(){
 
       return(
         <div style={{display:"flex"}}>
-             <SideBar></SideBar>
+             <SideBar small={true} ></SideBar>
              <AudioPlayer audioUrl={audioLink} title = {title} img = {image} author={author}/>
              <div>
                 <NavBar></NavBar>
