@@ -98,7 +98,7 @@ export default function BookId(){
                             </div>
                             <div className="center" style={{justifyContent:"space-between"}}>
                                 <IoMdTime style={{scale:"1.7"}}></IoMdTime>
-                                <div style={{padding:"5px"}} ><Time audioUrl={audioLink} ></Time></div>
+                                <div style={{padding:"10px"}} ><Time audioUrl={audioLink} ></Time></div>
                             </div>
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
@@ -135,7 +135,7 @@ export default function BookId(){
                         </div>
                     </div>
                     <div >
-                        {!imageLink ? <img style={{width:"300px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"270px",height:"300px",margin:"10px 100px",position:"relative",right:"220px"}}></div>}
+                        {!imageLink ? <img style={{width:"280px",height:"450px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"270px",height:"300px",margin:"10px 100px",position:"relative",right:"220px"}}></div>}
                     </div>
                     
                       
