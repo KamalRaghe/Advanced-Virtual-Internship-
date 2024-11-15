@@ -131,11 +131,11 @@ export default function BookId(){
                         </div>
                         <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>
                         <div>
-                            {authorDescription}
+                            {!authorDescription ? authorDescription:<div className="skeleton" style={{width:"800px",height:"100px"}}></div>}
                         </div>
                     </div>
-                    <div>
-                        {!imageLink ? <img style={{width:"300px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"250px",height:"300px",margin:"10px 100px"}}></div>}
+                    <div style={{}} >
+                        {imageLink ? <img style={{width:"300px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"250px",height:"300px",margin:"10px 100px"}}></div>}
                     </div>
                     
                       
