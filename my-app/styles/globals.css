@@ -7,10 +7,27 @@
   font-family: "Roboto", sans-serif;
 }
 
+.skeleton-inside{
+  width: 100%;
+  height: 10%;
+  background-color: white;
+  animation: down 1.5s infinite;
+}
+
 .skeleton{
   background-color: #e0e0e0;
-  animation: 'pulse 1.5s infinite';
+  animation: pulse 1.5s infinite;
 }
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes pulse {
   0% {
     opacity: 1;
