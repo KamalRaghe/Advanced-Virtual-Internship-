@@ -120,10 +120,10 @@ export default function BookId(){
                                 <HiOutlineMicrophone  style={{scale:"1.5"}} /> 
                                 {type}
                             </div>
-                            <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
+                            {!keyIdeas ? <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
                                 <HiOutlineLightBulb style={{scale:"1.5"}} /> 
-                                {keyIdeas ? <div>{keyIdeas} Key Ideas</div>:<div className="skeleton" ></div>}
-                            </div>
+                                 <div>{keyIdeas} Key Ideas</div>
+                            </div>:<div className="skeleton" style={{width:"100px",height:"10px"}} ></div>}
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
                         {!audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
