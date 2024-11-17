@@ -126,12 +126,12 @@ export default function BookId(){
                             </div>
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
-                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
+                        {!audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
                             < PiBookOpenText/>  <div style={{marginLeft:"5px",fontSize:"16px"}}>Read</div> 
-                        </button>  
+                        </button>:<button className='center skeleton' style={{padding:"15px 40px",color:"transparent",fontSize:"22px",borderRadius:"5px"}} >Hello</button>}  
                         {!audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
                              <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}} onClick={()=>router.push(`/player/${id}`)} >Listen</div>
-                        </button>:<button className='center skelton' style={{padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}} ></button>}  
+                        </button>:<button className='center skeleton' style={{padding:"15px 40px",color:"transparent",fontSize:"22px",borderRadius:"5px"}} >World</button>}  
                         </div>
                         <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
                         <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"10px"}}>What's it about?</div>
