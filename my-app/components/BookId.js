@@ -134,7 +134,7 @@ export default function BookId(){
                         </button>:<button className='center skeleton' style={{padding:"15px 40px",color:"transparent",fontSize:"22px",borderRadius:"5px"}} >World</button>}  
                         </div>
                         <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
-                        <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"10px"}}>What's it about?</div>
+                        {!summary && <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"10px"}}>What's it about?</div>}
                         <div style={{display:"flex"}}>
                             {!tags && tags.map(tag =>{
                                 return <div key={tag} style={{fontSize:"16px",margin:"10px 0px",marginRight:"10px",display:"flex",backgroundColor:"#f1f6f4",padding:'15px 20px'}}>{tag}</div>
@@ -143,7 +143,7 @@ export default function BookId(){
                         <div>
                             {!summary ? summary :<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
                         </div>
-                        <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>
+                        {!authorDescription && <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>}
                         <div>
                             {!authorDescription ? authorDescription:<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
                         </div>
