@@ -122,7 +122,7 @@ export default function BookId(){
                             </div>
                             <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
                                 <HiOutlineLightBulb style={{scale:"1.5"}} /> 
-                                {keyIdeas} Key Ideas
+                                {keyIdeas ? <div>{keyIdeas} Key Ideas</div>:<div className="skeleton" ></div>}
                             </div>
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
