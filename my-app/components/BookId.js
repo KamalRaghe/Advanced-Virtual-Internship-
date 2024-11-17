@@ -106,24 +106,24 @@ export default function BookId(){
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>
                         <div style={{display:"flex",marginTop:"50px"}} >
-                            <div className="center" style={{justifyContent:"start",width:"200px"}}>
+                            {!totalRating ? <div className="center" style={{justifyContent:"start",width:"200px"}}>
                                 <CiStar style={{scale:"1.5"}} /> 
                                 <div style={{padding:"5px"}} >{averageRating} ({totalRating} ratings)</div>
-                            </div>
-                            <div className="center" style={{justifyContent:"space-between"}}>
+                            </div>:<div className="skeleton" style={{width:"100px",height:"20px"}} ></div>}
+                            {!audioLink ? <div className="center" style={{justifyContent:"space-between"}}>
                                 <IoMdTime style={{scale:"1.7"}}></IoMdTime>
                                 <div style={{padding:"10px"}} ><Time audioUrl={audioLink} ></Time></div>
-                            </div>
+                            </div>:<div className="skeleton" style={{width:"100px",height:"20px",marginLeft:"80px"}} ></div>}
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
-                            <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
+                            {!type ? <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
                                 <HiOutlineMicrophone  style={{scale:"1.5"}} /> 
                                 {type}
-                            </div>
+                            </div>:<div className="skeleton" style={{width:"100px",height:"20px"}} ></div>}
                             {!keyIdeas ? <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
                                 <HiOutlineLightBulb style={{scale:"1.5"}} /> 
                                  <div>{keyIdeas} Key Ideas</div>
-                            </div>:<div className="skeleton" style={{width:"100px",height:"30px",marginLeft:"85px"}} ></div>}
+                            </div>:<div className="skeleton" style={{width:"100px",height:"20px",marginLeft:"80px"}} ></div>}
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
                         {!audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
