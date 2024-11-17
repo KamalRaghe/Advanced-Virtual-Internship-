@@ -28,6 +28,7 @@ export default function BookId(){
   const [tag, setTag] = useState()
   const [tag1, setTag1] = useState()
   const [tag2, setTag2] = useState()
+  const [tags, setTags] = useState([])
   const[imageLink,setImageLink]= useState()
 
     async function fetchBook(){
@@ -81,6 +82,19 @@ export default function BookId(){
             let sec = window.localStorage.getItem('second')
             setSecond(sec)
        }, 1000);
+       setTimeout(() => {
+        if(tag2){
+            setTags([tag, tag1, tag2])
+        }else{
+            if(tag1){
+                setTags([tag, tag1])
+            }else{
+                if(tag){
+                    setTags([tag])
+                }
+            }
+        } 
+       }, 2000);
         
         console.log(window.localStorage.getItem('audioLink'))
       },[])
@@ -122,9 +136,9 @@ export default function BookId(){
                         <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
                         <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"20px"}}>What's it about?</div>
                         <div style={{display:"flex"}}>
-                            {/* {tags && tags.map(tag =>{
+                            {tags && tags.map(tag =>{
                                 return <div key={tag} style={{fontSize:"16px",margin:"10px 0px",marginRight:"10px",display:"flex",backgroundColor:"#f1f6f4",padding:'15px 20px'}}>{tag}</div>
-                            })} */}
+                            })}
                         </div>
                         <div>
                             {!summary ? summary :<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
