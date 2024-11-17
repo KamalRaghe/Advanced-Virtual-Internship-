@@ -129,27 +129,27 @@ export default function BookId(){
                          <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
                             < PiBookOpenText/>  <div style={{marginLeft:"5px",fontSize:"16px"}}>Read</div> 
                         </button>  
-                         <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
-                            <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}} onClick={()=>router.push(`/player/${id}`)} >Listen</div>
-                        </button>  
+                        {!audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
+                             <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}} onClick={()=>router.push(`/player/${id}`)} >Listen</div>
+                        </button>:<button className='center skelton' style={{padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}} ></button>}  
                         </div>
                         <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
                         <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"10px"}}>What's it about?</div>
                         <div style={{display:"flex"}}>
-                            {tags && tags.map(tag =>{
+                            {!tags && tags.map(tag =>{
                                 return <div key={tag} style={{fontSize:"16px",margin:"10px 0px",marginRight:"10px",display:"flex",backgroundColor:"#f1f6f4",padding:'15px 20px'}}>{tag}</div>
                             })}
                         </div>
                         <div>
-                            {summary ? summary :<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
+                            {!summary ? summary :<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
                         </div>
                         <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>
                         <div>
-                            {authorDescription ? authorDescription:<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
+                            {!authorDescription ? authorDescription:<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
                         </div>
                     </div>
                     <div >
-                        {imageLink ? <img style={{width:"280px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"270px",height:"300px",margin:"10px 100px",position:"relative",right:"220px"}}></div>}
+                        {!imageLink ? <img style={{width:"280px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"270px",height:"300px",margin:"10px 100px",position:"relative",right:"220px"}}></div>}
                     </div>
                     
                       
