@@ -33,13 +33,13 @@ export default function Books({url,name,move,subName}){
                     <div style={{display:"flex",position:"relative",right:move,bottom:"0px"}}>
                         {books.map(book =>{
                         return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px"}} >
-                              <img src={book.imageLink}></img>
-                              <div className="center" style={{justifyContent:"start",width:"600px",color:"navy",fontSize:"60px",fontWeight:"bolder",padding:"10px"}}>{book.title}</div>
-                              <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>
-                              <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"45px",padding:"10px"}}>{book.subTitle}</div>
+                              {!book ? <img src={book.imageLink}></img>:<div className="skeleton" style={{width:"450px",height:"600px"}} ></div>}
+                              {!book ? <div className="center" style={{justifyContent:"start",width:"600px",color:"navy",fontSize:"60px",fontWeight:"bolder",padding:"10px"}}>{book.title}</div>:<div  className="skeleton" style={{width:"350px", height:"60px",margin:"15px 0px"}} ></div>}
+                              {!book ? <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>:<div  className="skeleton" style={{width:"250px", height:"40px",margin:"15px 0px"}} ></div>}
+                              {!book ? <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"45px",padding:"10px"}}>{book.subTitle}</div>:<div  className="skeleton" style={{width:"350px", height:"60px",margin:"15px 0px"}} ></div>}
                               <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"50px",padding:" 5px 10px"}}>
-                                 <IoMdTime></IoMdTime> <Time audioUrl={book.audioLink} ></Time>
-                                  <CiStar  style={{marginLeft:"20px"}} /> {book.averageRating}
+                                 {!book ? <div><IoMdTime></IoMdTime> <Time style={{padding:"2px"}} audioUrl={book.audioLink} ></Time></div>:<div  className="skeleton" style={{width:"150px", height:"40px",margin:"15px 0px"}} ></div>}
+                                  {!book ? <div><CiStar  style={{marginLeft:"20px"}} /> {book.averageRating}</div>:<div  className="skeleton" style={{width:"150px", height:"40px",margin:"15px 25px"}} ></div>}
                                 </div>
                              
                             </div>
