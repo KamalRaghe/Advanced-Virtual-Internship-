@@ -102,54 +102,54 @@ export default function BookId(){
         <div >
                 <div className="BookScreen" style={{display:"flex",justifyContent:"space-between"}}>            
                     <div style={{padding:"10px"}} >
-                        {!title ? <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>:<div className="skeleton" style={{width:"400px",height:"60px"}} ></div>}
-                        {!author ? <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>:<div className="skeleton" style={{width:"150px",height:"30px",marginBottom:"20px"}} ></div>}
-                        {!subTitle ? <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>:<div className="skeleton" style={{width:"400px",height:"60px"}} ></div>}
+                        {title ? <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>:<div className="skeleton" style={{width:"600px",height:"80px"}} ></div>}
+                        {author ? <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>:<div className="skeleton" style={{width:"150px",height:"30px",margin:"20px 0px"}} ></div>}
+                        {subTitle ? <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>:<div className="skeleton" style={{width:"400px",height:"60px"}} ></div>}
                         <div style={{display:"flex",marginTop:"50px"}} >
-                            {!totalRating ? <div className="center" style={{justifyContent:"start",width:"200px"}}>
+                            {totalRating ? <div className="center" style={{justifyContent:"start",width:"200px"}}>
                                 <CiStar style={{scale:"1.5"}} /> 
                                 <div style={{padding:"5px"}} >{averageRating} ({totalRating} ratings)</div>
                             </div>:<div className="skeleton" style={{width:"100px",height:"20px"}} ></div>}
-                            {!audioLink ? <div className="center" style={{justifyContent:"space-between"}}>
+                            {audioLink ? <div className="center" style={{justifyContent:"space-between"}}>
                                 <IoMdTime style={{scale:"1.7"}}></IoMdTime>
                                 <div style={{padding:"10px"}} ><Time audioUrl={audioLink} ></Time></div>
                             </div>:<div className="skeleton" style={{width:"100px",height:"20px",marginLeft:"80px"}} ></div>}
                         </div>
                         <div style={{display:"flex",marginTop:"20px"}} >
-                            {!type ? <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
+                            {type ? <div className="center" style={{width:"115px",justifyContent:"space-between"}}>
                                 <HiOutlineMicrophone  style={{scale:"1.5"}} /> 
                                 {type}
                             </div>:<div className="skeleton" style={{width:"100px",height:"20px"}} ></div>}
-                            {!keyIdeas ? <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
+                            {keyIdeas ? <div className="center" style={{width:"105px",justifyContent:"space-between",marginLeft:"85px"}}>
                                 <HiOutlineLightBulb style={{scale:"1.5"}} /> 
                                  <div>{keyIdeas} Key Ideas</div>
                             </div>:<div className="skeleton" style={{width:"100px",height:"20px",marginLeft:"80px"}} ></div>}
                         </div>
                         <div style={{display:"flex",justifyContent:"space-between",width:"300px",marginTop:"30px"}} >
-                        {!audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
+                        {audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
                             < PiBookOpenText/>  <div style={{marginLeft:"5px",fontSize:"16px"}}>Read</div> 
                         </button>:<button className='center skeleton' style={{padding:"15px 40px",color:"transparent",fontSize:"22px",borderRadius:"5px"}} >Hello</button>}  
-                        {!audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
+                        {audioLink ? <button className='center' style={{backgroundColor:"#032b41",color:'white',padding:"15px 40px",fontSize:"22px",borderRadius:"5px"}}> 
                              <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}} onClick={()=>router.push(`/player/${id}`)} >Listen</div>
                         </button>:<button className='center skeleton' style={{padding:"15px 40px",color:"transparent",fontSize:"22px",borderRadius:"5px"}} >World</button>}  
                         </div>
-                        <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>{!imageLink && <div>Add title to My library</div>}</div>
-                        {!summary && <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"10px"}}>What's it about?</div>}
+                        <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>{imageLink && <div>Add title to My library</div>}</div>
+                        {summary && <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"10px"}}>What's it about?</div>}
                         <div style={{display:"flex"}}>
-                            {!tags && tags.map(tag =>{
+                            {tags && tags.map(tag =>{
                                 return <div key={tag} style={{fontSize:"16px",margin:"10px 0px",marginRight:"10px",display:"flex",backgroundColor:"#f1f6f4",padding:'15px 20px'}}>{tag}</div>
                             })}
                         </div>
                         <div>
-                            {!summary ? summary :<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
+                            {summary ? summary :<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
                         </div>
-                        {!authorDescription && <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>}
+                        {authorDescription && <div style={{fontSize:"18px",fontWeight:"bold",padding:"20px"}}>About the author</div>}
                         <div>
-                            {!authorDescription ? authorDescription:<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
+                            {authorDescription ? authorDescription:<div className="skeleton" style={{width:"800px",height:"700px"}}></div>}
                         </div>
                     </div>
                     <div >
-                        {!imageLink ? <img style={{width:"280px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"270px",height:"300px",margin:"10px 100px",position:"relative",right:"220px"}}></div>}
+                        {imageLink ? <img style={{width:"280px",height:"300px",margin:"10px"}} src={imageLink}></img>:<div className="skeleton" style={{width:"270px",height:"300px",margin:"10px 100px",position:"relative",right:"220px"}}></div>}
                     </div>
                     
                       
