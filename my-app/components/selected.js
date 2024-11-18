@@ -27,11 +27,13 @@ export default function Book(){
                         </div>:<div className="skeleton" style={{width:"150px",height:"150px",margin:"20px"}}></div>}
                         <div style={{height:"100%",width:"300px",position:"relative",left:"20px",top:"10px"}} >
                             <div className="center" style={{justifyContent:"start",fontWeight:"bolder"}}>{book.title}</div>
-                            <div className="center" style={{justifyContent:"start",scale:"0.8",position:"relative",right:"17px"}}>{book.author}</div>
-                            <div className="center" style={{position:"relative",backgroundColor:"black",color:"white",borderRadius:"50%",width:'40px',height:'40px'}}>
-                              <FaPlay></FaPlay> 
+                            <div className="center" style={{justifyContent:"start",scale:"0.8",position:"relative",right:"20px"}}>{book.author}</div>
+                            <div style={{display:"flex",alignItems:"center",marginTop:"20px"}} >
+                              <div className="center" style={{position:"relative",backgroundColor:"black",color:"white",borderRadius:"50%",width:'40px',height:'40px'}}>
+                                <FaPlay></FaPlay> 
+                              </div>
+                              {!book ? <div style={{padding:'10px'}} >3 mins 23 secs</div>:<div style={{padding:'10px'}} >0 mins 00 secs</div>}
                             </div>
-                            <div><Time audioUrl={book.audioLink} ></Time></div>
                         </div>
                     </div>
                 </div>
