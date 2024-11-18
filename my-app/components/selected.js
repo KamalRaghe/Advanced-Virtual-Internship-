@@ -3,6 +3,7 @@ import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
 import { useEffect, useState } from "react"
 import { FaPlay } from "react-icons/fa";
+import Time from "./time";
 export default function Book(){
   const [book, setBook] = useState([])
 
@@ -19,15 +20,18 @@ export default function Book(){
                 <div  className="BookScreen" style={{position:"relative",margin:"20px",marginBottom:"100px"}}>            
                     <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder",marginBottom:"20px"}} >Selected just for you</div>
                     <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",backgroundColor:"beige",width:"35%",height:"180px",padding:"20px"}} >
-                        <div style={{width:"400px",position:"relative",bottom:"30px"}} >{book.subTitle}</div>
+                        {!book ? <div style={{width:"400px",position:"relative",bottom:"30px"}} >{book.subTitle}</div>:<div className="skeleton" style={{width:"350px", height:"40px",position:"relative",bottom:"30px"}} ></div>}
                         <div className="center" style={{borderRight:"1px solid lightblue",height:"90%",width:"10px"}} ></div>
-                        <div key={book.id} style={{scale:"0.24",width:"200px",height:"300px",position:"relative",bottom:"30px"}} >
+                        {!book ? <div key={book.id} style={{scale:"0.24",width:"200px",height:"300px",position:"relative",bottom:"30px"}} >
                             <img src={book.imageLink}></img>
-                        </div>
+                        </div>:<div className="skeleton" style={{width:"150px",height:"150px",margin:"20px"}}></div>}
                         <div style={{height:"100%",width:"300px",position:"relative",left:"20px",top:"10px"}} >
                             <div className="center" style={{justifyContent:"start",fontWeight:"bolder"}}>{book.title}</div>
                             <div className="center" style={{justifyContent:"start",scale:"0.8",position:"relative",right:"17px"}}>{book.author}</div>
-                            <div className="center" style={{position:"relative",backgroundColor:"black",color:"white",borderRadius:"50%",width:'40px',height:'40px'}}><FaPlay></FaPlay></div>
+                            <div className="center" style={{position:"relative",backgroundColor:"black",color:"white",borderRadius:"50%",width:'40px',height:'40px'}}>
+                              <FaPlay></FaPlay> 
+                            </div>
+                            <div><Time audioUrl={book.audioLink} ></Time></div>
                         </div>
                     </div>
                 </div>
