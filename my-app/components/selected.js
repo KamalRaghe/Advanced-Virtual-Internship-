@@ -26,8 +26,8 @@ export default function Book(){
                             <img src={book.imageLink}></img>
                         </div>:<div className="skeleton" style={{width:"150px",height:"150px",margin:"20px"}}></div>}
                         <div style={{height:"100%",width:"300px",position:"relative",left:"20px",top:"10px"}} >
-                            <div className="center" style={{justifyContent:"start",fontWeight:"bolder"}}>{book.title}</div>
-                            <div className="center" style={{justifyContent:"start",scale:"0.8",position:"relative",right:"20px"}}>{book.author}</div>
+                            {!book ? <div className="center" style={{justifyContent:"start",fontWeight:"bolder"}}>{book.title}</div>:<div className="skeleton" style={{width:"75px", height:"20px"}} ></div>}
+                            {!book ? <div className="center" style={{justifyContent:"start",scale:"0.8",position:"relative",right:"20px"}}>{book.author}</div>:<div className="skeleton" style={{width:"45px", height:"12px",marginTop:"10px"}} ></div>}
                             <div style={{display:"flex",alignItems:"center",marginTop:"20px"}} >
                               <div className="center" style={{position:"relative",backgroundColor:"black",color:"white",borderRadius:"50%",width:'40px',height:'40px'}}>
                                 <FaPlay></FaPlay> 
