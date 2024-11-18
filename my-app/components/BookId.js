@@ -102,8 +102,8 @@ export default function BookId(){
         <div >
                 <div className="BookScreen" style={{display:"flex",justifyContent:"space-between"}}>            
                     <div style={{padding:"10px"}} >
-                        <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>
-                        <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
+                        {!title ? <div style={{width:"600px",display:"flex",justifyContent:"start",color:"#032b41",fontSize:"40px",margin:"10px",fontWeight:"bolder"}}>{title}</div>:<div className="skeleton" style={{width:"400px",height:"60px"}} ></div>}
+                        {!author ? <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>:<div className="skeleton" style={{width:"150px",height:"30px",marginBottom:"20px"}} ></div>}
                         {!subTitle ? <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>:<div className="skeleton" style={{width:"400px",height:"60px"}} ></div>}
                         <div style={{display:"flex",marginTop:"50px"}} >
                             {!totalRating ? <div className="center" style={{justifyContent:"start",width:"200px"}}>
