@@ -133,7 +133,7 @@ export default function BookId(){
                              <HiOutlineMicrophone/>  <div style={{fontSize:"16px"}} onClick={()=>router.push(`/player/${id}`)} >Listen</div>
                         </button>:<button className='center skeleton' style={{padding:"15px 40px",color:"transparent",fontSize:"22px",borderRadius:"5px"}} >World</button>}  
                         </div>
-                        <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>Add title to My library</div>
+                        <div className="side-bar__icon" style={{fontSize:"20px",color:"blue",padding:"20px 0px"}} ><CiBookmark></CiBookmark> <div style={{margin:"5px"}} ></div>{!imageLink && <div>Add title to My library</div>}</div>
                         {!summary && <div style={{fontSize:"18px",fontWeight:"bold",paddingBottom:"10px"}}>What's it about?</div>}
                         <div style={{display:"flex"}}>
                             {!tags && tags.map(tag =>{
