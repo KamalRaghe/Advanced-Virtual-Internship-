@@ -23,7 +23,7 @@ export default function Books({url,name,move,subName}){
       useEffect(()=>{
         setTimeout(() => {
           fetchBooks()
-        }, 2000);
+        }, 1000);
       },[])
       return(
         <div >
@@ -53,11 +53,11 @@ export default function Books({url,name,move,subName}){
                           return <div style={{position:"relative",right:"680px",top:"100px",margin:"0px 20px"}} key={book} >
                             <div className="skeleton" style={{width:"140px",height:"180px"}} ></div>
                             <div  className="skeleton" style={{width:"150px", height:"20px",margin:"10px 0px"}} ></div>
-                            <div  className="skeleton" style={{width:"50px", height:"10px",margin:"10px 0px"}} ></div>
+                            <div  className="skeleton" style={{width:"50px", height:"15px",margin:"10px 0px"}} ></div>
                             <div  className="skeleton" style={{width:"100px", height:"25px",margin:"10px 0px"}} ></div>
                             <div style={{display:"flex"}}>
-                              <div  className="skeleton" style={{width:"50px", height:"10px",margin:"10px 0px"}} ></div>
-                              <div  className="skeleton" style={{width:"50px", height:"10px",margin:"10px 15px"}} ></div>
+                              <div  className="skeleton" style={{width:"50px", height:"15px",margin:"10px 0px"}} ></div>
+                              <div  className="skeleton" style={{width:"50px", height:"15px",margin:"10px 15px"}} ></div>
                             </div>
                           </div>
                       })}

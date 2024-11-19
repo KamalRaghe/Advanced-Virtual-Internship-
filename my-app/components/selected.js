@@ -17,13 +17,15 @@ export default function Book(){
       }
 
       useEffect(()=>{
-        fetchBooks()
+        setTimeout(() => {
+          fetchBooks()
+        }, 1000);
       },[])
       return(
         <div >
                 <div  className="BookScreen" style={{position:"relative",margin:"20px",marginBottom:"100px"}}>            
                     <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder",marginBottom:"20px"}} >Selected just for you</div>
-                    {<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",backgroundColor:"beige",width:"35%",height:"180px",padding:"20px"}} >
+                      {loaded ? <div className="faded" style={{display:"flex",alignItems:"center",justifyContent:"space-between",backgroundColor:"beige",width:"35%",height:"180px",padding:"20px"}} >
                         {book ? <div style={{width:"400px",position:"relative",bottom:"30px"}} >{book.subTitle}</div>:<div className="skeleton" style={{width:"350px", height:"40px",position:"relative",bottom:"30px"}} ></div>}
                         <div className="center" style={{borderRight:"1px solid lightblue",height:"90%",width:"10px"}} ></div>
                         {book ? <div key={book.id} style={{scale:"0.24",width:"200px",height:"300px",position:"relative",bottom:"30px"}} >
@@ -39,7 +41,7 @@ export default function Book(){
                               {book ? <div style={{padding:'10px'}} >3 mins 23 secs</div>:<div style={{padding:'10px',position:"relative",left:"20px"}} >0 mins 00 secs</div>}
                             </div>
                         </div>
-                    </div>}
+                    </div>:<div className="skeleton" style={{width:"650px",height:"180px"}} ></div>}
                 </div>
         </div>
       )
