@@ -6,8 +6,7 @@ import AudioPlayer from "./audio";
 import Time from "./time";
 
 export default function Player(){
-    const [minute, setMinute] = useState(0)
-    const [second, setSecond] = useState(0)
+    const [loaded, setLoaded] = useState(false)
     const [title, setTitle] = useState()
     const [author, setAuthor] = useState()
     const [subTitle, setSubTitle] = useState()
@@ -17,6 +16,7 @@ export default function Player(){
 
       useEffect(()=>{
         setTimeout(() => {
+          setLoaded(true)
           setTitle(window.localStorage.getItem('title'))
           setAuthor(window.localStorage.getItem('author'))
           setSubTitle(window.localStorage.getItem('subtitle'))
@@ -34,7 +34,7 @@ export default function Player(){
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{subTitle}</div>
                         <div>
-                            {summary}
+                            {!summary ? summary : <div className="skeleton" style={{width:"800px",height:"700px"}} ></div>}
                         </div>
                         
 
