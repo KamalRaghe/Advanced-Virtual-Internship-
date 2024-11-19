@@ -9,20 +9,21 @@ import AudioPlayer from "./audio";
 import Time from "./time";
 
 export default function Books({url,name,move,subName}){
-  const [books, setBooks] = useState([])
+  const [books, setBooks] = useState([1,2,3,4,5])
+  const [loaded, setLoaded] = useState(false)
   const router = useRouter()
   
 
     async function fetchBooks(){
         const { data } = await axios.get(url)
         setBooks(data)
-        console.log(data)
+        setLoaded(true)
       }
 
       useEffect(()=>{
         setTimeout(() => {
           fetchBooks()
-        }, 1000);
+        }, 2000);
       },[])
       return(
         <div >
@@ -32,21 +33,35 @@ export default function Books({url,name,move,subName}){
                       <br></br>
                       <div>{subName}</div>
                     </div>
-                    <div style={{display:"flex",position:"relative",right:move,bottom:"0px"}}>
+                    {loaded ? <div className="faded" style={{display:"flex",position:"relative",right:move,bottom:"0px"}}>
                         {books.map(book =>{
                         return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px"}} >
-                              {book ? <img src={book.imageLink}></img>:<div className="skeleton" style={{width:"450px",height:"600px"}} ></div>}
-                              {book ? <div className="center" style={{justifyContent:"start",width:"600px",color:"navy",fontSize:"60px",fontWeight:"bolder",padding:"10px"}}>{book.title}</div>:<div  className="skeleton" style={{width:"350px", height:"60px",margin:"15px 0px"}} ></div>}
-                              {book ? <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>:<div  className="skeleton" style={{width:"250px", height:"40px",margin:"15px 0px"}} ></div>}
-                              {book ? <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"45px",padding:"10px"}}>{book.subTitle}</div>:<div  className="skeleton" style={{width:"350px", height:"60px",margin:"15px 0px"}} ></div>}
+                              <img src={book.imageLink}></img>
+                              <div className="center" style={{justifyContent:"start",width:"600px",color:"navy",fontSize:"60px",fontWeight:"bolder",padding:"10px"}}>{book.title}</div>
+                              <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>
+                              <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"45px",padding:"10px"}}>{book.subTitle}</div>
                               <div className="center" style={{justifyContent:"start",width:"600px",fontSize:"50px",padding:" 5px 10px"}}>
-                                 {book ? <div className="center" style={{display:"flex"}} ><IoMdTime></IoMdTime> <Time style={{padding:"5px"}} audioUrl={book.audioLink} ></Time></div>:<div  className="skeleton" style={{width:"150px", height:"40px",margin:"15px 0px"}} ></div>}
-                                  {book ? <div><CiStar  style={{marginLeft:"10px"}} /> {book.averageRating}</div>:<div  className="skeleton" style={{width:"150px", height:"40px",margin:"15px 25px"}} ></div>}
+                                  <div className="center" style={{display:"flex"}} ><IoMdTime></IoMdTime> <div style={{padding:"10px"}} ><Time  audioUrl={book.audioLink} ></Time></div></div>
+                                  <div><CiStar  style={{marginLeft:"10px"}} /> {book.averageRating}</div>
                                 </div>
                              
                             </div>
                         })}
-                    </div>
+                    </div>:
+                    <div style={{display:"flex",margin:"0px"}}>
+                      {books.map(book =>{
+                          return <div style={{position:"relative",right:"680px",top:"100px",margin:"0px 20px"}} key={book} >
+                            <div className="skeleton" style={{width:"140px",height:"180px"}} ></div>
+                            <div  className="skeleton" style={{width:"150px", height:"20px",margin:"10px 0px"}} ></div>
+                            <div  className="skeleton" style={{width:"50px", height:"10px",margin:"10px 0px"}} ></div>
+                            <div  className="skeleton" style={{width:"100px", height:"25px",margin:"10px 0px"}} ></div>
+                            <div style={{display:"flex"}}>
+                              <div  className="skeleton" style={{width:"50px", height:"10px",margin:"10px 0px"}} ></div>
+                              <div  className="skeleton" style={{width:"50px", height:"10px",margin:"10px 15px"}} ></div>
+                            </div>
+                          </div>
+                      })}
+                    </div>}
                 </div>
         </div>
       )

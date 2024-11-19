@@ -21,6 +21,10 @@
   }
 }
 
+.faded{
+  animation: pulse 1.5s linear
+}
+
 .center{
     display: flex;
     justify-content: center;
