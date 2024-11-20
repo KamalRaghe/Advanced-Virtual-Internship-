@@ -34,7 +34,7 @@ export default function Player(){
                         <div style={{margin:"20px 10px",fontWeight:"bold"}} >{author ? author : <div className="skeleton" style={{width:"150px",height:"30px"}}></div>}</div>
                         <div style={{margin:"10px",fontSize:"25px"}} >{subTitle ? subTitle : <div className="skeleton" style={{width:"600px",height:"50px"}}></div>}</div>
                         <div>
-                            {summary ? summary : <div className="skeleton" style={{width:"1000px",height:"700px"}} ></div>}
+                            {!summary ? summary : <div className="skeleton" style={{width:"1000px",height:"700px"}} ></div>}
                         </div>
                     </div>
                     <div>
