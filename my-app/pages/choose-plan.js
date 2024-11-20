@@ -6,7 +6,6 @@ import { FaHandshake } from "react-icons/fa"
 import { useEffect, useState } from "react"
 export default function ForYouPage(){
   const [books, setBooks] = useState([])
-  console.log('dvwvwre')
       return(
         <div>
              <div className="center" style={{zIndex:"100",flexDirection:"column",justifyContent:"space-between",height:"95vh",width:"100vw",backgroundColor:"#032b41",borderBottomRightRadius:"30%",borderBottomLeftRadius:"30%"}}>
