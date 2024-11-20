@@ -14,6 +14,18 @@ export default function Player(){
     const [summary, setSummary] = useState()
     const [image, setImage] = useState()
 
+      useEffect(()=>{
+        setTimeout(() => {
+          setLoaded(true)
+          setTitle(window.localStorage.getItem('title'))
+          setAuthor(window.localStorage.getItem('author'))
+          setSubTitle(window.localStorage.getItem('subtitle'))
+          setAudioLink(window.localStorage.getItem('audioLink'))
+          setSummary(window.localStorage.getItem('summary'))
+          setImage(window.localStorage.getItem('imageLink'))
+     }, 1000);
+     
+      },[])
       return(
         <div >
                 <div className="BookScreen" style={{display:"flex",justifyContent:"space-between"}}>            
