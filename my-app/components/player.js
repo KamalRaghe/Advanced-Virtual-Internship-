@@ -38,11 +38,8 @@ export default function Player(){
                         </div>
                     </div>
                     <div>
-                    </div>
-                    
-                      
-        
-                </div>
+                    </div>        
+                 </div>
         </div>
       )
 }
