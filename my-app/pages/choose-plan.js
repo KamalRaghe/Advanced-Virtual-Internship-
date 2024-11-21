@@ -1,6 +1,6 @@
 
 import { LuFileKey } from "react-icons/lu";
-import { PiPottedPlantFill } from "react-icons/pi"
+import {  PiPottedPlantFill} from "react-icons/pi"
 import { FaHandshake } from "react-icons/fa"
 
 import { useEffect, useState } from "react"
@@ -14,6 +14,16 @@ export default function ForYouPage(){
                 <div className="center" style={{zIndex:"2",height:"300px",width:"350px",backgroundColor:"white",borderTopRightRadius:"50%",borderTopLeftRadius:"50%"}} >
                     <img style={{scale:"0.4",zIndex:"1",borderRadius:"50%"}} src="pricing-top.png" alt="logo" />
                 </div>
+                <div>
+                    <LuFileKey/>
+                </div>
+                <div>
+                    <PiPottedPlantFill/>
+                </div>
+                <div>
+                    <FaHandshake/>
+                </div>
+              
             </div>
         </div>
       )
