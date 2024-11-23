@@ -17,9 +17,9 @@ export default function ForYouPage(){
             </div>
             <div className="center"> 
                 <div className="center" style={{justifyContent:'space-between',width:"200px",scale:"3",paddingTop:"40px"}} >
-                    <div className="center" style={{flexDirection:"column",fontSize:"5px"}} >
+                    <div className="center" style={{flexDirection:"column"}} >
                         <LuFileKey/>
-                        <span>Key ideas in few min with many books to read</span>
+                        <span style={{fontSize:"5px"}} >Key ideas in few min with many books to read</span>
                     </div>
                     <div>
                         <PiPottedPlantFill/>
