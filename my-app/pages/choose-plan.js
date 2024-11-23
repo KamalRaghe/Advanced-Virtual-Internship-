@@ -14,16 +14,20 @@ export default function ForYouPage(){
                 <div className="center" style={{zIndex:"2",height:"300px",width:"350px",backgroundColor:"white",borderTopRightRadius:"50%",borderTopLeftRadius:"50%"}} >
                     <img style={{scale:"0.4",zIndex:"1",borderRadius:"50%"}} src="pricing-top.png" alt="logo" />
                 </div>
-                <div>
-                    <LuFileKey/>
+            </div>
+            <div className="center"> 
+                <div className="center" style={{justifyContent:'space-between',width:"200px",scale:"3",paddingTop:"40px"}} >
+                    <div className="center" style={{flexDirection:"column",fontSize:"5px"}} >
+                        <LuFileKey/>
+                        <span>Key ideas in few min with many books to read</span>
+                    </div>
+                    <div>
+                        <PiPottedPlantFill/>
+                    </div>
+                    <div>
+                        <FaHandshake/>
+                    </div>
                 </div>
-                <div>
-                    <PiPottedPlantFill/>
-                </div>
-                <div>
-                    <FaHandshake/>
-                </div>
-              
             </div>
         </div>
       )
