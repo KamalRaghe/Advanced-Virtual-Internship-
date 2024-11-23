@@ -16,7 +16,7 @@ export default function ForYouPage(){
                 </div>
             </div>
             <div className="center"> 
-                <div className="center" style={{justifyContent:'space-between',width:"200px",scale:"3",paddingTop:"40px"}} >
+                <div className="center" style={{justifyContent:'space-between',width:"250px",scale:"3",paddingTop:"40px"}} >
                     <div className="center" style={{flexDirection:"column"}} >
                         <LuFileKey/>
                         <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} >Key ideas in few min with many books to read</span>
