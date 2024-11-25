@@ -16,21 +16,22 @@ export default function ForYouPage(){
                 </div>
             </div>
             <div className="center"> 
-                <div className="center" style={{justifyContent:'space-between',width:"250px",scale:"3",paddingTop:"40px"}} >
+                <div className="center" style={{justifyContent:'space-between',width:"250px",scale:"3.5",paddingTop:"40px",color:"#032b41"}} >
                     <div className="center" style={{flexDirection:"column"}} >
                         <LuFileKey/>
-                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} >Key ideas in few min with many books to read</span>
+                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} ><span style={{fontWeight:"bolder"}} >Key ideas in few min</span> with many books to read</span>
                     </div>
                     <div className="center" style={{flexDirection:"column"}} >
                         <PiPottedPlantFill/>
-                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} >3 million people growing with Summarist everyday</span>
+                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} ><span style={{fontWeight:"bolder"}} >3 million</span> 3 million people growing with Summarist everyday</span>
                     </div>
                     <div className="center" style={{flexDirection:"column"}}>
                         <FaHandshake/>
-                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} >Precise recommendations collections curated by experts</span>
+                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} ><span style={{fontWeight:"bolder"}} >Precise recommendations</span> collections curated by experts</span>
                     </div>
                 </div>
             </div>
+            
         </div>
       )
 }
