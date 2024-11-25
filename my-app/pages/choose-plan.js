@@ -34,8 +34,8 @@ export default function ForYouPage(){
             <div className="center" style={{flexDirection:"column"}} >
                 <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
                 <div style={{border:"4px solid gray",width:"650px",height:"140px",margin:"20px"}}>
-                    <button className="center" style={{width:"20px",height:"20px",borderRadius:"50%",border:"2px solid black"}}>
-                        <span style={{backgroundColor:"black",width:"2px",height:"2px"}} ></span>
+                    <button className="center" style={{width:"20px",height:"20px",borderRadius:"50%",border:"2px solid black",margin:"10px"}}>
+                        <span style={{backgroundColor:"black",width:"6px",height:"6px",borderRadius:"50px"}} ></span>
                     </button>
                     <div style={{padding:"2px"}}>
                         <div style={{padding:"5px 20px"}} >Premium Plus Yearly</div>
