@@ -33,7 +33,11 @@ export default function ForYouPage(){
             </div>
             <div className="center" style={{flexDirection:"column"}} >
                 <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
-                
+                <div style={{border:"4px solid gray",width:"650px",height:"140px",margin:"20px"}}>
+                    <div>Premium Plus Yearly</div>
+                    <div>$99.99/year</div>
+                    <div>7-day free trial included</div>
+                </div>
             </div>
         </div>
       )
