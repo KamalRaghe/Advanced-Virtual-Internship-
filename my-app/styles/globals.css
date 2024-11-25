@@ -21,6 +21,10 @@
   }
 }
 
+.radio{
+  border: 1px solid black;
+}
+
 .faded{
   animation: pulse 1.5s linear
 }

@@ -31,10 +31,9 @@ export default function ForYouPage(){
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="center" style={{flexDirection:"column"}} >
                 <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
-                <input name='money' type='radio'/>
-                <input name='money' type='radio'/>
+                
             </div>
         </div>
       )
