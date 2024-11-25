@@ -15,7 +15,7 @@ export default function ForYouPage(){
                     <img style={{scale:"0.4",zIndex:"1",borderRadius:"50%"}} src="pricing-top.png" alt="logo" />
                 </div>
             </div>
-            <div className="center"> 
+            <div className="center" style={{paddingBottom:"160px"}}> 
                 <div className="center" style={{justifyContent:'space-between',width:"250px",scale:"3.5",paddingTop:"40px",color:"#032b41"}} >
                     <div className="center" style={{flexDirection:"column"}} >
                         <LuFileKey/>
@@ -23,7 +23,7 @@ export default function ForYouPage(){
                     </div>
                     <div className="center" style={{flexDirection:"column"}} >
                         <PiPottedPlantFill/>
-                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} ><span style={{fontWeight:"bolder"}} >3 million</span> 3 million people growing with Summarist everyday</span>
+                        <span style={{fontSize:"5px",paddingTop:"10px", width:"70px",textAlign:"center"}} ><span style={{fontWeight:"bolder"}} >3 million</span> people growing with Summarist everyday</span>
                     </div>
                     <div className="center" style={{flexDirection:"column"}}>
                         <FaHandshake/>
@@ -31,7 +31,11 @@ export default function ForYouPage(){
                     </div>
                 </div>
             </div>
-            
+            <div>
+                <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
+                <input name='money' type='radio'/>
+                <input name='money' type='radio'/>
+            </div>
         </div>
       )
 }
