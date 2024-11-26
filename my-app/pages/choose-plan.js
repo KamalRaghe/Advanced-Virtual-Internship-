@@ -58,7 +58,9 @@ export default function ForYouPage(){
                         <div style={{padding:"5px",fontSize:"13px",color:"grey"}} >No trial included</div>
                     </div>
                 </div>
-                {on1 ? <button className=" center btn" style={{width:"300px"}} >Start your free 7-day trial</button>:<button className=" center btn" style={{width:"300px"}} >Start your first month </button>}
+                {on1 ? <button className=" center btn" style={{width:"300px"}} >Start your free 7-day trial</button>:
+                <button className=" center btn" style={{width:"300px"}} >Start your first month </button>}
+                {on1 ? <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>:<div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
             </div> 
             
         </div>
