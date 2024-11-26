@@ -36,13 +36,13 @@ export default function ForYouPage(){
             </div>
             <div className="center" style={{flexDirection:"column"}} >
                 <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
-                <div className="center" style={{justifyContent:'start',border:border1,width:"650px",height:"140px",margin:"20px"}}>
+                <div className="center" style={{justifyContent:'start',border:border1,width:"650px",height:"140px",margin:"20px",backgroundColor:"#f1f6f4"}}>
                     <button onClick={()=>{setOn1(true);setOn2(),setBorder1("4px solid #20ba68"),setBorder2('"4px solid gray"')}} className="center" style={{width:"25px",height:"25px",borderRadius:"50%",border:"2px solid black",margin:"20px",position:"relative",bottom:"30px"}}>
                         {on1 && <span style={{backgroundColor:"black",width:"6px",height:"6px",borderRadius:"50px"}} ></span>}
                     </button>
                     <div>
-                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"20px"}} >Premium Plus Yearly</div>
-                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"22px"}} >$99.99/year</div>
+                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"20px",color:"#032b41"}} >Premium Plus Yearly</div>
+                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"22px",color:"#032b41"}} >$99.99/year</div>
                         <div style={{padding:"5px"}} >7-day free trial included</div>
                     </div>
                 </div>
