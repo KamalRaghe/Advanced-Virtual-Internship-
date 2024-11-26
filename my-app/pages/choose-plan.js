@@ -53,9 +53,9 @@ export default function ForYouPage(){
                         {on2 && <span style={{backgroundColor:"black",width:"6px",height:"6px",borderRadius:"50px"}} ></span>}
                     </button>
                     <div>
-                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"20px",color:"#032b41"}} >Premium Plus Yearly</div>
-                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"22px",color:"#032b41"}} >$99.99/year</div>
-                        <div style={{padding:"5px",fontSize:"13px",color:"grey"}} >7-day free trial included</div>
+                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"20px",color:"#032b41"}} >Premium Monthly</div>
+                        <div style={{padding:"5px",fontWeight:"bolder",fontSize:"22px",color:"#032b41"}} >$9.99/month</div>
+                        <div style={{padding:"5px",fontSize:"13px",color:"grey"}} >No trial included</div>
                     </div>
                 </div>
             </div> 
