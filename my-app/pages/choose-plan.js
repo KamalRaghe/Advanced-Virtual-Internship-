@@ -7,6 +7,8 @@ import { useEffect, useState } from "react"
 export default function ForYouPage(){
   const [on1, setOn1] = useState()
   const [on2, setOn2] = useState()
+  const [border1, setBorder1] = useState("4px solid gray")
+  const [border2, setBorder2] = useState("4px solid gray")
       return(
         <div>
              <div className="center" style={{zIndex:"100",flexDirection:"column",justifyContent:"space-between",height:"95vh",width:"100vw",backgroundColor:"#032b41",borderBottomRightRadius:"30%",borderBottomLeftRadius:"30%"}}>
@@ -34,7 +36,7 @@ export default function ForYouPage(){
             </div>
             <div className="center" style={{flexDirection:"column"}} >
                 <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
-                <div className="center" style={{justifyContent:'start',border:"4px solid gray",width:"650px",height:"140px",margin:"20px"}}>
+                <div className="center" style={{justifyContent:'start',border:border1,width:"650px",height:"140px",margin:"20px"}}>
                     <button onClick={()=>{setOn1(true);setOn2()}} className="center" style={{width:"25px",height:"25px",borderRadius:"50%",border:"2px solid black",margin:"20px",position:"relative",bottom:"30px"}}>
                         {on1 && <span style={{backgroundColor:"black",width:"6px",height:"6px",borderRadius:"50px"}} ></span>}
                     </button>
