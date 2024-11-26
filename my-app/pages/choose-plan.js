@@ -58,11 +58,19 @@ export default function ForYouPage(){
                         <div style={{padding:"5px",fontSize:"13px",color:"grey"}} >No trial included</div>
                     </div>
                 </div>
+            </div> 
+            <div className="center">
                 {on1 ? <button className=" center btn" style={{width:"300px"}} >Start your free 7-day trial</button>:
                 <button className=" center btn" style={{width:"300px"}} >Start your first month </button>}
-                {on1 ? <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>Cancel your trial at any time before it ends, and you won’t be charged.</div>:<div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
-            </div> 
-            
+                {on1 ? <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>Cancel your trial at any time before it ends, and you won’t be charged.</div>:
+                <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
+            </div>
+            <div>
+                    How does the free 7-day trial work? <button>lol</button>
+                    <div>
+                        Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
+                    </div>
+                </div>
         </div>
       )
 }
