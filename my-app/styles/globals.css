@@ -7,6 +7,11 @@
   font-family: "Roboto", sans-serif;
 }
 
+.cover{
+  position: relative;
+  bottom: 60px;
+}
+
 .skeleton{
   background-color:lightgrey;
   animation: pulse 1.5s infinite alternate;

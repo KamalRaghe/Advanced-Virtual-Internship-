@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 export default function ForYouPage(){
   const [on1, setOn1] = useState(true)
   const [on2, setOn2] = useState()
+  const [cover1, setCover1] = useState('cover')
   const [border1, setBorder1] = useState("4px solid #20ba68")
   const [border2, setBorder2] = useState("4px solid gray")
       return(
@@ -67,10 +68,17 @@ export default function ForYouPage(){
             </div>
             <div>
                     How does the free 7-day trial work? <button>lol</button>
+                    <div style={{display:'flex'}}>
+                        Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
+                    </div>
+            </div>
+
+            <div className={cover1} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10"}}>
+                    How does the free 7-day trial work? <button onClick={()=>setCover1('0px')}>lol</button><button onClick={()=>setCover1('60px')} >close</button>
                     <div>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>
-                </div>
+            </div>
         </div>
       )
 }
