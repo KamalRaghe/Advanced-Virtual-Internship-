@@ -70,29 +70,38 @@ export default function ForYouPage(){
                 <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
             </div>
             <div className="center" style={{flexDirection:"column"}}>
-                <div className="center" style={{flexDirection:"column",width:"70%"}}>
-                    <div style={{display:"flex",justifyContent:"space-between",width:'100%',margin:"40px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px"}}>{cover1 == 'coverDown' ? <FaChevronUp onClick={()=>setCover1('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover1('coverDown')} />}</button></div>
+                <div className="center" style={{flexDirection:"column",width:"80%"}}>
+                    <div style={{display:"flex",justifyContent:"space-between",width:'100%',margin:"30px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px"}}>{cover1 == 'coverDown' ? <FaChevronUp onClick={()=>setCover1('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover1('coverDown')} />}</button></div>
                     <div style={{display:'flex',marginBottom:"20px"}}>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>
                 </div>
 
-                <div className={cover1} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10",width:"70%"}}>
-                <div className="center" style={{flexDirection:"column",marginTop:"30px"}}>
-                    <div style={{display:"flex",justifyContent:"space-between",width:'100%',margin:"10px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px"}}>{cover2 == 'coverDown' ? <FaChevronUp onClick={()=>setCover2('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover2('coverDown')} />}</button></div>
-                    <div style={{display:'flex'}}>
+                <div className={cover1} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10",width:"80%"}}>
+                <div className="center" style={{flexDirection:"column"}}>
+                    <div style={{display:"flex",justifyContent:"space-between",width:'100%',margin:"30px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px"}}>{cover2 == 'coverDown' ? <FaChevronUp onClick={()=>setCover2('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover2('coverDown')} />}</button></div>
+                    <div style={{display:'flex',marginBottom:"20px"}}>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>
                 </div>
+                <div className={cover2} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10"}}>
+                <div className="center" style={{flexDirection:"column"}}>
+                    <div style={{display:"flex",justifyContent:"space-between",width:'100%',margin:"30px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px"}}>{cover3 == 'coverDown' ? <FaChevronUp onClick={()=>setCover3('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover3('coverDown')} />}</button></div>
+                    <div style={{display:'flex',marginBottom:"20px"}}>
+                        Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
+                    </div>
                 </div>
-                <div  style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10",width:"70%"}}>
-                <div className="center" style={{flexDirection:"column",marginTop:"30px"}}>
+                <div className={cover3} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10"}}>
+                <div className="center" style={{flexDirection:"column"}}>
                     <div style={{display:"flex",justifyContent:"space-between",width:'100%',margin:"10px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px"}}>{cover3 == 'coverDown' ? <FaChevronUp onClick={()=>setCover3('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover3('coverDown')} />}</button></div>
                     <div style={{display:'flex'}}>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>
                 </div>
                 </div>
+                </div>
+                </div>
+            
             </div>
         </div>
       )
