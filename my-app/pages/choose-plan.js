@@ -2,7 +2,8 @@
 import { LuFileKey } from "react-icons/lu";
 import {  PiPottedPlantFill} from "react-icons/pi"
 import { FaHandshake } from "react-icons/fa"
-
+import { FaChevronDown } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa";
 import { useEffect, useState } from "react"
 export default function ForYouPage(){
   const [on1, setOn1] = useState(true)
@@ -66,18 +67,20 @@ export default function ForYouPage(){
                 {on1 ? <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>Cancel your trial at any time before it ends, and you won’t be charged.</div>:
                 <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
             </div>
-            <div>
-                    How does the free 7-day trial work? <button>lol</button>
+            <div className="center" style={{flexDirection:"column"}}>
+                <div className="center" style={{flexDirection:"column",width:"70%"}}>
+                    <div>How does the free 7-day trial work? <button>lol</button></div>
                     <div style={{display:'flex'}}>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>
-            </div>
+                </div>
 
-            <div className={cover1} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10"}}>
+                <div className={cover1} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10",width:"70%"}}>
                     How does the free 7-day trial work? <button onClick={()=>setCover1(' cover coverUp')}>lol</button><button onClick={()=>setCover1('coverDown')} >close</button>
                     <div>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>
+                </div>
             </div>
         </div>
       )
