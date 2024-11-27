@@ -74,7 +74,7 @@ export default function ForYouPage(){
             </div>
 
             <div className={cover1} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10"}}>
-                    How does the free 7-day trial work? <button onClick={()=>setCover1('coverUp')}>lol</button><button onClick={()=>setCover1('coverDown')} >close</button>
+                    How does the free 7-day trial work? <button onClick={()=>setCover1(' cover coverUp')}>lol</button><button onClick={()=>setCover1('coverDown')} >close</button>
                     <div>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>

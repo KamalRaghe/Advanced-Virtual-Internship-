@@ -12,24 +12,29 @@
   bottom: 60px;
 }
 
-
 .coverUp{
-  animation: cUp 1s linear;
+  animation: cUp 1s ease-in;
 }
-
-.coverDown{
-  animation: cDown 1s linear;
-  bottom: 60px;
-}
-@keyframes cDown{
+@keyframes cUp{
   0% {
-    transform: translateY(0);
-    background-color: black;
+    transform: translateY(60px);
   }
 
   100% {
-    transform: translateY(60);
-    background-color: red;
+    transform: translateY(0px);
+  }
+}
+
+.coverDown{
+  animation: cDown 1s ease-in;
+}
+@keyframes cDown{
+  0% {
+    transform: translateY(-60px);
+  }
+
+  100% {
+    transform: translateY(0px);
   }
 }
 
