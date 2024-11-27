@@ -12,6 +12,27 @@
   bottom: 60px;
 }
 
+
+.coverUp{
+  animation: cUp 1s linear;
+}
+
+.coverDown{
+  animation: cDown 1s linear;
+  bottom: 60px;
+}
+@keyframes cDown{
+  0% {
+    transform: translateY(0);
+    background-color: black;
+  }
+
+  100% {
+    transform: translateY(60);
+    background-color: red;
+  }
+}
+
 .skeleton{
   background-color:lightgrey;
   animation: pulse 1.5s infinite alternate;
