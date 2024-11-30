@@ -5,7 +5,7 @@ import { FaHandshake } from "react-icons/fa"
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import { useEffect, useState } from "react"
-import db
+import { db, initFirebase } from "@/firebase";
 export default function ForYouPage(){
   const [on1, setOn1] = useState(true)
   const [on2, setOn2] = useState()
@@ -29,7 +29,7 @@ export default function ForYouPage(){
         );
       
         const docRef = await addDoc(checkoutSessionRef, {
-          price: 'price_1OtfM3DlcBixp6qNRoKw4xAD',
+          price: 'prod_RJEjkQ5TBW7OMG',
           success_url: window.location.origin,
           cancel_url: window.location.origin,
         });
@@ -100,7 +100,7 @@ export default function ForYouPage(){
             </div> 
             <div className="center" style={{flexDirection:"column"}}>
                 {on1 ? <button className=" center btn" style={{width:"300px"}} >Start your free 7-day trial</button>:
-                <button className=" center btn" style={{width:"300px"}} >Start your first month </button>}
+                <button className="center btn" onClick={getCheckoutUrl} style={{width:"300px"}} >Start your first month </button>}
                 {on1 ? <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>Cancel your trial at any time before it ends, and you won’t be charged.</div>:
                 <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
             </div>
