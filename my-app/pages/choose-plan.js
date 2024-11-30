@@ -6,6 +6,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import { useEffect, useState } from "react"
 import { db, initFirebase } from "@/firebase";
+import { addDoc, collection, onSnapshot,getFirestore} from "firebase/firestore"
 import { useRouter } from "next/router";
 export default function ForYouPage(){
   const [on1, setOn1] = useState(true)
@@ -19,36 +20,38 @@ export default function ForYouPage(){
 
   const router = useRouter()
 
-    async function getCheckoutUrl(){
-        const app = initFirebase()
-        const userId = window.localStorage.getItem('uid');
-        const checkoutSessionRef = collection(
-          db,
-          "customers",
-          userId,
-          "checkout_sessions"
-        );
-      
-        const docRef = await addDoc(checkoutSessionRef, {
-          price: 'prod_RJEjkQ5TBW7OMG',
-          success_url: window.location.origin,
-          cancel_url: window.location.origin,
-        });
-        const promise = new Promise((resolve, reject) => {
-          const unsubscribe = onSnapshot(docRef, (snap) => {
-            const { error, url } = snap.data() || {};
-            if (error) {
-              unsubscribe(); 
-              reject(new Error(`An error occurred: ${error.message}`));
-            }
-            if (url) {
-              unsubscribe(); 
-              router.push(url);
-            }
-          });
-        });
-      };
-
+  async function getCheckoutUrl(){
+    const app = initFirebase()
+    const userId = window.localStorage.getItem('uid');
+  
+    const db = getFirestore(app);
+    const checkoutSessionRef = collection(
+      db,
+      "customers",
+      userId,
+      "checkout_sessions"
+    );
+  
+    const docRef = await addDoc(checkoutSessionRef, {
+      price: 'price_1OtfM3DlcBixp6qNRoKw4xAD',
+      success_url: window.location.origin,
+      cancel_url: window.location.origin,
+    });
+    const promise = new Promise((resolve, reject) => {
+      const unsubscribe = onSnapshot(docRef, (snap) => {
+        const { error, url } = snap.data() || {};
+        if (error) {
+          unsubscribe(); 
+          reject(new Error(`An error occurred: ${error.message}`));
+        }
+        if (url) {
+            console.log('epirjvb')
+          unsubscribe(); 
+          router.push(url);
+        }
+      });
+    });
+  };
       return(
         <div>
              <div className="center" style={{zIndex:"100",flexDirection:"column",justifyContent:"space-between",height:"95vh",width:"100vw",backgroundColor:"#032b41",borderBottomRightRadius:"30%",borderBottomLeftRadius:"30%"}}>
