@@ -20,8 +20,10 @@ export default function ForYouPage(){
 
   const router = useRouter()
 
+
   async function getCheckoutUrl(){
     const app = initFirebase()
+    console.log(getFirestore(app))
     const userId = window.localStorage.getItem('uid');
   
     const db = getFirestore(app);
@@ -33,7 +35,7 @@ export default function ForYouPage(){
     );
   
     const docRef = await addDoc(checkoutSessionRef, {
-      price: 'price_1OtfM3DlcBixp6qNRoKw4xAD',
+      price: 'price_1QQcFuIZAnJ0s9ybh26Cg68g',
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
