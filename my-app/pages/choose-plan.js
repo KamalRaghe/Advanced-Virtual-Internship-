@@ -6,6 +6,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import { useEffect, useState } from "react"
 import { db, initFirebase } from "@/firebase";
+import { useRouter } from "next/router";
 export default function ForYouPage(){
   const [on1, setOn1] = useState(true)
   const [on2, setOn2] = useState()
