@@ -35,8 +35,7 @@ export default function ForYouPage(){
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
-      const unsubscribe = onSnapshot(docRef, (snap) => {
-        console.log(snap.data())    
+      const unsubscribe = onSnapshot(docRef, (snap) => {   
         const { error, url } = snap.data() || {};
         console.log(url)
         if (error) {
