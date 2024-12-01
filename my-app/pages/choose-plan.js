@@ -37,17 +37,15 @@ export default function ForYouPage(){
     });
       const unsubscribe = onSnapshot(docRef, (snap) => {
         console.log(snap.data())    
-        const { error, 
-            success_url } = snap.data() || {};
-        console.log(
-            success_url)
+        const { error, url } = snap.data() || {};
+        console.log(url)
         if (error) {
           unsubscribe(); 
         }
-        // if (url) {
-        //   unsubscribe(); 
-        //   router.push(url);
-        // }
+        if (url) {
+          unsubscribe(); 
+          router.push(url);
+        }
       });
   };
       return(
