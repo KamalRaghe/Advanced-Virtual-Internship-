@@ -31,21 +31,24 @@ export default function ForYouPage(){
     );
   
     const docRef = await addDoc(checkoutSessionRef, {
-      price: 'price_1QQcFuIZAnJ0s9ybh26Cg68g',
+      price: 'price_1QRLFfIZAnJ0s9ybHSTVWrtw',
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
-      const unsubscribe = onSnapshot(docRef, (snap) => {   
-        const { error, url } = snap.data() || {};
-        console.log(url)
-        if (error) {
-          unsubscribe(); 
-        }
-        if (url) {
-          unsubscribe(); 
-          router.push(url);
-        }
+    const promise = new Promise((resolve, reject) => {
+        const unsubscribe = onSnapshot(docRef, (snap) => {
+          const { error, url } = snap.data() || {};
+          if (error) {
+            unsubscribe(); 
+            reject(new Error(`An error occurred: ${error.message}`));
+          }
+          if (url) {
+            unsubscribe(); 
+            router.push(url);
+          }
+        });
       });
+      console.log(promise)
   };
       return(
         <div>
