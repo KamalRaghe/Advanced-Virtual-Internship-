@@ -48,7 +48,6 @@ export default function ForYouPage(){
           }
         });
       });
-      console.log(promise)
   };
       return(
         <div>
