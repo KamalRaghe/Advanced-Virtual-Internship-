@@ -20,42 +20,37 @@ export default function ForYouPage(){
 
   const router = useRouter()
 
-
   async function getCheckoutUrl(){
-    console.log("Checkout")
-    const app = initFirebase();
-    const userId = window.localStorage.getItem('uid');;
-  
-    if (!userId) {
-      throw new Error("User is not authenticated.");
-    }
+    const app = initFirebase()
+    const userId = window.localStorage.getItem('uid');
   
     const db = getFirestore(app);
-    const checkoutSessionRef = collection(db, "customers", userId, "checkout_sessions");
+    const checkoutSessionRef = collection(
+      db,
+      "customers",
+      userId,
+      "checkout_sessions"
+    );
   
     const docRef = await addDoc(checkoutSessionRef, {
-      price: "price_1QQcFuIZAnJ0s9ybh26Cg68g",
+      price: 'price_1OtfM3DlcBixp6qNRoKw4xAD',
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
-    
     const promise = new Promise((resolve, reject) => {
-  console.log("Starting promise for snapshot...");
-  const unsubscribe = onSnapshot(docRef, (snap) => {
-    console.log("Snapshot received:", snap.data());
-    const url = snap.data() || {};
-    if (!url) {
-      console.error("Error in snapshot:", error);
-      unsubscribe();
-      reject(new Error(`An error occurred: ${error.message}`));
-    }
-    if (url) {
-      console.log("URL found in snapshot:", url);
-      unsubscribe();
-      router.push(url);
-    }
-  });
-});
+      const unsubscribe = onSnapshot(docRef, (snap) => {
+        const { error, url } = snap.data() || {};
+        if (error) {
+          unsubscribe(); 
+          reject(new Error(`An error occurred: ${error.message}`));
+        }
+        if (url) {
+          unsubscribe(); 
+          router.push(url);
+        }
+      });
+    });
+  
   
   };
       return(
