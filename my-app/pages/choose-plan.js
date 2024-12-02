@@ -137,31 +137,31 @@ export default function ForYouPage(){
                 <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
             </div>
             <div className="center" style={{flexDirection:"column"}}>
-                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"20px",width:"80%"}}>
-                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"30px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover1 == 'coverDown' ? <FaChevronUp onClick={()=>setCover1('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover1('coverDown')} />}</button></div>
-                    <div style={{display:'flex',marginBottom:"40px"}}>
+                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"40px",width:"80%"}}>
+                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"50px",fontSize:"25px"}} >How does the free 7-day trial work? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover1 == 'coverDown' ? <FaChevronUp onClick={()=>setCover1('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover1('coverDown')} />}</button></div>
+                    <div style={{display:'flex',marginBottom:"20px"}}>
                         Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                     </div>
                 </div>
 
                 <div className={cover1} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10",width:"80%"}}>
-                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"20px"}}>
-                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"30px",fontSize:"25px"}} >Can I switch subscriptions from monthly to yearly, or yearly to monthly? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover2 == 'coverDown' ? <FaChevronUp onClick={()=>setCover2('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover2('coverDown')} />}</button></div>
-                    <div style={{display:'flex',marginBottom:"40px"}}>
+                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"40px"}}>
+                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"50px",fontSize:"25px"}} >Can I switch subscriptions from monthly to yearly, or yearly to monthly? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover2 == 'coverDown' ? <FaChevronUp onClick={()=>setCover2('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover2('coverDown')} />}</button></div>
+                    <div style={{display:'flex',marginBottom:"20px"}}>
                         While an annual plan is active, it is not feasible to switch to a monthly plan. However, once the current month ends, transitioning from a monthly plan to an annual plan is an option.
                     </div>
                 </div>
                 <div className={cover2} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10"}}>
-                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"20px"}}>
-                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"30px",fontSize:"25px"}} >What's included in the Premium plan? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover3 == 'coverDown' ? <FaChevronUp onClick={()=>setCover3('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover3('coverDown')} />}</button></div>
-                    <div style={{display:'flex',marginBottom:"40px"}}>
+                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"40px"}}>
+                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"50px",fontSize:"25px"}} >What's included in the Premium plan? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover3 == 'coverDown' ? <FaChevronUp onClick={()=>setCover3('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover3('coverDown')} />}</button></div>
+                    <div style={{display:'flex',marginBottom:"20px"}}>
                         Premium membership provides you with the ultimate Summarist experience, including unrestricted entry to many best-selling books high-quality audio, the ability to download titles for offline reading, and the option to send your reads to your Kindle.
                     </div>
                 </div>
                 <div className={cover3} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10"}}>
-                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"20px"}}>
-                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"30px",fontSize:"25px"}} >Can I cancel during my trial or subscription? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover4 == 'coverDown' ? <FaChevronUp onClick={()=>setCover4('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover4('coverDown')} />}</button></div>
-                    <div style={{display:'flex',marginBottom:"40px"}}>
+                <div className="center" style={{alignItems:"space-between",flexDirection:"column",marginBottom:"40px"}}>
+                    <div style={{color:"black",display:"flex",justifyContent:"space-between",width:'100%',margin:"50px",fontSize:"25px"}} >Can I cancel during my trial or subscription? <button style={{scale:"2",position:"relative",right:"10px",marginLeft:"20px"}}>{cover4 == 'coverDown' ? <FaChevronUp onClick={()=>setCover4('cover coverUp')}/>:<FaChevronDown onClick={()=>setCover4('coverDown')} />}</button></div>
+                    <div style={{display:'flex',marginBottom:"20px"}}>
                         You will not be charged if you cancel your trial before its conclusion. While you will not have complete access to the entire Summarist library, you can still expand your knowledge with one curated book per day.
                     </div>
                 </div>

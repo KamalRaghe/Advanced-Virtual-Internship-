@@ -9,7 +9,7 @@
 
 .cover{
   position: relative;
-  bottom: 120px;
+  bottom: 140px;
 }
 
 .coverUp{
@@ -17,7 +17,7 @@
 }
 @keyframes cUp{
   0% {
-    transform: translateY(120px);
+    transform: translateY(140px);
 
   }
 
@@ -31,7 +31,7 @@
 }
 @keyframes cDown{
   0% {
-    transform: translateY(-120px);
+    transform: translateY(-140px);
   }
 
   100% {
