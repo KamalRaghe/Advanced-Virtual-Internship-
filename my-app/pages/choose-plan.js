@@ -165,7 +165,7 @@ export default function ForYouPage(){
                         You will not be charged if you cancel your trial before its conclusion. While you will not have complete access to the entire Summarist library, you can still expand your knowledge with one curated book per day.
                     </div>
                 </div>
-                <div className={cover4} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10",height:"70px"}}></div>
+                <div className={cover4} style={{backgroundColor:"white",borderTop:"1px solid grey",zIndex:"10",height:"100px"}}></div>
                 </div>
                 </div>
                 </div>
