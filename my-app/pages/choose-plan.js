@@ -22,7 +22,13 @@ export default function ForYouPage(){
   const router = useRouter()
 
   async function getCheckoutUrl(price,type){
-    window.localStorage.setItem('payment', type)
+    if(type === 'premium-plus'){
+        window.localStorage.setItem('payment', type)
+    }else{
+        if(type === 'premium'){
+            window.localStorage.setItem('payment', type)
+        }
+    }
     const userId = window.localStorage.getItem('uid');
     const checkoutSessionRef = collection(
       db,
