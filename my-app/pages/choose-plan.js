@@ -48,6 +48,32 @@ export default function ForYouPage(){
         });
       });
     };
+
+    async function PayedCheck() {
+        const app = initFirebase()
+        const userId = window.localStorage.getItem('uid')
+        const subscriptionsRef = collection(db, "customers", userId, "subscriptions");
+        const q = query(
+          subscriptionsRef,
+          where("status", "in", ["trialing", "active"])
+        );
+      
+        const promise = new Promise((resolve, reject) => {
+          const unsubscribe = onSnapshot(
+            q,
+            (snapshot) => {
+      
+              if (snapshot.docs.length === 0) {
+                Payed(false);
+              } else {
+                Payed(true);
+              }
+              unsubscribe();
+            },
+            reject
+          );
+        });
+      };
       return(
         <div>
              <div className="center" style={{zIndex:"100",flexDirection:"column",justifyContent:"space-between",height:"95vh",width:"100vw",backgroundColor:"#032b41",borderBottomRightRadius:"30%",borderBottomLeftRadius:"30%"}}>
