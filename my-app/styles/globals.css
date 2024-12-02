@@ -9,12 +9,7 @@
 
 .cover{
   position: relative;
-  color: transparent;
-  bottom: 80px;
-}
-
-.Text{
-  color: transparent;
+  bottom: 120px;
 }
 
 .coverUp{
@@ -22,7 +17,8 @@
 }
 @keyframes cUp{
   0% {
-    transform: translateY(80px);
+    transform: translateY(120px);
+
   }
 
   100% {
@@ -35,7 +31,7 @@
 }
 @keyframes cDown{
   0% {
-    transform: translateY(-80px);
+    transform: translateY(-120px);
   }
 
   100% {
