@@ -23,6 +23,8 @@ export default function Modal({close}){
         function signIn(){
           const email = account.title
           const password = account.password
+          window.localStorage.setItem('User', `${auth.currentUser?.email}`)
+          window.localStorage.setItem('uid', `${auth.currentUser?.uid}`)
           signInWithEmailAndPassword(auth,email,password).then(()=>{
             router.push('/for-you')
           }).catch(err =>{
@@ -47,7 +49,8 @@ export default function Modal({close}){
           e.preventDefault()
           const email = account.title
           const password = account.password
-      
+          window.localStorage.setItem('User', `${auth.currentUser?.email}`)
+          window.localStorage.setItem('uid', `${auth.currentUser?.uid}`)
           createUserWithEmailAndPassword(auth,email,password).then(()=>{
             router.push('/for-you')
           }).catch(err =>{
