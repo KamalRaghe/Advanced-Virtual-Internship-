@@ -21,7 +21,8 @@ export default function ForYouPage(){
 
   const router = useRouter()
 
-  async function getCheckoutUrl(price){
+  async function getCheckoutUrl(price,type){
+    window.localStorage.setItem('payment', type)
     const userId = window.localStorage.getItem('uid');
     const checkoutSessionRef = collection(
       db,
@@ -131,8 +132,8 @@ export default function ForYouPage(){
                 </div>
             </div> 
             <div className="center" style={{flexDirection:"column"}}>
-                {on1 ? <button className=" center btn" onClick={()=>getCheckoutUrl('price_1QRLMTIZAnJ0s9ybjGtOekL4')} style={{width:"300px"}} >Start your free 7-day trial</button>:
-                <button className="center btn" onClick={()=>getCheckoutUrl('price_1QRLFfIZAnJ0s9ybHSTVWrtw')} style={{width:"300px"}} >Start your first month </button>}
+                {on1 ? <button className=" center btn" onClick={()=>getCheckoutUrl('price_1QRLMTIZAnJ0s9ybjGtOekL4','premium-plus')} style={{width:"300px"}} >Start your free 7-day trial</button>:
+                <button className="center btn" onClick={()=>getCheckoutUrl('price_1QRLFfIZAnJ0s9ybHSTVWrtw','premium')} style={{width:"300px"}} >Start your first month </button>}
                 {on1 ? <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>Cancel your trial at any time before it ends, and you won’t be charged.</div>:
                 <div style={{padding:"5px",fontSize:"13px",color:"grey",margin:"5px"}}>30-day money back guarantee, no questions asked.</div>}
             </div>
