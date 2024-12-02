@@ -9,7 +9,12 @@
 
 .cover{
   position: relative;
+  color: transparent;
   bottom: 80px;
+}
+
+.Text{
+  color: transparent;
 }
 
 .coverUp{
