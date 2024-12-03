@@ -37,7 +37,7 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
-        console.log(auth)
+        console.log(auth.currentUser.email)
       })
         return(
           <div style={{display:"flex"}}>
