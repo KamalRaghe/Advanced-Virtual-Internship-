@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Setting(){
     const [payed, Payed] = useState()
+    const [user, setUser] = useState()
     const [type, setType] = useState()
     const router = useRouter()
     async function PayedCheck() {
@@ -37,7 +38,7 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
-        console.log(auth.currentUser.email)
+        setUser(window.localStorage.getItem('User'))
       })
         return(
           <div style={{display:"flex"}}>
@@ -50,7 +51,7 @@ export default function Setting(){
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder"}}>Your Subscription plan</div>
                             <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px",borderBottom:"1px solid lightgrey"}} >{type}</div>
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>
-                            <div>hanna@gmail.com</div>
+                            <div>{user}</div>
                         </div>
                     </div>
                 </div>
