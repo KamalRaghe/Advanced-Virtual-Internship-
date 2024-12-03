@@ -8,9 +8,11 @@ import { useEffect, useState } from "react"
 import { db, initFirebase } from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 import { useRouter } from "next/router";
+import Modal from "@/components/modal";
 export default function ForYouPage(){
   const [on1, setOn1] = useState(true)
   const [on2, setOn2] = useState()
+  const [modal, setModal] = useState(false)
   const [cover1, setCover1] = useState('cover')
   const [cover2, setCover2] = useState('cover')
   const [cover3, setCover3] = useState('cover')
@@ -46,7 +48,7 @@ export default function ForYouPage(){
           const { error, url } = snap.data() || {};
           if (error) {
             unsubscribe(); 
-            console.log(`An error occurred: ${error.message}`);
+            setModal(true)
           }
           if (url) {
             unsubscribe(); 
@@ -80,6 +82,7 @@ export default function ForYouPage(){
                     </div>
                 </div>
             </div>
+            {modal && <Modal></Modal>}
             <div className="center" style={{flexDirection:"column"}} onClick={()=>{setOn1(true);setOn2(),setBorder1("4px solid #20ba68"),setBorder2("4px solid gray")}}>
                 <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
                 <div className="center" style={{justifyContent:'start',border:border1,width:"650px",height:"140px",margin:"20px",backgroundColor:"#f1f6f4",borderRadius:"8px"}}>
