@@ -4,7 +4,7 @@ import { db, initFirebase } from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 
 export default function Setting(){
-    
+    const [payed, Payed] = useState()
     const router = useRouter()
     async function PayedCheck() {
         const app = initFirebase()

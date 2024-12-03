@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 export default function ForYouPage(){
   const [on1, setOn1] = useState(true)
   const [on2, setOn2] = useState()
-  const [payed, Payed] = useState()
   const [cover1, setCover1] = useState('cover')
   const [cover2, setCover2] = useState('cover')
   const [cover3, setCover3] = useState('cover')
