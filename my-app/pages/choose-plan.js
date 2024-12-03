@@ -82,10 +82,7 @@ export default function ForYouPage(){
         });
       };
 
-      useEffect(() =>{
-        PayedCheck()
-        console.log(payed)
-      })
+   
 
       return(
         <div>
