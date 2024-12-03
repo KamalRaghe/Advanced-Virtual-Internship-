@@ -5,6 +5,7 @@ import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 
 export default function Setting(){
     
+    const router = useRouter()
     async function PayedCheck() {
         const app = initFirebase()
         const userId = window.localStorage.getItem('uid')
