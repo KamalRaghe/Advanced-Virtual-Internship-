@@ -3,9 +3,11 @@ import NavBar from "@/components/Nav"
 import { db, initFirebase } from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 import { useEffect, useState } from "react"
+import { useRouter } from "next/router";
 
 export default function Setting(){
     const [payed, Payed] = useState()
+    const [type, setType] = useState()
     const router = useRouter()
     async function PayedCheck() {
         const app = initFirebase()
@@ -22,8 +24,10 @@ export default function Setting(){
             (snapshot) => {
               if (snapshot.docs.length === 0) {
                 Payed(false);
+                setType('')
               } else {
                 Payed(true);
+                setType(window.localStorage.getItem('type'))
               }
               unsubscribe();
             },
@@ -34,7 +38,6 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
-        console.log(payed)
       })
         return(
           <div style={{display:"flex"}}>
@@ -45,7 +48,7 @@ export default function Setting(){
                         <div style={{color:"#032b41",fontSize:"32px",fontWeight:"bolder",margin:"10px",marginBottom:"30px",padding:"20px 0px",borderBottom:"1px solid lightgrey"}} >Settings</div>
                         <div style={{marginLeft:"10px"}}>
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder"}}>Your Subscription plan</div>
-                            <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px",borderBottom:"1px solid lightgrey"}} >premium-plus</div>
+                            <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px",borderBottom:"1px solid lightgrey"}} >{type}</div>
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>
                             <div>hanna@gmail.com</div>
                         </div>
