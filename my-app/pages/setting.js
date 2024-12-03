@@ -1,6 +1,6 @@
 import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
-import { db, initFirebase } from "@/firebase";
+import { db, auth} from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router";
@@ -10,7 +10,6 @@ export default function Setting(){
     const [type, setType] = useState()
     const router = useRouter()
     async function PayedCheck() {
-        const app = initFirebase()
         const userId = window.localStorage.getItem('uid')
         const subscriptionsRef = collection(db, "customers", userId, "subscriptions");
         const q = query(
@@ -38,6 +37,7 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
+        console.log(auth)
       })
         return(
           <div style={{display:"flex"}}>
