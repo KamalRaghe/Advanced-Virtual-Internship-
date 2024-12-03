@@ -18,11 +18,7 @@ export default function SideBar({small}){
 
     const router = useRouter()
 
-    function Logout(){
-        auth.signOut().then(() => {router.push('/')}).catch((error) => alert(error.message))
-        window.localStorage.setItem('User', '')
-        window.localStorage.setItem('uid', '')
-    }
+  
 
     useEffect(()=>{
         if(small){
