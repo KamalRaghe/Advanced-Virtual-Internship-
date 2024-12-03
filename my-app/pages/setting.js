@@ -4,6 +4,11 @@ import { db, initFirebase } from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 
 export default function Setting(){
+    
+    useEffect(() =>{
+        PayedCheck()
+        console.log(payed)
+      })
         return(
           <div style={{display:"flex"}}>
                <SideBar></SideBar>
