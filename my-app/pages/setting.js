@@ -5,6 +5,31 @@ import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 
 export default function Setting(){
     
+    async function PayedCheck() {
+        const app = initFirebase()
+        const userId = window.localStorage.getItem('uid')
+        const subscriptionsRef = collection(db, "customers", userId, "subscriptions");
+        const q = query(
+          subscriptionsRef,
+          where("status", "in", ["trialing", "active"])
+        );
+      
+        const promise = new Promise((resolve, reject) => {
+          const unsubscribe = onSnapshot(
+            q,
+            (snapshot) => {
+              if (snapshot.docs.length === 0) {
+                Payed(false);
+              } else {
+                Payed(true);
+              }
+              unsubscribe();
+            },
+            reject
+          );
+        });
+      };
+    
     useEffect(() =>{
         PayedCheck()
         console.log(payed)
