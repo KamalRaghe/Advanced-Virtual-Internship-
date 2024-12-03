@@ -17,6 +17,12 @@ export default function SideBar({small}){
 
     const router = useRouter()
 
+    function Logout(){
+        auth.signOut().then(() => {router.push('/')}).catch((error) => alert(error.message))
+        window.localStorage.setItem('User', '')
+        window.localStorage.setItem('uid', '')
+    }
+
     useEffect(()=>{
         if(small){
             setWidth('87vh')
@@ -40,7 +46,7 @@ export default function SideBar({small}){
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><GoSearch></GoSearch></div> <div style={{margin:"5px"}} ></div>Search</div>
                     <div className="side-bar__icon" onClick={()=>router.push('/setting')} ><div style={{scale:"1.3",position:"relative",top:"2px"}} ><CiSettings></CiSettings></div> <div style={{margin:"5px"}} ></div>Settings</div>
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><CiCircleQuestion></CiCircleQuestion></div> <div style={{fontSize:"13px",margin:'5px'}} >Help & Support</div></div>
-                    <div className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>
+                    <div onClick={Logout} className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>
                 </div>
             </div>
         </div>
