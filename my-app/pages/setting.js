@@ -49,7 +49,8 @@ export default function Setting(){
                         <div style={{color:"#032b41",fontSize:"32px",fontWeight:"bolder",margin:"10px",marginBottom:"30px",padding:"20px 0px",borderBottom:"1px solid lightgrey"}} >Settings</div>
                         <div style={{marginLeft:"10px"}}>
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder"}}>Your Subscription plan</div>
-                            <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px",borderBottom:"1px solid lightgrey"}} >{type}</div>
+                            <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px"}} >{type ? type: 'Basic'}</div>
+                            {type && <button className="btn" style={{width:"100px",borderBottom:"1px solid lightgrey"}}> Upgrade to Premium</button>}
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>
                             <div>{user}</div>
                         </div>
