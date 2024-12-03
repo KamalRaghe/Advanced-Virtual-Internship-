@@ -1,5 +1,7 @@
 import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
+import { db, initFirebase } from "@/firebase";
+import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 
 export default function Setting(){
         return(
