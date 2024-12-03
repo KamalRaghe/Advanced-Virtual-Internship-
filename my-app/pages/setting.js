@@ -27,7 +27,7 @@ export default function Setting(){
                 setType('')
               } else {
                 Payed(true);
-                setType(window.localStorage.getItem('type'))
+                setType(window.localStorage.getItem('payment'))
               }
               unsubscribe();
             },
