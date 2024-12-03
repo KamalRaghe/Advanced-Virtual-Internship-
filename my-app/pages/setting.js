@@ -2,6 +2,7 @@ import SideBar from "@/components/sideBar"
 import NavBar from "@/components/Nav"
 import { db, initFirebase } from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
+import { useEffect, useState } from "react"
 
 export default function Setting(){
     const [payed, Payed] = useState()
