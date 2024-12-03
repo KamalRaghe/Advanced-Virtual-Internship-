@@ -46,7 +46,7 @@ export default function ForYouPage(){
           const { error, url } = snap.data() || {};
           if (error) {
             unsubscribe(); 
-            reject(new Error(`An error occurred: ${error.message}`));
+            console.log(`An error occurred: ${error.message}`);
           }
           if (url) {
             unsubscribe(); 
