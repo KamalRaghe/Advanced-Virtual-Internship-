@@ -7,6 +7,7 @@ import { IoMdMenu } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/router";
+import { auth } from "@/firebase";
 
 
 export default function SideBar({small}){
