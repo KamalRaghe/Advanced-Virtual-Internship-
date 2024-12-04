@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { 
   AiFillFileText,
   AiFillBulb, 
@@ -8,8 +8,15 @@ import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { RiLeafLine } from "react-icons/ri"
 import { BiCrown } from "react-icons/bi";
 import Modal from "@/components/modal"
+import { auth } from "@/firebase";
 export default function Home(){
  
+  useEffect(()=>{
+    if(auth){
+        
+    }
+  })
+
   const [modal, setModal] = useState()
   return(
 <div lang="en">
