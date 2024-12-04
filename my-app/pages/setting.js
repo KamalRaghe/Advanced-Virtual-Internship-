@@ -41,7 +41,7 @@ export default function Setting(){
     useEffect(() =>{
         PayedCheck()
         setUser(window.localStorage.getItem('User'))
-        setModal(!auth)
+        setModal(auth)
       })
         return(
           <div style={{display:"flex"}}>
