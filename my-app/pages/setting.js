@@ -56,7 +56,7 @@ export default function Setting(){
                             {type && <button className="btn" style={{width:"100px",borderBottom:"1px solid lightgrey"}}> Upgrade to Premium</button>}
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>
                             <div>{user}</div>
-                            {modal && <Modal/>}
+                            {modal && <Modal close={()=>setModal()} />}
                         </div>
                     </div>
                 </div>
