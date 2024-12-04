@@ -44,7 +44,7 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
-        console.log(payed)
+        console.log(auth)
         setUser(window.localStorage.getItem('User'))
       })
         return(
