@@ -18,6 +18,7 @@ export default function Books({url,name,move,subName}){
         const { data } = await axios.get(url)
         setBooks(data)
         setLoaded(true)
+        console.log(data)
       }
 
       useEffect(()=>{
@@ -35,7 +36,8 @@ export default function Books({url,name,move,subName}){
                     </div>
                     {loaded ? <div className="faded" style={{display:"flex",position:"relative",right:move,bottom:"0px"}}>
                         {books.map(book =>{
-                        return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px"}} >
+                        return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px",position:"relative"}} >
+                              {book.subscriptionRequired && <div className="center" style={{backgroundColor:"black",fontSize:"40px",position:"absolute",top:"-110px",left:'250px',borderRadius:"60px",width:"380px",height:"90px",color:"white"}} >Premium</div>}
                               <img src={book.imageLink}></img>
                               <div className="center" style={{justifyContent:"start",width:"600px",color:"navy",fontSize:"60px",fontWeight:"bolder",padding:"10px"}}>{book.title}</div>
                               <div className="center" style={{justifyContent:"start",width:"600px",color:"grey",fontSize:"50px",padding:" 0 10px"}}>{book.author}</div>
