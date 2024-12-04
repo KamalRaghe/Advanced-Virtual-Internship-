@@ -50,7 +50,6 @@ export default function ForYouPage(){
           const { error, url } = snap.data() || {};
           if (error) {
             unsubscribe(); 
-            setModal(true)
           }
           if (url) {
             unsubscribe(); 
