@@ -21,7 +21,11 @@ export default function Books({url,name,move,subName}){
         console.log(data)
       }
 
-    
+      useEffect(()=>{
+        setTimeout(() => {
+          fetchBooks()
+        }, 1000);
+      },[])
       return(
         <div >
                 <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"start",marginBottom:"150px"}}>            
