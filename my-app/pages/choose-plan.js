@@ -31,19 +31,21 @@ export default function ForYouPage(){
         }
     }
     const userId = window.localStorage.getItem('uid');
-    const checkoutSessionRef = collection(
-      db,
-      "customers",
-      userId,
-      "checkout_sessions"
-    );
-  
-    const docRef = await addDoc(checkoutSessionRef, {
-      price: price,
-      success_url: window.location.origin,
-      cancel_url: window.location.origin,
-    });
-    const promise = new Promise((resolve, reject) => {
+    if(userId){
+      const checkoutSessionRef = collection(
+        db,
+        "customers",
+        userId,
+        "checkout_sessions"
+      );
+
+      const docRef = await addDoc(checkoutSessionRef, {
+        price: price,
+        success_url: window.location.origin,
+        cancel_url: window.location.origin,
+      });
+
+      const promise = new Promise((resolve, reject) => {
         const unsubscribe = onSnapshot(docRef, (snap) => {
           const { error, url } = snap.data() || {};
           if (error) {
@@ -56,6 +58,10 @@ export default function ForYouPage(){
           }
         });
       });
+    }else{
+      setModal(true)
+    }
+    
     };
       return(
         <div>
@@ -82,7 +88,7 @@ export default function ForYouPage(){
                     </div>
                 </div>
             </div>
-            {modal && <Modal></Modal>}
+            {modal && <Modal close={()=>setModal()} ></Modal>}
             <div className="center" style={{flexDirection:"column"}} onClick={()=>{setOn1(true);setOn2(),setBorder1("4px solid #20ba68"),setBorder2("4px solid gray")}}>
                 <div style={{fontSize:"30px",fontWeight:"bolder",color:"#032b41"}} >Choose the plan that fits you</div>
                 <div className="center" style={{justifyContent:'start',border:border1,width:"650px",height:"140px",margin:"20px",backgroundColor:"#f1f6f4",borderRadius:"8px"}}>

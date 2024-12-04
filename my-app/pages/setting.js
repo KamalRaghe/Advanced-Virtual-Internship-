@@ -14,34 +14,38 @@ export default function Setting(){
     const router = useRouter()
     async function PayedCheck() {
         const userId = window.localStorage.getItem('uid')
-        const subscriptionsRef = collection(db, "customers", userId, "subscriptions");
-        const q = query(
-          subscriptionsRef,
-          where("status", "in", ["trialing", "active"])
-        );
-      
-        const promise = new Promise((resolve, reject) => {
-          const unsubscribe = onSnapshot(
-            q,
-            (snapshot) => {
-              if (snapshot.docs.length === 0) {
-                Payed(false);
-                setType('')
-              } else {
-                Payed(true);
-                setType(window.localStorage.getItem('payment'))
-              }
-              unsubscribe();
-            },
-            reject
-          );
-        });
+        if(userId) {
+            const subscriptionsRef = collection(db, "customers", userId, "subscriptions");
+            const q = query(
+            subscriptionsRef,
+            where("status", "in", ["trialing", "active"])
+            );
+        
+            const promise = new Promise((resolve, reject) => {
+            const unsubscribe = onSnapshot(
+                q,
+                (snapshot) => {
+                if (snapshot.docs.length === 0) {
+                    Payed(false);
+                    setType('')
+                } else {
+                    Payed(true);
+                    setType(window.localStorage.getItem('payment'))
+                }
+                unsubscribe();
+                },
+                reject
+            );
+            });
+        }else{
+            setModal(true);
+        }
       };
     
     useEffect(() =>{
         PayedCheck()
+        console.log(payed)
         setUser(window.localStorage.getItem('User'))
-        setModal(!auth)
       })
         return(
           <div style={{display:"flex"}}>
@@ -53,9 +57,9 @@ export default function Setting(){
                         <div style={{marginLeft:"10px"}}>
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder"}}>Your Subscription plan</div>
                             <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px"}} >{type ? type: 'Basic'}</div>
-                            {!type && <button className="btn" style={{width:"100px"}}> Upgrade to Premium</button>}
+                            {!type && <button className="btn" style={{width:"100px",marginBottom:"20px"}}> Upgrade to Premium</button>}
                             <div style={{borderBottom:"1px solid lightgrey"}} ></div>
-                            <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>
+                            {user && <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>}
                             <div>{user}</div>
                             {modal && <Modal close={()=>setModal(false)} />}
                         </div>
