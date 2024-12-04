@@ -4,9 +4,11 @@ import { db, auth} from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router";
+import Modal from "@/components/modal";
 
 export default function Setting(){
     const [payed, Payed] = useState()
+    const [modal, setModal] = useState()
     const [user, setUser] = useState()
     const [type, setType] = useState()
     const router = useRouter()
